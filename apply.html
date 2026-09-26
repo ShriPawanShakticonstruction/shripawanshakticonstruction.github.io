@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Apply — Shri Pawan Shakti Construction</title>
 <style>
-:root{--gold:#c9a55a;--cream:#f7f3eb;--ink:#171717;--line:#e6dece}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:var(--ink)}.wrap{max-width:900px;margin:auto;padding:25px 16px}.head{text-align:center;margin-bottom:30px}.head img{height:60px;margin-bottom:10px}.head h1{margin:10px 0;color:var(--gold)}.head p{color:var(--muted);margin:5px 0}.tabs{display:flex;gap:10px;margin-bottom:20px;border-bottom:1px solid var(--line)}.tab{flex:1;padding:15px;background:none;border:none;color:var(--ink);cursor:pointer;border-bottom:3px solid transparent;font-weight:bold;transition:all 0.3s}.tab.active{border-bottom-color:var(--gold);color:var(--gold)}.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:25px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}.form{display:none}.form.active{display:block}.form h2{color:var(--gold);margin-top:0}.form .note{color:#666;font-size:14px;margin:10px 0 20px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}@media(max-width:600px){.grid{grid-template-columns:1fr}}.grid>div{display:flex;flex-direction:column}.grid label{font-weight:bold;margin-bottom:5px;color:var(--ink)}.grid input,.grid textarea,.grid select{padding:10px;border:1px solid var(--line);border-radius:6px;font-family:inherit;font-size:14px}.grid textarea{grid-column:1/-1;resize:vertical;min-height:100px}.grid input:focus,.grid textarea:focus,.grid select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,165,90,0.1)}.resumeSection{background:#f9f7f5;border:1px solid var(--line);border-radius:8px;padding:15px;margin:20px 0}.resumeLabel{font-weight:bold;color:var(--ink);margin-bottom:8px;display:block}.resumeInput{padding:8px;border:2px dashed var(--line);border-radius:6px;cursor:pointer;display:block;width:100%;text-align:center;background:#fff;transition:all 0.3s}.resumeInput:hover{border-color:var(--gold);background:#faf8f6}.resumeInput:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,165,90,0.1)}.resumePreview{background:#e8f5e9;border:1px solid #4caf50;border-radius:6px;padding:12px;margin-top:10px;display:none;font-size:14px}.resumePreview.show{display:block}.resumePreview.error{background:#ffebee;border-color:#f44336}.resumePreview strong{display:block;margin-bottom:5px}.resumePreview.error strong{color:#f44336}.uploadHint{font-size:12px;color:#999;margin-top:5px}.submitBtn{background:var(--gold);color:#fff;padding:12px 30px;border:none;border-radius:6px;font-weight:bold;cursor:pointer;font-size:16px;width:100%;transition:all 0.3s;grid-column:1/-1}.submitBtn:hover{background:#b8944a;transform:translateY(-2px);box-shadow:0 4px 12px rgba(201,165,90,0.3)}.submitBtn:disabled{background:#ccc;cursor:not-allowed;transform:none}.status{margin-top:15px;padding:12px;border-radius:6px;text-align:center;font-weight:bold;display:none;grid-column:1/-1}.status.show{display:block}.status.success{background:#e8f5e9;color:#2e7d32;border:1px solid #4caf50}.status.error{background:#ffebee;color:#c62828;border:1px solid #f44336}.back{display:inline-block;margin-top:20px;color:var(--gold);text-decoration:none;font-weight:bold;transition:all 0.3s}.back:hover{text-decoration:underline;color:#b8944a}
-</style>
+:root{--gold:#c9a55a;--cream:#f7f3eb;--ink:#171717;--line:#e6dece}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:var(--ink)}.wrap{max-width:900px;margin:30px auto;padding:20px}.head{text-align:center;margin-bottom:20px}.head img{width:92px;height:92px;border-radius:18px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.08)}.head h1{margin:14px 0 6px;font-size:2rem}.head p{margin:0;color:#555}.tabs{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}.tab{background:#fff;border:1px solid var(--line);padding:12px 18px;border-radius:999px;cursor:pointer;font-weight:700;color:var(--ink)}.tab.active{background:var(--gold);color:#fff;border-color:var(--gold)}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 8px 24px rgba(0,0,0,.04)}.form{display:none}.form.active{display:block}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid>div{display:flex;flex-direction:column}.label,.note,.resumeLabel{font-weight:700}.label{margin-bottom:8px}.input,select,textarea{width:100%;padding:12px 14px;border:1px solid #d8d1c4;border-radius:10px;font-size:1rem;background:#fff}textarea{min-height:120px;resize:vertical}.resumeSection{border:1px dashed #cbbf9a;border-radius:12px;padding:14px;background:#faf7f1}.resumeInput{margin-top:10px}.uploadHint{margin-top:8px;color:#666;font-size:.9rem}.resumePreview{margin-top:12px;padding:10px 12px;border-radius:10px;background:#f7f3eb;display:none}.resumePreview.show{display:block}.resumePreview.error{background:#fff1f1;border:1px solid #ffc7c7;color:#8a2020}.status{margin-top:14px;padding:12px;border-radius:10px;display:none;font-weight:700}.status.show{display:block}.status.success{background:#eafaf0;color:#1d6d3b;border:1px solid #bce8c8}.status.error{background:#fff1f1;color:#8a2020;border:1px solid #ffc7c7}.submitBtn{margin-top:18px;width:100%;border:none;border-radius:12px;padding:15px 18px;background:linear-gradient(135deg,#c9a55a,#b38b3d);color:#fff;font-weight:700;font-size:1rem;cursor:pointer}.submitBtn:disabled{opacity:.7;cursor:not-allowed}.back{display:inline-block;margin-top:18px;color:#5f4a18;font-weight:700}.@media (max-width:640px){.grid{grid-template-columns:1fr}.wrap{padding:12px}.head h1{font-size:1.5rem}}</style>
 </head>
 <body>
 <div class="wrap">
@@ -26,6 +25,10 @@
     <form class="form active" data-form="work">
       <h2>Apply for Work</h2>
       <p class="note">Road, civil, electrical, building work या contract enquiry के लिए form भरें।</p>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="New Work Enquiry - Shri Pawan Shakti Construction">
+      <input type="hidden" name="_next" value="https://shripawanshakticonstruction.github.io/apply.html?success=1">
       
       <div class="grid">
         <div>
@@ -76,6 +79,10 @@
     <form class="form" data-form="job">
       <h2>Apply for Job</h2>
       <p class="note">Construction company की नौकरी के लिए अपना विवरण और resume भेजें।</p>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="New Job Application - Shri Pawan Shakti Construction">
+      <input type="hidden" name="_next" value="https://shripawanshakticonstruction.github.io/apply.html?success=1">
       
       <div class="grid">
         <div>
@@ -180,13 +187,13 @@ function setupResumePreview(inputSelector, previewSelector) {
     
     if (file.size > maxSize) {
       resumePreview.classList.add('show', 'error');
-      resumePreview.innerHTML = '<strong>❌ फाइल ���हुत बड़ी है!</strong><br>कृपया 5 MB से छोटी फाइल चुनें।';
+      resumePreview.innerHTML = '<strong>❌ फाइल बहुत बड़ी है!</strong><br>कृपया 5 MB से छोटी फाइल चुनें।';
       resumeInput.value = '';
       return;
     }
     
     const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-    const isValidType = allowedTypes.includes(file.type);
+    const isValidType = allowedTypes.includes(file.type) || file.name.toLowerCase().endsWith('.pdf') || file.name.toLowerCase().endsWith('.doc') || file.name.toLowerCase().endsWith('.docx');
     
     if (!isValidType) {
       resumePreview.classList.add('show', 'error');
@@ -210,6 +217,17 @@ function setupResumePreview(inputSelector, previewSelector) {
 setupResumePreview('input[name="Resume"]', '.job-preview');
 setupResumePreview('input[name="WorkDocs"]', '.work-preview');
 
+// Success message after redirect
+const pageParams = new URLSearchParams(window.location.search);
+if (pageParams.get('success') === '1') {
+  const activeForm = document.querySelector('.form.active');
+  const statusDiv = activeForm ? activeForm.querySelector('.status') : null;
+  if (statusDiv) {
+    statusDiv.classList.add('show', 'success');
+    statusDiv.textContent = '✅ Application भेज दिया गया है। आपसे जल्द संपर्क किया जाएगा।';
+  }
+}
+
 // Form submission handling
 document.querySelectorAll('.form').forEach(form => {
   form.addEventListener('submit', async function(e) {
@@ -218,36 +236,33 @@ document.querySelectorAll('.form').forEach(form => {
     const submitBtn = this.querySelector('.submitBtn');
     const statusDiv = this.querySelector('.status');
     const formData = new FormData(this);
+    const formType = this.getAttribute('data-form');
+
+    formData.set('_captcha', 'false');
+    formData.set('_template', 'table');
+    formData.set('_subject', formType === 'work'
+      ? 'New Work Enquiry - Shri Pawan Shakti Construction'
+      : 'New Job Application - Shri Pawan Shakti Construction');
+    formData.set('_next', 'https://shripawanshakticonstruction.github.io/apply.html?success=1');
     
     // Disable button and show loading
     submitBtn.disabled = true;
     submitBtn.textContent = '⏳ भेजा जा रहा है...';
     
     try {
-      // Submit to FormSubmit
-      const response = await fetch('https://formsubmit.co/shripawanshakticonstruction@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/shripawanshakticonstruction@gmail.com', {
         method: 'POST',
         body: formData
       });
       
       if (response.ok) {
-        // Show success message on same page
         statusDiv.classList.add('show', 'success');
         statusDiv.textContent = '✅ Application भेज दिया गया है। आपसे जल्द संपर्क किया जाएगा।';
-        
-        // Reset form
         this.reset();
         document.querySelectorAll('.resumePreview').forEach(x => x.classList.remove('show'));
-        
-        // Reset button after 3 seconds
         setTimeout(() => {
           submitBtn.disabled = false;
-          const formType = this.getAttribute('data-form');
-          if (formType === 'work') {
-            submitBtn.textContent = '📤 Apply for Work';
-          } else {
-            submitBtn.textContent = '📤 Apply for Job';
-          }
+          submitBtn.textContent = formType === 'work' ? '📤 Apply for Work' : '📤 Apply for Job';
         }, 3000);
       } else {
         throw new Error('Form submission failed');
@@ -255,15 +270,8 @@ document.querySelectorAll('.form').forEach(form => {
     } catch (error) {
       statusDiv.classList.add('show', 'error');
       statusDiv.textContent = '❌ कोई समस्या आई। कृपया फिर से कोशिश करें।';
-      
-      // Reset button
       submitBtn.disabled = false;
-      const formType = this.getAttribute('data-form');
-      if (formType === 'work') {
-        submitBtn.textContent = '📤 Apply for Work';
-      } else {
-        submitBtn.textContent = '📤 Apply for Job';
-      }
+      submitBtn.textContent = formType === 'work' ? '📤 Apply for Work' : '📤 Apply for Job';
     }
   });
 });
