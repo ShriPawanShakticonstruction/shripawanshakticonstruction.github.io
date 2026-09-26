@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Dashboard — Shri Pawan Shakti Construction</title>
+<style>
+body{margin:0;background:#f6f2ea;font-family:Arial;color:#171717}.wrap{max-width:1100px;margin:auto;padding:25px 16px}.card{background:#fff;border:1px solid #e5dece;border-radius:14px;padding:22px;margin:15px 0;box-shadow:0 8px 25px #0000000a}h1,h2{font-family:Georgia,serif}.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}label{display:block;font-weight:700;margin:10px 0 6px}input{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box}button{border:0;border-radius:8px;padding:11px 16px;font-weight:700;cursor:pointer;background:#111;color:#fff}.gold{background:#c9a55a;color:#111}.msg{padding:10px;border-radius:8px;background:#eee;margin-top:10px}.hidden{display:none}.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.photo{border:1px solid #ddd;padding:10px;border-radius:10px}.photo img{width:100%;height:140px;object-fit:cover;border-radius:8px;background:#eee}.small{font-size:12px;color:#666}@media(max-width:800px){.grid,.photos{grid-template-columns:1fr 1fr}}@media(max-width:520px){.grid,.photos{grid-template-columns:1fr}}
+</style></head>
+<body><div class="wrap">
+<h1>🔐 Shri Pawan Shakti Construction — Admin Dashboard</h1>
+
+<div id="login" class="card">
+<h2>Gmail OTP Login</h2><p>Authorized admin: <b>shripawanshakticonstruction@gmail.com</b></p>
+<button onclick="sendOtp()">Send OTP</button>
+<div id="otpBox" class="hidden"><label>OTP</label><input id="otp" inputmode="numeric" maxlength="6" placeholder="6 digit OTP"><br><br><button onclick="verifyOtp()">Verify OTP</button></div>
+<div id="loginMsg" class="msg"></div></div>
+
+<div id="dash" class="hidden">
+<div class="card"><h2>Company Information</h2><div class="grid">
+<div><label>Proprietor Name</label><input id="proprietor"></div>
+<div><label>Official Gmail</label><input id="email" disabled></div>
+<div><label>Contact Number 1</label><input id="phone1"></div>
+<div><label>Contact Number 2 / Alternate</label><input id="phone2"></div>
+<div><label>GST Number</label><input id="gst"></div>
+<div><label>Udyam Number</label><input id="udyam" placeholder="UDYAM-MP-XX-XXXXXXX"></div>
+</div><br><button class="gold" onclick="saveCompany()">💾 Save Company Information</button><div id="companyMsg" class="msg"></div></div>
+
+<div class="card"><h2>Road Development — 8 Photos</h2><div class="photos" id="roadPhotos"></div></div>
+<div class="card"><h2>Pole Installation — 8 Photos</h2><div class="photos" id="polePhotos"></div></div>
+<div class="card"><p class="small">Certificate PDF upload can be added as a separate document field after you provide the final certificate files/requirements. This dashboard currently manages the company fields and 16 gallery photos.</p><button onclick="logout()">Logout</button></div>
+</div></div>
+<script>
+let token=sessionStorage.getItem("spc_admin_token")||"";
+const adminEmail="shripawanshakticonstruction@gmail.com";
+const $=id=>document.getElementById(id);
+function msg(id,t){$(id).textContent=t}
+async function sendOtp(){msg("loginMsg","OTP भेजा जा रहा है...");const r=await fetch("/api/send-otp",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({email:adminEmail})});const d=await r.json();msg("loginMsg",d.error||d.message||"");if(r.ok)$("otpBox").classList.remove("hidden")}
+async function verifyOtp(){const r=await fetch("/api/verify-otp",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({email:adminEmail,otp:$("otp").value})});const d=await r.json();if(!r.ok)return msg("loginMsg",d.error||"Login failed");token=d.token;sessionStorage.setItem("spc_admin_token",token);showDash()}
+async function loadCompany(){const r=await fetch("/api/company");const d=await r.json();$("proprietor").value=d.proprietor||"";$("email").value=d.email||adminEmail;$("phone1").value=d.phone1||"";$("phone2").value=d.phone2||"";$("gst").value=d.gst||"";$("udyam").value=d.udyam||""}
+async function saveCompany(){const body={proprietor:$("proprietor").value,phone1:$("phone1").value,phone2:$("phone2").value,gst:$("gst").value,udyam:$("udyam").value};const r=await fetch("/api/company",{method:"PUT",headers:{"content-type":"application/json","Authorization":"Bearer "+token},body:JSON.stringify(body)});const d=await r.json();msg("companyMsg",d.error||"Company information saved.");}
+function photoCard(kind,i){const key=kind+"-"+i;return `<div class="photo"><img id="img-${key}" src="/api/photo?key=${key}" onerror="this.style.opacity=.25"><input id="file-${key}" type="file" accept="image/*"><br><br><button onclick="uploadPhoto('${key}')">Upload / Replace</button></div>`}
+function renderPhotos(){ $("roadPhotos").innerHTML=Array.from({length:8},(_,i)=>photoCard("road",i)).join(""); $("polePhotos").innerHTML=Array.from({length:8},(_,i)=>photoCard("pole",i)).join("")}
+async function uploadPhoto(key){const f=$("file-"+key).files[0];if(!f)return alert("Photo select करें");if(f.size>6*1024*1024)return alert("Photo 6 MB से छोटी रखें");const data=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(f)});const r=await fetch("/api/save-photo",{method:"POST",headers:{"content-type":"application/json","Authorization":"Bearer "+token},body:JSON.stringify({key,dataUrl:data})});const d=await r.json();if(!r.ok)return alert(d.error||"Upload failed");$("img-"+key).src="/api/photo?key="+key+"&t="+Date.now();alert("Photo saved")}
+function showDash(){$("login").classList.add("hidden");$("dash").classList.remove("hidden");loadCompany();renderPhotos()}
+function logout(){sessionStorage.removeItem("spc_admin_token");location.reload()}
+(async()=>{if(token){const r=await fetch("/api/company");if(r.ok)showDash()}})();
+</script></body></html>

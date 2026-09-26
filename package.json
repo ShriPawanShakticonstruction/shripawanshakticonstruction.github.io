@@ -1,0 +1,8 @@
+{
+  "name": "shri-pawan-shakti-construction-netlify",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "@netlify/blobs": "^9.0.0"
+  }
+}
