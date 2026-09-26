@@ -1,0 +1,43 @@
+<svg width="1200" height="500" viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="500" fill="#070707"/>
+
+  <!-- Monogram -->
+  <g transform="translate(220,42)">
+    <path d="M110 15C75 15 46 44 46 79V321C46 356 75 385 110 385H184C276 385 351 346 351 260C351 211 322 177 278 159L415 35L379 15L246 131C224 111 198 98 170 94L110 89V15Z" fill="url(#gold)" fill-opacity="0.96"/>
+    <path d="M191 107L98 107V173H192C219 173 239 196 239 222C239 247 220 271 193 271H95V332H196C250 332 295 294 295 242C295 188 250 149 191 149H95V107H191Z" fill="#070707"/>
+
+    <!-- building silhouette -->
+    <g fill="#070707">
+      <rect x="122" y="165" width="18" height="130"/>
+      <rect x="150" y="135" width="18" height="160"/>
+      <rect x="178" y="150" width="18" height="145"/>
+      <rect x="206" y="120" width="18" height="175"/>
+      <rect x="234" y="175" width="18" height="120"/>
+    </g>
+
+    <path d="M69 401C159 363 226 370 316 404L338 382C255 332 174 328 79 370L69 401Z" fill="#070707"/>
+    <path d="M18 326C175 268 301 284 402 363" stroke="#E9D9B5" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- Text -->
+  <g>
+    <line x1="230" y1="377" x2="378" y2="377" stroke="#E9D9B5" stroke-width="3" opacity="0.8"/>
+    <text x="390" y="390" font-family="Georgia, 'Times New Roman', serif" font-size="48" letter-spacing="18" fill="#E9D9B5">SHRI</text>
+    <line x1="760" y1="377" x2="970" y2="377" stroke="#E9D9B5" stroke-width="3" opacity="0.8"/>
+
+    <line x1="235" y1="430" x2="380" y2="430" stroke="#E9D9B5" stroke-width="3" opacity="0.8"/>
+    <text x="175" y="468" font-family="Georgia, 'Times New Roman', serif" font-size="96" letter-spacing="2" fill="#E9D9B5" font-weight="700">PAWAN SHAKTI</text>
+    <line x1="782" y1="430" x2="963" y2="430" stroke="#E9D9B5" stroke-width="3" opacity="0.8"/>
+
+    <text x="420" y="470" font-family="Arial, sans-serif" font-size="28" letter-spacing="8" fill="#E9D9B5" font-weight="700" opacity="0.9">CONSTRUCTION</text>
+  </g>
+
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F7F0E1"/>
+      <stop offset="0.33" stop-color="#E4D3AB"/>
+      <stop offset="0.7" stop-color="#CDAF74"/>
+      <stop offset="1" stop-color="#F1E2BC"/>
+    </linearGradient>
+  </defs>
+</svg>
