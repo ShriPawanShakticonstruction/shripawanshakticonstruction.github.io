@@ -15,15 +15,11 @@ body{margin:0;background:#f6f2ea;font-family:Arial;color:#171717}.wrap{max-width
   </div>
 
   <div id="login" class="card">
-    <h2>Gmail OTP Login</h2>
-    <p>Authorized admin: <b>shripawanshakticonstruction@gmail.com</b></p>
-    <button onclick="sendOtp()">Send OTP</button>
-    <div id="otpBox" class="hidden">
-      <label>OTP</label>
-      <input id="otp" inputmode="numeric" maxlength="6" placeholder="6 digit OTP">
-      <br><br>
-      <button onclick="verifyOtp()">Verify OTP</button>
-    </div>
+    <h2>🔑 Admin Login — panditjibaaphe4u</h2>
+    <p>Enter the admin password:</p>
+    <input type="password" id="password" placeholder="Enter password" onkeypress="if(event.key==='Enter') loginAdmin()">
+    <br><br>
+    <button onclick="loginAdmin()">Login</button>
     <div id="loginMsg" class="msg"></div>
   </div>
 
@@ -52,7 +48,7 @@ body{margin:0;background:#f6f2ea;font-family:Arial;color:#171717}.wrap{max-width
 <script>
 let token = sessionStorage.getItem('spc_admin_token') || '';
 const adminEmail = 'shripawanshakticonstruction@gmail.com';
-const demoOtp = '123456';
+const adminPassword = 'panditjibaaphe4u';
 const $ = (id) => document.getElementById(id);
 
 function msg(id, text) { $(id).textContent = text; }
@@ -81,42 +77,25 @@ function setStoredPhoto(key, dataUrl) {
   localStorage.setItem('spc_photo_' + key, dataUrl);
 }
 
-function showOtpBox() {
-  $('otpBox').classList.remove('hidden');
-}
-
-function hideOtpBox() {
-  $('otpBox').classList.add('hidden');
-}
-
-async function sendOtp() {
-  msg('loginMsg', 'OTP generate हो रहा है...');
-
-  const otp = demoOtp;
-  sessionStorage.setItem('spc_demo_otp', otp);
-  showOtpBox();
-  msg('loginMsg', `OTP generated successfully. Demo code: <b>${otp}</b> (temporary workaround for static site)`);
-}
-
-async function verifyOtp() {
-  const inputOtp = $('otp').value.trim();
-  const savedOtp = sessionStorage.getItem('spc_demo_otp') || '';
-
-  if (!inputOtp) {
-    msg('loginMsg', 'OTP enter करें');
+function loginAdmin() {
+  const password = $('password').value.trim();
+  
+  if (!password) {
+    msg('loginMsg', 'Password enter करो');
     return;
   }
-
-  if (inputOtp === savedOtp || inputOtp === demoOtp) {
+  
+  if (password === adminPassword) {
     token = adminEmail;
     sessionStorage.setItem('spc_admin_token', token);
-    msg('loginMsg', 'OTP verified successfully');
-    hideOtpBox();
+    msg('loginMsg', '✅ Login successful!');
+    $('password').value = '';
     showDash();
     return;
   }
-
-  msg('loginMsg', 'OTP incorrect. Demo OTP: 123456');
+  
+  msg('loginMsg', '❌ Wrong password');
+  $('password').value = '';
 }
 
 async function loadCompany() {
@@ -140,7 +119,7 @@ async function saveCompany() {
   };
 
   setStoredCompany(payload);
-  msg('companyMsg', 'Company information saved locally.');
+  msg('companyMsg', '✅ Company information saved locally.');
 }
 
 function photoCard(kind, index) {
@@ -188,11 +167,10 @@ function showDash() {
 
 function logout() {
   sessionStorage.removeItem('spc_admin_token');
-  sessionStorage.removeItem('spc_demo_otp');
   $('login').classList.remove('hidden');
   $('dash').classList.add('hidden');
-  $('loginMsg').textContent = 'Logged out';
-  $('otp').value = '';
+  $('loginMsg').textContent = '';
+  $('password').value = '';
 }
 
 (async () => {
