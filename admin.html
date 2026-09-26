@@ -1,183 +1,183 @@
 <!doctype html>
 <html lang="hi">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Admin Dashboard — Shri Pawan Shakti Construction</title>
-<style>
-body{margin:0;background:#f6f2ea;font-family:Arial;color:#171717}.wrap{max-width:1100px;margin:auto;padding:25px 16px}.card{background:#fff;border:1px solid #e5dece;border-radius:14px;padding:22px;margin-bottom:18px}.hidden{display:none}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.grid div{display:flex;flex-direction:column}.label,.small{font-size:12px;color:#666}label{font-weight:700;margin-bottom:6px}input,button{padding:10px 12px;border:1px solid #d3c5a9;border-radius:8px;font-size:15px}input{width:100%;box-sizing:border-box;background:#fff}button{background:#d2a64d;color:#1b1a17;border:none;cursor:pointer;font-weight:700}button.gold{background:#d2a64d;color:#1b1a17}.msg{margin-top:10px;color:#0f7a0b;font-weight:700}.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}.photo{border:1px solid #e1d4b3;border-radius:10px;padding:10px;background:#faf7f2}.photo img{width:100%;height:160px;object-fit:cover;border-radius:8px;background:#eee;display:block}.photo input{margin-top:8px}.small{font-size:12px;color:#4a4a4a}.topbar{display:flex;justify-content:space-between;align-items:center;gap:10px}.btn-logout{background:#6b4a2c;color:#fff}.muted{font-size:13px;color:#6b4a2c;margin:8px 0 0}
-</style>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Dashboard — Shri Pawan Shakti Construction</title>
+  <style>
+    body{margin:0;background:#f6f2ea;font-family:Arial;color:#171717}.wrap{max-width:1100px;margin:auto;padding:25px 16px}.card{background:#fff;border:1px solid #e5dece;border-radius:14px;padding:22px;box-shadow:0 5px 16px rgba(0,0,0,.04)}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.topbar h1{font-size:1.8rem;margin:0}.btn-logout{padding:10px 15px;border:0;border-radius:8px;background:#1d1d1d;color:#fff;font-weight:700;cursor:pointer}.hidden{display:none}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.grid div{display:flex;flex-direction:column;gap:8px}.label,.small{font-size:.8rem;color:#666}.input,input,button{font:inherit}.input,input{padding:10px 12px;border:1px solid #d2c8b5;border-radius:8px;background:#fff}.msg{margin-top:10px;font-size:.95rem;color:#0b6b3c}.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.photo{border:1px solid #ece2d2;border-radius:10px;padding:10px;background:#faf7f1}.photo img{width:100%;height:150px;object-fit:cover;border-radius:8px;background:#f0ebdf;display:block}.photo input{margin-top:8px;width:100%}.gold{background:#c9a55a;color:#fff;border:0;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer}.btn{padding:10px 14px;border-radius:10px;border:0;background:#111;color:#fff;cursor:pointer}.small{line-height:1.6}.@media (max-width:600px){.topbar{flex-direction:column;align-items:flex-start;gap:12px}.topbar h1{font-size:1.3rem}}
+  </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="topbar">
-    <h1>🔐 Shri Pawan Shakti Construction — Admin Dashboard</h1>
-    <button class="btn-logout" onclick="logout()">Logout</button>
-  </div>
+  <div class="wrap">
+    <div class="topbar">
+      <h1>🔐 Shri Pawan Shakti Construction — Admin Dashboard</h1>
+      <button class="btn-logout" onclick="logout()">Logout</button>
+    </div>
 
-  <div id="login" class="card">
-    <h2>🔑 Admin Login — panditjibaaphe4u</h2>
-    <p>Enter the admin password:</p>
-    <input type="password" id="password" placeholder="Enter password" onkeypress="if(event.key==='Enter') loginAdmin()">
-    <br><br>
-    <button onclick="loginAdmin()">Login</button>
-    <div id="loginMsg" class="msg"></div>
-  </div>
+    <div id="login" class="card">
+      <h2>🔑 Admin Login</h2>
+      <p>Enter the admin password:</p>
+      <input type="password" id="password" placeholder="Enter password" onkeypress="if(event.key==='Enter') loginAdmin()">
+      <br><br>
+      <button onclick="loginAdmin()">Login</button>
+      <div id="loginMsg" class="msg"></div>
+    </div>
 
-  <div id="dash" class="hidden">
-    <div class="card">
-      <h2>Company Information</h2>
-      <div class="grid">
-        <div><label>Proprietor Name</label><input id="proprietor"></div>
-        <div><label>Official Gmail</label><input id="email" disabled></div>
-        <div><label>Contact Number 1</label><input id="phone1"></div>
-        <div><label>Contact Number 2 / Alternate</label><input id="phone2"></div>
-        <div><label>GST Number</label><input id="gst"></div>
-        <div><label>Udyam Number</label><input id="udyam" placeholder="UDYAM-MP-XX-XXXXXXX"></div>
+    <div id="dash" class="hidden">
+      <div class="card">
+        <h2>Company Information</h2>
+        <div class="grid">
+          <div><label>Proprietor Name</label><input id="proprietor"></div>
+          <div><label>Official Gmail</label><input id="email" disabled></div>
+          <div><label>Contact Number 1</label><input id="phone1"></div>
+          <div><label>Contact Number 2 / Alternate</label><input id="phone2"></div>
+          <div><label>GST Number</label><input id="gst"></div>
+          <div><label>Udyam Number</label><input id="udyam" placeholder="UDYAM-MP-XX-XXXXXXX"></div>
+        </div>
+        <br>
+        <button class="gold" onclick="saveCompany()">💾 Save Company Information</button>
+        <div id="companyMsg" class="msg"></div>
       </div>
-      <br>
-      <button class="gold" onclick="saveCompany()">💾 Save Company Information</button>
-      <div id="companyMsg" class="msg"></div>
-    </div>
 
-    <div class="card"><h2>Road Development — 8 Photos</h2><div class="photos" id="roadPhotos"></div></div>
-    <div class="card"><h2>Pole Installation — 8 Photos</h2><div class="photos" id="polePhotos"></div></div>
-    <div class="card"><p class="small">Certificate PDF upload can be added as a separate document field after you provide the final certificate files/requirements. This dashboard currently manages the company profile and project photos.</p></div>
+      <div class="card"><h2>Road Development — 8 Photos</h2><div class="photos" id="roadPhotos"></div></div>
+      <div class="card"><h2>Pole Installation — 8 Photos</h2><div class="photos" id="polePhotos"></div></div>
+      <div class="card"><p class="small">Certificate PDF upload can be added as a separate document field after you provide the final certificate files/requirements. This dashboard currently manages the company profile and project photos.</p></div>
+    </div>
   </div>
-</div>
 
-<script>
-let token = sessionStorage.getItem('spc_admin_token') || '';
-const adminEmail = 'shripawanshakticonstruction@gmail.com';
-const adminPassword = 'panditjibaaphe4u';
-const $ = (id) => document.getElementById(id);
+  <script>
+    let token = sessionStorage.getItem('spc_admin_token') || '';
+    const adminEmail = 'shripawanshakticonstruction@gmail.com';
+    const adminPassword = 'panditjibaaphe4u';
+    const $ = (id) => document.getElementById(id);
 
-function msg(id, text) { $(id).textContent = text; }
+    function msg(id, text) { $(id).textContent = text; }
 
-function getStoredCompany() {
-  try {
-    return JSON.parse(localStorage.getItem('spc_company') || '{}');
-  } catch {
-    return {};
-  }
-}
+    function getStoredCompany() {
+      try {
+        return JSON.parse(localStorage.getItem('spc_company') || '{}');
+      } catch {
+        return {};
+      }
+    }
 
-function setStoredCompany(data) {
-  localStorage.setItem('spc_company', JSON.stringify(data));
-}
+    function setStoredCompany(data) {
+      localStorage.setItem('spc_company', JSON.stringify(data));
+    }
 
-function getPhotoKey(kind, index) {
-  return `${kind}-${index}`;
-}
+    function getPhotoKey(kind, index) {
+      return `${kind}-${index}`;
+    }
 
-function getStoredPhoto(key) {
-  return localStorage.getItem('spc_photo_' + key) || '';
-}
+    function getStoredPhoto(key) {
+      return localStorage.getItem('spc_photo_' + key) || '';
+    }
 
-function setStoredPhoto(key, dataUrl) {
-  localStorage.setItem('spc_photo_' + key, dataUrl);
-}
+    function setStoredPhoto(key, dataUrl) {
+      localStorage.setItem('spc_photo_' + key, dataUrl);
+    }
 
-function loginAdmin() {
-  const password = $('password').value.trim();
-  
-  if (!password) {
-    msg('loginMsg', 'Password enter करो');
-    return;
-  }
-  
-  if (password === adminPassword) {
-    token = adminEmail;
-    sessionStorage.setItem('spc_admin_token', token);
-    msg('loginMsg', '✅ Login successful!');
-    $('password').value = '';
-    showDash();
-    return;
-  }
-  
-  msg('loginMsg', '❌ Wrong password');
-  $('password').value = '';
-}
+    function loginAdmin() {
+      const password = $('password').value.trim();
 
-async function loadCompany() {
-  const company = getStoredCompany();
-  $('proprietor').value = company.proprietor || '';
-  $('email').value = company.email || adminEmail;
-  $('phone1').value = company.phone1 || '';
-  $('phone2').value = company.phone2 || '';
-  $('gst').value = company.gst || '';
-  $('udyam').value = company.udyam || '';
-}
+      if (!password) {
+        msg('loginMsg', 'Password enter करो');
+        return;
+      }
 
-async function saveCompany() {
-  const payload = {
-    proprietor: $('proprietor').value,
-    email: adminEmail,
-    phone1: $('phone1').value,
-    phone2: $('phone2').value,
-    gst: $('gst').value,
-    udyam: $('udyam').value
-  };
+      if (password === adminPassword) {
+        token = adminEmail;
+        sessionStorage.setItem('spc_admin_token', token);
+        msg('loginMsg', '✅ Login successful!');
+        $('password').value = '';
+        showDash();
+        return;
+      }
 
-  setStoredCompany(payload);
-  msg('companyMsg', '✅ Company information saved locally.');
-}
+      msg('loginMsg', '❌ Wrong password');
+      $('password').value = '';
+    }
 
-function photoCard(kind, index) {
-  const key = getPhotoKey(kind, index);
-  const imgSrc = getStoredPhoto(key) || '';
-  return `
-    <div class="photo">
-      <img id="img-${key}" src="${imgSrc}" onerror="this.style.opacity=.25; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%22 height=%22100%22 fill=%22%23eee%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%23999%22>Image</text></svg>'">
-      <input id="file-${key}" type="file" accept="image/*" onchange="uploadPhoto('${key}')">
-    </div>
-  `;
-}
+    async function loadCompany() {
+      const company = getStoredCompany();
+      $('proprietor').value = company.proprietor || '';
+      $('email').value = company.email || adminEmail;
+      $('phone1').value = company.phone1 || '';
+      $('phone2').value = company.phone2 || '';
+      $('gst').value = company.gst || '';
+      $('udyam').value = company.udyam || '';
+    }
 
-function renderPhotos() {
-  $('roadPhotos').innerHTML = Array.from({ length: 8 }, (_, i) => photoCard('road', i)).join('');
-  $('polePhotos').innerHTML = Array.from({ length: 8 }, (_, i) => photoCard('pole', i)).join('');
-}
+    async function saveCompany() {
+      const payload = {
+        proprietor: $('proprietor').value,
+        email: adminEmail,
+        phone1: $('phone1').value,
+        phone2: $('phone2').value,
+        gst: $('gst').value,
+        udyam: $('udyam').value
+      };
 
-async function uploadPhoto(key) {
-  const fileInput = $('file-' + key);
-  const file = fileInput.files[0];
+      setStoredCompany(payload);
+      msg('companyMsg', '✅ Company information saved locally.');
+    }
 
-  if (!file) return;
-  if (file.size > 6 * 1024 * 1024) {
-    alert('Photo 6 MB से छोटी रखें');
-    return;
-  }
+    function photoCard(kind, index) {
+      const key = getPhotoKey(kind, index);
+      const imgSrc = getStoredPhoto(key) || '';
+      return `
+        <div class="photo">
+          <img id="img-${key}" src="${imgSrc}" onerror="this.style.opacity=.25; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%22 height=%22100%22 fill=%22%23efe8dc%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 font-size=%2212%22 fill=%22%23888%22>Image</text></svg>'">
+          <input id="file-${key}" type="file" accept="image/*" onchange="uploadPhoto('${key}')">
+        </div>
+      `;
+    }
 
-  const reader = new FileReader();
-  reader.onload = () => {
-    const dataUrl = reader.result;
-    setStoredPhoto(key, dataUrl);
-    const img = $('img-' + key);
-    if (img) img.src = dataUrl;
-  };
-  reader.readAsDataURL(file);
-}
+    function renderPhotos() {
+      $('roadPhotos').innerHTML = Array.from({ length: 8 }, (_, i) => photoCard('road', i)).join('');
+      $('polePhotos').innerHTML = Array.from({ length: 8 }, (_, i) => photoCard('pole', i)).join('');
+    }
 
-function showDash() {
-  $('login').classList.add('hidden');
-  $('dash').classList.remove('hidden');
-  loadCompany();
-  renderPhotos();
-}
+    async function uploadPhoto(key) {
+      const fileInput = $('file-' + key);
+      const file = fileInput.files[0];
 
-function logout() {
-  sessionStorage.removeItem('spc_admin_token');
-  $('login').classList.remove('hidden');
-  $('dash').classList.add('hidden');
-  $('loginMsg').textContent = '';
-  $('password').value = '';
-}
+      if (!file) return;
+      if (file.size > 6 * 1024 * 1024) {
+        alert('Photo 6 MB से छोटी रखें');
+        return;
+      }
 
-(async () => {
-  if (token) {
-    showDash();
-  }
-})();
-</script>
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataUrl = reader.result;
+        setStoredPhoto(key, dataUrl);
+        const img = $('img-' + key);
+        if (img) img.src = dataUrl;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function showDash() {
+      $('login').classList.add('hidden');
+      $('dash').classList.remove('hidden');
+      loadCompany();
+      renderPhotos();
+    }
+
+    function logout() {
+      sessionStorage.removeItem('spc_admin_token');
+      $('login').classList.remove('hidden');
+      $('dash').classList.add('hidden');
+      $('loginMsg').textContent = '';
+      $('password').value = '';
+    }
+
+    (async () => {
+      if (token) {
+        showDash();
+      }
+    })();
+  </script>
 </body>
 </html>
