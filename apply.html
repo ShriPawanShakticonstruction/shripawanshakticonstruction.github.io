@@ -23,12 +23,7 @@
   
   <div class="card">
     <!-- APPLY FOR WORK FORM -->
-    <form class="form active" data-form="work" action="https://formsubmit.co/shripawanshakticonstruction@gmail.com" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="_subject" value="New Apply for Work — Shri Pawan Shakti Construction">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="?sent=true">
-      
+    <form class="form active" data-form="work">
       <h2>Apply for Work</h2>
       <p class="note">Road, civil, electrical, building work या contract enquiry के लिए form भरें।</p>
       
@@ -78,12 +73,7 @@
     </form>
     
     <!-- APPLY FOR JOB FORM -->
-    <form class="form" data-form="job" action="https://formsubmit.co/shripawanshakticonstruction@gmail.com" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="_subject" value="New Apply for Job — Shri Pawan Shakti Construction">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="?sent=true">
-      
+    <form class="form" data-form="job">
       <h2>Apply for Job</h2>
       <p class="note">Construction company की नौकरी के लिए अपना विवरण और resume भेजें।</p>
       
@@ -169,14 +159,6 @@ tabs.forEach(tab => {
   });
 });
 
-// Show success message if form was submitted
-if (new URLSearchParams(location.search).get('sent')) {
-  document.querySelectorAll('.status').forEach(x => {
-    x.classList.add('show', 'success');
-    x.textContent = '✅ Application भेज दिया गया है। आपसे जल्द संपर्क किया जाएगा।';
-  });
-}
-
 // Resume Preview Function
 function setupResumePreview(inputSelector, previewSelector) {
   const resumeInput = document.querySelector(inputSelector);
@@ -198,7 +180,7 @@ function setupResumePreview(inputSelector, previewSelector) {
     
     if (file.size > maxSize) {
       resumePreview.classList.add('show', 'error');
-      resumePreview.innerHTML = '<strong>❌ फाइल बहुत बड़ी है!</strong><br>कृपया 5 MB से छोटी फाइल चुनें।';
+      resumePreview.innerHTML = '<strong>❌ फाइल ���हुत बड़ी है!</strong><br>कृपया 5 MB से छोटी फाइल चुनें।';
       resumeInput.value = '';
       return;
     }
@@ -228,12 +210,61 @@ function setupResumePreview(inputSelector, previewSelector) {
 setupResumePreview('input[name="Resume"]', '.job-preview');
 setupResumePreview('input[name="WorkDocs"]', '.work-preview');
 
-// Form submission feedback
+// Form submission handling
 document.querySelectorAll('.form').forEach(form => {
-  form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
     const submitBtn = this.querySelector('.submitBtn');
+    const statusDiv = this.querySelector('.status');
+    const formData = new FormData(this);
+    
+    // Disable button and show loading
     submitBtn.disabled = true;
     submitBtn.textContent = '⏳ भेजा जा रहा है...';
+    
+    try {
+      // Submit to FormSubmit
+      const response = await fetch('https://formsubmit.co/shripawanshakticonstruction@gmail.com', {
+        method: 'POST',
+        body: formData
+      });
+      
+      if (response.ok) {
+        // Show success message on same page
+        statusDiv.classList.add('show', 'success');
+        statusDiv.textContent = '✅ Application भेज दिया गया है। आपसे जल्द संपर्क किया जाएगा।';
+        
+        // Reset form
+        this.reset();
+        document.querySelectorAll('.resumePreview').forEach(x => x.classList.remove('show'));
+        
+        // Reset button after 3 seconds
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          const formType = this.getAttribute('data-form');
+          if (formType === 'work') {
+            submitBtn.textContent = '📤 Apply for Work';
+          } else {
+            submitBtn.textContent = '📤 Apply for Job';
+          }
+        }, 3000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      statusDiv.classList.add('show', 'error');
+      statusDiv.textContent = '❌ कोई समस्या आई। कृपया फिर से कोशिश करें।';
+      
+      // Reset button
+      submitBtn.disabled = false;
+      const formType = this.getAttribute('data-form');
+      if (formType === 'work') {
+        submitBtn.textContent = '📤 Apply for Work';
+      } else {
+        submitBtn.textContent = '📤 Apply for Job';
+      }
+    }
   });
 });
 </script>
