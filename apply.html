@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Apply — Shri Pawan Shakti Construction</title>
 <style>
-:root{--gold:#c9a55a;--cream:#f7f3eb;--ink:#171717;--line:#e6dece}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:var(--ink)}.wrap{max-width:900px;margin:30px auto;padding:20px}.head{text-align:center;margin-bottom:20px}.head img{width:92px;height:92px;border-radius:18px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.08)}.head h1{margin:14px 0 6px;font-size:2rem}.head p{margin:0;color:#555}.tabs{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}.tab{background:#fff;border:1px solid var(--line);padding:12px 18px;border-radius:999px;cursor:pointer;font-weight:700;color:var(--ink)}.tab.active{background:var(--gold);color:#fff;border-color:var(--gold)}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 8px 24px rgba(0,0,0,.04)}.form{display:none}.form.active{display:block}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid>div{display:flex;flex-direction:column}.label,.note,.resumeLabel{font-weight:700}.label{margin-bottom:8px}.input,select,textarea{width:100%;padding:12px 14px;border:1px solid #d8d1c4;border-radius:10px;font-size:1rem;background:#fff}textarea{min-height:120px;resize:vertical}.resumeSection{border:1px dashed #cbbf9a;border-radius:12px;padding:14px;background:#faf7f1}.resumeInput{margin-top:10px}.uploadHint{margin-top:8px;color:#666;font-size:.9rem}.resumePreview{margin-top:12px;padding:10px 12px;border-radius:10px;background:#f7f3eb;display:none}.resumePreview.show{display:block}.resumePreview.error{background:#fff1f1;border:1px solid #ffc7c7;color:#8a2020}.status{margin-top:14px;padding:12px;border-radius:10px;display:none;font-weight:700}.status.show{display:block}.status.success{background:#eafaf0;color:#1d6d3b;border:1px solid #bce8c8}.status.error{background:#fff1f1;color:#8a2020;border:1px solid #ffc7c7}.submitBtn{margin-top:18px;width:100%;border:none;border-radius:12px;padding:15px 18px;background:linear-gradient(135deg,#c9a55a,#b38b3d);color:#fff;font-weight:700;font-size:1rem;cursor:pointer}.submitBtn:disabled{opacity:.7;cursor:not-allowed}.back{display:inline-block;margin-top:18px;color:#5f4a18;font-weight:700}@media (max-width:640px){.grid{grid-template-columns:1fr}.wrap{padding:12px}.head h1{font-size:1.5rem}}
+:root{--gold:#c9a55a;--cream:#f7f3eb;--ink:#171717;--line:#e6dece}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:var(--ink)}.wrap{max-width:900px;margin:30px auto;padding:20px}.head{text-align:center;margin-bottom:20px}.head img{width:92px;height:92px;border-radius:18px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.08)}.head h1{margin:14px 0 6px;font-size:2rem}.head p{margin:0;color:#555}.tabs{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}.tab{background:#fff;border:1px solid var(--line);padding:12px 18px;border-radius:999px;cursor:pointer;font-weight:700;color:var(--ink)}.tab.active{background:var(--gold);color:#fff;border-color:var(--gold)}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 8px 24px rgba(0,0,0,.04)}.form{display:none}.form.active{display:block}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid>div{display:flex;flex-direction:column}.label{font-weight:700;margin-bottom:8px}.input,select,textarea{width:100%;padding:12px 14px;border:1px solid #d8d1c4;border-radius:10px;font-size:1rem;background:#fff}textarea{min-height:120px;resize:vertical}.resumeSection{border:1px dashed #cbbf9a;border-radius:12px;padding:14px;background:#faf7f1}.uploadHint{margin-top:8px;color:#666;font-size:.9rem}.submitBtn{margin-top:18px;width:100%;border:none;border-radius:12px;padding:15px 18px;background:linear-gradient(135deg,#c9a55a,#b38b3d);color:#fff;font-weight:700;font-size:1rem;cursor:pointer}.back{display:inline-block;margin-top:18px;color:#5f4a18;font-weight:700}@media (max-width:640px){.grid{grid-template-columns:1fr}.wrap{padding:12px}.head h1{font-size:1.5rem}}
 </style>
 </head>
 <body>
@@ -15,14 +15,21 @@
     <h1>Shri Pawan Shakti Construction</h1>
     <p>Construction work और job के लिए आवेदन करें</p>
   </div>
+  
   <div class="tabs">
     <button class="tab active" data-tab="work">🏗️ Apply for Work</button>
     <button class="tab" data-tab="job">💼 Apply for Job</button>
   </div>
+  
   <div class="card">
-    <form class="form active" data-form="work">
+    <!-- APPLY FOR WORK FORM - FIXED -->
+    <form action="https://formsubmit.co/shripawanshakticonstruction@gmail.com" method="POST" enctype="multipart/form-data" class="form active" data-form="work">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="New Work Enquiry - Pawan Shakti">
+      <input type="hidden" name="_next" value="https://shripawanshakticonstruction.github.io/thankyou.html">
+      
       <h2>Apply for Work</h2>
-      <p class="note">Road, civil, electrical, building work या contract enquiry के लिए form भरें।</p>
       <div class="grid">
         <div><label class="label">पूरा नाम *</label><input name="Name" required class="input"></div>
         <div><label class="label">मोबाइल नंबर *</label><input name="Phone" type="tel" required class="input"></div>
@@ -32,47 +39,50 @@
             <option value="">-- चुनें --</option><option>Road Construction</option><option>Electrical Work</option><option>Building Construction</option><option>Civil Work</option><option>Government Tender</option><option>Other</option>
           </select>
         </div>
-        <div style="grid-column:1/-1;"><label class="label">विवरण / अनुमानित बजट *</label><textarea name="Details" required class="input" placeholder="अपनी परियोजना का विवरण दें..."></textarea></div>
+        <div style="grid-column:1/-1;"><label class="label">विवरण / बजट *</label><textarea name="Details" required class="input"></textarea></div>
         <div style="grid-column:1/-1;">
           <div class="resumeSection">
-            <label class="resumeLabel">📄 Company Documents (Optional)</label>
-            <input type="file" name="attachment" class="resumeInput work-resume input" accept=".pdf,.doc,.docx,.jpg,.png">
-            <div class="uploadHint">PDF, DOC, JPG, PNG (Max 5 MB)</div>
-            <div class="resumePreview work-preview"></div>
+            <label class="label">📄 Company Documents (Optional)</label>
+            <input type="file" name="attachment" class="input" accept=".pdf,.doc,.docx,.jpg,.png">
+            <div class="uploadHint">PDF, DOC, JPG, PNG - Max 5MB</div>
           </div>
         </div>
-        <div style="grid-column:1/-1;"><div class="status work-status"></div><button class="submitBtn" type="submit">📤 Apply for Work</button></div>
+        <div style="grid-column:1/-1;"><button class="submitBtn" type="submit">📤 Apply for Work</button></div>
       </div>
     </form>
 
-    <form class="form" data-form="job">
+    <!-- APPLY FOR JOB FORM - FIXED -->
+    <form action="https://formsubmit.co/shripawanshakticonstruction@gmail.com" method="POST" enctype="multipart/form-data" class="form" data-form="job">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="New Job Application - Pawan Shakti">
+      <input type="hidden" name="_next" value="https://shripawanshakticonstruction.github.io/thankyou.html">
+      
       <h2>Apply for Job</h2>
-      <p class="note">Construction company की नौकरी के लिए अपना विवरण और resume भेजें।</p>
       <div class="grid">
         <div><label class="label">पूरा नाम *</label><input name="Name" required class="input"></div>
         <div><label class="label">मोबाइल नंबर *</label><input name="Phone" type="tel" required class="input"></div>
         <div><label class="label">Email *</label><input name="Email" type="email" required class="input"></div>
-        <div><label class="label">पद के लिए आवेदन *</label>
+        <div><label class="label">पद *</label>
           <select name="Position" required class="input">
-            <option value="">-- चुनें --</option><option>Site Engineer</option><option>Foreman</option><option>Skilled Labor</option><option>Semi-Skilled Labor</option><option>Driver</option><option>Equipment Operator</option><option>Other</option>
+            <option value="">-- चुनें --</option><option>Site Engineer</option><option>Foreman</option><option>Skilled Labor</option><option>Driver</option><option>Other</option>
           </select>
         </div>
-        <div><label class="label">अनुभव (वर्षों में) *</label><input name="Experience" type="number" min="0" required class="input"></div>
+        <div><label class="label">अनुभव *</label><input name="Experience" type="number" required class="input"></div>
         <div><label class="label">योग्यता *</label>
           <select name="Qualification" required class="input">
-            <option value="">-- चुनें --</option><option>8th Pass</option><option>10th Pass</option><option>12th Pass</option><option>Diploma</option><option>Graduate</option><option>Post Graduate</option>
+            <option value="">-- चुनें --</option><option>10th Pass</option><option>12th Pass</option><option>Diploma</option><option>Graduate</option>
           </select>
         </div>
-        <div style="grid-column:1/-1;"><label class="label">आपके बारे में / कौशल *</label><textarea name="About" required class="input" placeholder="अपने कौशल और अनुभव के बारे में बताएं..."></textarea></div>
+        <div style="grid-column:1/-1;"><label class="label">आपके बारे में *</label><textarea name="About" required class="input"></textarea></div>
         <div style="grid-column:1/-1;">
           <div class="resumeSection">
-            <label class="resumeLabel">📄 Resume/CV (आवश्यक) *</label>
-            <input type="file" name="attachment" class="resumeInput job-resume input" accept=".pdf,.doc,.docx" required>
-            <div class="uploadHint">📌 PDF या DOC format (Max 5 MB)</div>
-            <div class="resumePreview job-preview"></div>
+            <label class="label">📄 Resume/CV *</label>
+            <input type="file" name="attachment" class="input" accept=".pdf,.doc,.docx" required>
+            <div class="uploadHint">PDF / DOC - Max 5MB</div>
           </div>
         </div>
-        <div style="grid-column:1/-1;"><div class="status job-status"></div><button class="submitBtn" type="submit">📤 Apply for Job</button></div>
+        <div style="grid-column:1/-1;"><button class="submitBtn" type="submit">📤 Apply for Job</button></div>
       </div>
     </form>
   </div>
@@ -80,50 +90,14 @@
 </div>
 
 <script>
-const tabs=document.querySelectorAll('.tab');const forms=document.querySelectorAll('.form');
+const tabs=document.querySelectorAll('.tab');
+const forms=document.querySelectorAll('.form');
 tabs.forEach(tab=>{
   tab.addEventListener('click',()=>{
-    tabs.forEach(x=>x.classList.remove('active'));forms.forEach(x=>x.classList.remove('active'));
-    tab.classList.add('active');document.querySelector(`.form[data-form="${tab.dataset.tab}"]`).classList.add('active');
-  });
-});
-
-function setupResumePreview(inputSelector, previewSelector, allowImage=false){
-  const resumeInput=document.querySelector(inputSelector);const resumePreview=document.querySelector(previewSelector);
-  if(!resumeInput) return;
-  resumeInput.addEventListener('change',function(e){
-    const file=e.target.files[0];if(!file){resumePreview.classList.remove('show');return;}
-    if(file.size>5*1024*1024){
-      resumePreview.classList.add('show','error');resumePreview.innerHTML='❌ फाइल 5 MB से बड़ी है!';resumeInput.value='';return;
-    }
-    resumePreview.classList.remove('error');resumePreview.classList.add('show');
-    resumePreview.innerHTML=`✅ तैयार है<br>📁 ${file.name}<br>📊 ${(file.size/1024/1024).toFixed(2)} MB`;
-  });
-}
-setupResumePreview('input.work-resume','.work-preview',true);
-setupResumePreview('input.job-resume','.job-preview',false);
-
-document.querySelectorAll('.form').forEach(form=>{
-  form.addEventListener('submit',async function(e){
-    e.preventDefault();
-    const submitBtn=this.querySelector('.submitBtn');const statusDiv=this.querySelector('.status');
-    const formType=this.getAttribute('data-form');const formData=new FormData(this);
-    formData.append('_captcha','false');formData.append('_template','table');
-    formData.append('_subject',formType==='work'?'New Work Enquiry - Pawan Shakti':'New Job Application - Pawan Shakti');
-    
-    submitBtn.disabled=true;submitBtn.textContent='⏳ भेजा जा रहा है...';statusDiv.className='status';
-    try{
-      const res=await fetch('https://formsubmit.co/ajax/shripawanshakticonstruction@gmail.com',{method:'POST',body:formData});
-      const data=await res.json();
-      if(res.ok){
-        statusDiv.classList.add('show','success');statusDiv.textContent='✅ Application भेज दिया गया है। आपसे जल्द संपर्क किया जाएगा।';
-        this.reset();document.querySelectorAll('.resumePreview').forEach(x=>x.classList.remove('show'));
-      }else{throw new Error();}
-    }catch(err){
-      statusDiv.classList.add('show','error');
-      statusDiv.textContent='❌ Confirm करना बाकी है! अपनी Gmail (shripawanshakticonstruction@gmail.com) में जाओ, FormSubmit का mail आया होगा उसमें Confirm पर क्लिक करो, फिर दोबारा try करो।';
-    }
-    submitBtn.disabled=false;submitBtn.textContent=formType==='work'?'📤 Apply for Work':'📤 Apply for Job';
+    tabs.forEach(x=>x.classList.remove('active'));
+    forms.forEach(x=>x.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelector(`.form[data-form="${tab.dataset.tab}"]`).classList.add('active');
   });
 });
 </script>
