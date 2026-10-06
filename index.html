@@ -1,25 +1,395 @@
-<div class="lang-switcher">
-  <button type="button" class="lang-trigger" aria-label="Select language">🌐 <span data-i18n="lang_label">Language</span> ▾</button>
-  <div class="lang-menu">
-    <button type="button" class="lang-option" data-lang="en">English</button>
-    <button type="button" class="lang-option" data-lang="hi">हिन्दी</button>
-    <button type="button" class="lang-option" data-lang="as">অসমীয়া</button>
-    <button type="button" class="lang-option" data-lang="bn">বাংলা</button>
-    <button type="button" class="lang-option" data-lang="gu">ગુજરાતી</button>
-    <button type="button" class="lang-option" data-lang="kn">ಕನ್ನಡ</button>
-    <button type="button" class="lang-option" data-lang="ml">മലയാളം</button>
-    <button type="button" class="lang-option" data-lang="mr">मराठी</button>
-    <button type="button" class="lang-option" data-lang="or">ଓଡ଼ିଆ</button>
-    <button type="button" class="lang-option" data-lang="pa">ਪੰਜਾਬੀ</button>
-    <button type="button" class="lang-option" data-lang="ta">தமிழ்</button>
-    <button type="button" class="lang-option" data-lang="te">తెలుగు</button>
-    <button type="button" class="lang-option" data-lang="ur">اردو</button>
-    <button type="button" class="lang-option" data-lang="ks">कॉशुर</button>
-    <button type="button" class="lang-option" data-lang="kok">कोंकणी</button>
-    <button type="button" class="lang-option" data-lang="mni">মণিপুরি</button>
-    <button type="button" class="lang-option" data-lang="es">Español</button>
-    <button type="button" class="lang-option" data-lang="fr">Français</button>
-    <button type="button" class="lang-option" data-lang="de">Deutsch</button>
-    <button type="button" class="lang-option" data-lang="ar">العربية</button>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shri Pawan Shakti Construction | Infrastructure & Building Experts</title>
+  <meta name="description" content="Shri Pawan Shakti Construction delivers road, highway, civil, electrical, railway and building construction solutions with quality work and trusted execution." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .floating-actions { position: fixed; right: 18px; bottom: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 2000; }
+    .float-btn { display:flex; align-items:center; justify-content:center; width:58px; height:58px; border-radius:50%; box-shadow:0 12px 30px rgba(0,0,0,0.2); color:white; font-size:26px; text-decoration:none; }
+    .call-btn { background:#0a8f2d; }
+    .wa-btn { background:#25D366; }
+    .service-photo-strip { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:18px; margin-top:20px; }
+    .service-photo-card { border-radius:18px; overflow:hidden; background:#fff; box-shadow:0 18px 35px rgba(12,35,55,0.08); border:1px solid var(--line); }
+    .service-photo-card img { width:100%; height:220px; object-fit:cover; display:block; }
+    .service-photo-card .caption { padding:14px 16px; font-weight:600; color:var(--navy); background:#fff; }
+    .promo-panel { background:linear-gradient(135deg, #f8f3ea, #edf4fa); border:1px solid var(--line); border-radius:20px; padding:26px; box-shadow:0 18px 40px rgba(17,45,69,0.06); }
+    .promo-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:26px; align-items:center; }
+    .promo-badges { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+    .promo-badges span { background:#fff; border:1px solid var(--line); color:var(--navy); padding:8px 12px; border-radius:999px; font-weight:700; font-size:0.85rem; }
+    .promo-image { min-height:280px; border-radius:18px; background:linear-gradient(180deg, rgba(17,45,69,0.15), rgba(17,45,69,0.1)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; }
+    .home-cta-section { display:grid; grid-template-columns:1.2fr 0.8fr; gap:22px; align-items:center; margin-top:20px; }
+    .contact-box { background:#fff; border:1px solid var(--line); border-radius:20px; box-shadow:0 18px 40px rgba(17,45,69,0.05); padding:24px; }
+    .contact-box h3 { margin:0 0 12px; color:var(--navy); }
+    .contact-list { list-style:none; margin:0; padding:0; display:grid; gap:10px; color:var(--muted); }
+    .contact-list li { display:flex; align-items:center; gap:10px; }
+    .contact-list strong { color:var(--navy); }
+    .lang-switcher { position:relative; }
+    .lang-trigger { background:#fff; border:1px solid var(--line); color:var(--navy); border-radius:10px; padding:8px 12px; cursor:pointer; font-weight:700; }
+    .lang-menu { position:absolute; right:0; top:45px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:8px; min-width:190px; display:none; max-height:300px; overflow-y:auto; box-shadow:0 18px 40px rgba(17,45,69,0.12); z-index:200; }
+    .lang-switcher.open .lang-menu { display:block; }
+    .lang-option { width:100%; text-align:left; border:none; background:transparent; color:var(--navy); padding:8px 10px; border-radius:8px; cursor:pointer; }
+    .lang-option:hover { background:var(--light); }
+    @media (max-width: 900px) { .promo-grid, .home-cta-section, .service-photo-strip { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span data-i18n="topbar_text">Trusted infrastructure partner in Dabra, Madhya Pradesh</span>
+      <div class="top-links">
+        <a href="tel:8878128338">☎ 8878128338</a>
+        <a href="mailto:shripawanshakticonstruction@gmail.com">✉ Email</a>
+      </div>
+    </div>
   </div>
-</div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="Shri Pawan Shakti Construction home">
+        <img src="assets/IMG-20260927-WA7171.jpg" alt="Shri Pawan Shakti Construction logo" />
+        <span>Shri Pawan Shakti Construction</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="mobile-toggle" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+          <a href="index.html" class="active" data-i18n="nav_home">Home</a>
+          <a href="company.html" data-i18n="nav_company">Company</a>
+          <div class="dropdown">
+            <button class="drop-trigger" type="button" data-i18n="nav_services">Services ▾</button>
+            <div class="dropdown-menu">
+              <a href="highway.html">Highway</a>
+              <a href="road.html">Road</a>
+              <a href="civil.html">Civil</a>
+              <a href="electrical.html">Electrical</a>
+              <a href="building.html">Building</a>
+              <a href="railway.html">Railway</a>
+              <a href="construction.html">Construction</a>
+            </div>
+          </div>
+          <a href="gallery.html" data-i18n="nav_projects">Projects</a>
+          <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
+          <a href="apply.html" data-i18n="nav_contact">Contact</a>
+
+          <div class="lang-switcher">
+            <button type="button" class="lang-trigger" aria-label="Select language">🌐 <span data-i18n="lang_label">Language</span> ▾</button>
+            <div class="lang-menu">
+              <button type="button" class="lang-option" data-lang="en">English</button>
+              <button type="button" class="lang-option" data-lang="hi">हिन्दी</button>
+              <button type="button" class="lang-option" data-lang="as">অসমীয়া</button>
+              <button type="button" class="lang-option" data-lang="bn">বাংলা</button>
+              <button type="button" class="lang-option" data-lang="gu">ગુજરાતી</button>
+              <button type="button" class="lang-option" data-lang="kn">ಕನ್ನಡ</button>
+              <button type="button" class="lang-option" data-lang="ml">മലയാളം</button>
+              <button type="button" class="lang-option" data-lang="mr">मराठी</button>
+              <button type="button" class="lang-option" data-lang="or">ଓଡ଼ିଆ</button>
+              <button type="button" class="lang-option" data-lang="pa">ਪੰਜਾਬੀ</button>
+              <button type="button" class="lang-option" data-lang="ta">தமிழ்</button>
+              <button type="button" class="lang-option" data-lang="te">తెలుగు</button>
+              <button type="button" class="lang-option" data-lang="ur">اردو</button>
+              <button type="button" class="lang-option" data-lang="ks">कॉशुर</button>
+              <button type="button" class="lang-option" data-lang="kok">कोंकणी</button>
+              <button type="button" class="lang-option" data-lang="mni">মণিপুরি</button>
+              <button type="button" class="lang-option" data-lang="es">Español</button>
+              <button type="button" class="lang-option" data-lang="fr">Français</button>
+              <button type="button" class="lang-option" data-lang="de">Deutsch</button>
+              <button type="button" class="lang-option" data-lang="ar">العربية</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero_eyebrow">Engineering • Execution • Excellence</p>
+          <h1 data-i18n="hero_heading">Building strong foundations for a better tomorrow.</h1>
+          <p class="tagline" data-i18n="hero_tagline">We deliver reliable infrastructure, civil works, and construction solutions with quality execution, strong supervision, and complete commitment to every project.</p>
+          <div class="hero-actions">
+            <a href="apply.html" class="btn btn-primary" data-i18n="cta_send_enquiry">Send Enquiry</a>
+            <a href="gallery.html" class="btn btn-secondary" data-i18n="cta_our_projects">Our Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-bar">
+      <div class="container stats-grid">
+        <div class="stat-item"><strong>15+</strong><span data-i18n="stat_experience">Years of experience</span></div>
+        <div class="stat-item"><strong>50+</strong><span data-i18n="stat_projects">Projects delivered</span></div>
+        <div class="stat-item"><strong>100%</strong><span data-i18n="stat_quality">Commitment to quality</span></div>
+        <div class="stat-item"><strong>24/7</strong><span data-i18n="stat_support">Site support</span></div>
+      </div>
+    </section>
+
+    <section class="section intro-section">
+      <div class="container intro-grid">
+        <div class="intro-image"></div>
+        <div class="intro-copy">
+          <p class="eyebrow accent" data-i18n="who_we_are">Who we are</p>
+          <h2 data-i18n="intro_heading">Dependable construction solutions built for progress.</h2>
+          <p data-i18n="intro_p1">Shri Pawan Shakti Construction is a professional infrastructure and construction company focused on road, highway, railway, civil, building, and electrical work. We work with honest execution, practical planning, and responsible project delivery.</p>
+          <p data-i18n="intro_p2">From planning to finishing, our team ensures quality, safety, and practical results for each project. We believe strong work culture and clear commitments create long-term trust.</p>
+          <ul class="check-list">
+            <li data-i18n="check_1">End-to-end execution support</li>
+            <li data-i18n="check_2">Skilled workforce and project supervision</li>
+            <li data-i18n="check_3">On-time delivery and budget discipline</li>
+            <li data-i18n="check_4">Client-first communication and transparency</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="promo-panel">
+          <div class="promo-grid">
+            <div>
+              <p class="eyebrow accent" data-i18n="strength_label">Our strength</p>
+              <h2 style="margin:0; font-family:'Barlow Condensed',sans-serif; font-size:clamp(2.2rem,4vw,3.6rem); line-height:1; color:var(--navy);" data-i18n="strength_heading">Trusted work. Strong execution. Safe delivery.</h2>
+              <div class="promo-badges">
+                <span data-i18n="badge_road">Road Work</span>
+                <span data-i18n="badge_highway">Highway Project</span>
+                <span data-i18n="badge_railway">Railway Support</span>
+                <span data-i18n="badge_building">Building Works</span>
+                <span data-i18n="badge_civil">Civil Work</span>
+                <span data-i18n="badge_electrical">Electrical Projects</span>
+              </div>
+            </div>
+            <div class="promo-image"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow accent" data-i18n="services_label">Our services</p>
+          <h2 data-i18n="services_heading">Infrastructure solutions for every stage of progress.</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon">🛣️</div>
+            <h3>Highway</h3>
+            <p data-i18n="service_highway">Design and construction of major highways and corridors with safety-focused execution.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon">🚧</div>
+            <h3>Road</h3>
+            <p data-i18n="service_road">Rural and urban road construction, widening, and maintenance work for long-term durability.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon">🏗️</div>
+            <h3>Civil</h3>
+            <p data-i18n="service_civil">Comprehensive civil engineering, earthwork, and site development services.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon">⚡</div>
+            <h3>Electrical</h3>
+            <p data-i18n="service_electrical">Power distribution, lighting, and electrical infrastructure work to support project needs.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon">🏢</div>
+            <h3>Building</h3>
+            <p data-i18n="service_building">Residential, commercial, and institutional building works with clear site management.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon">🚆</div>
+            <h3>Railway</h3>
+            <p data-i18n="service_railway">Trackside support and railway civil infrastructure work for reliable execution.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow accent" data-i18n="snapshots_label">Project snapshots</p>
+          <h2 data-i18n="snapshots_heading">Work that speaks for itself.</h2>
+        </div>
+
+        <div class="service-photo-strip">
+          <div class="service-photo-card">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80" alt="Road construction" />
+            <div class="caption" data-i18n="photo_road">Road Development</div>
+          </div>
+          <div class="service-photo-card">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80" alt="Highway work" />
+            <div class="caption" data-i18n="photo_highway">Highway Work</div>
+          </div>
+          <div class="service-photo-card">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80" alt="Railway work" />
+            <div class="caption" data-i18n="photo_railway">Railway Support</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow accent" data-i18n="why_choose">Why choose us</p>
+          <h2 data-i18n="process_heading">Execution that keeps your project moving.</h2>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-box">
+            <span>01</span>
+            <h3 data-i18n="step_1_title">Planning</h3>
+            <p data-i18n="step_1_text">Clear project understanding and detailed planning from the start.</p>
+          </div>
+          <div class="process-box">
+            <span>02</span>
+            <h3 data-i18n="step_2_title">Execution</h3>
+            <p data-i18n="step_2_text">Strong site supervision and skilled coordination for smooth work flow.</p>
+          </div>
+          <div class="process-box">
+            <span>03</span>
+            <h3 data-i18n="step_3_title">Quality</h3>
+            <p data-i18n="step_3_text">Material-focused quality checks and structured workmanship standards.</p>
+          </div>
+          <div class="process-box">
+            <span>04</span>
+            <h3 data-i18n="step_4_title">Handover</h3>
+            <p data-i18n="step_4_text">Final project delivery with safety, finish, and client satisfaction in focus.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-section">
+      <div class="container project-header">
+        <div>
+          <p class="eyebrow accent" data-i18n="featured_label">Featured work</p>
+          <h2 data-i18n="featured_heading">Projects built with purpose and precision.</h2>
+        </div>
+        <a href="gallery.html" class="text-link" data-i18n="view_all_projects">View all projects →</a>
+      </div>
+
+      <div class="container project-grid">
+        <article class="project-card">
+          <div class="project-image project-one"></div>
+          <div class="project-body">
+            <h3 data-i18n="project_highway_title">Highway Development</h3>
+            <p data-i18n="project_highway_text">Road corridor development and continuity execution for long-term infrastructure support.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image project-two"></div>
+          <div class="project-body">
+            <h3 data-i18n="project_road_title">Road Infrastructure</h3>
+            <p data-i18n="project_road_text">Earthwork, base preparation, and surfacing to keep roads durable and serviceable.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image project-three"></div>
+          <div class="project-body">
+            <h3 data-i18n="project_building_title">Building & Civil Works</h3>
+            <p data-i18n="project_building_text">Commercial and structural work focused on safety, durability, and finishing quality.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container home-cta-section">
+        <div class="promo-panel" style="margin:0;">
+          <p class="eyebrow accent" data-i18n="partner_label">Need a construction partner?</p>
+          <h2 style="margin:0; font-family:'Barlow Condensed',sans-serif; font-size:clamp(2.4rem,4vw,3.4rem); color:var(--navy); line-height:1;" data-i18n="partner_heading">Let us help with your next project.</h2>
+          <div class="promo-badges">
+            <span data-i18n="badge_fast">Fast Response</span>
+            <span data-i18n="badge_ready">Site Ready</span>
+            <span data-i18n="badge_team">Skilled Team</span>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <h3 data-i18n="contact_title">Contact us</h3>
+          <ul class="contact-list">
+            <li><span>📞</span> <strong data-i18n="phone_label">Phone:</strong> 8878128338</li>
+            <li><span>✉️</span> <strong data-i18n="email_label">Email:</strong> shripawanshakticonstruction@gmail.com</li>
+            <li><span>📍</span> <strong data-i18n="location_label">Location:</strong> Dabra, Madhya Pradesh</li>
+          </ul>
+          <div style="margin-top:18px;">
+            <a href="apply.html" class="btn btn-primary" style="width:100%;" data-i18n="cta_send_enquiry_2">Send Enquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip">
+      <div class="container cta-inner">
+        <div>
+          <p class="eyebrow light" data-i18n="cta_pre">Let's build together</p>
+          <h2 data-i18n="cta_heading_main">Need a trusted construction partner?</h2>
+        </div>
+        <a href="apply.html" class="btn btn-light" data-i18n="cta_consultation">Send Enquiry</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand">
+          <img src="assets/IMG-20260927-WA7171.jpg" alt="Shri Pawan Shakti Construction logo" />
+          <span>Shri Pawan Shakti Construction</span>
+        </a>
+        <p data-i18n="footer_intro">Modern infrastructure and construction services focused on quality, reliability and long-term value.</p>
+      </div>
+
+      <div>
+        <h4 data-i18n="footer_quicklinks">Quick Links</h4>
+        <ul>
+          <li><a href="company.html" data-i18n="nav_company_2">Company</a></li>
+          <li><a href="gallery.html" data-i18n="nav_projects_2">Projects</a></li>
+          <li><a href="privacy.html" data-i18n="nav_privacy_2">Privacy Policy</a></li>
+          <li><a href="apply.html" data-i18n="nav_contact_2">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 data-i18n="footer_services">Services</h4>
+        <ul>
+          <li><a href="highway.html">Highway</a></li>
+          <li><a href="road.html">Road</a></li>
+          <li><a href="civil.html">Civil</a></li>
+          <li><a href="electrical.html">Electrical</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 data-i18n="footer_contact">Contact</h4>
+        <ul>
+          <li>☎ 8878128338</li>
+          <li>✉ shripawanshakticonstruction@gmail.com</li>
+          <li>📍 Dabra, Madhya Pradesh</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Shri Pawan Shakti Construction. All rights reserved.</div>
+  </footer>
+
+  <div class="floating-actions">
+    <a class="float-btn call-btn" href="tel:8878128338" aria-label="Call now">📞</a>
+    <a class="float-btn wa-btn" href="https://wa.me/918878128338" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+  </div>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
