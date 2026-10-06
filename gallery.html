@@ -15,6 +15,10 @@
     .float-btn { display:flex; align-items:center; justify-content:center; width:58px; height:58px; border-radius:50%; box-shadow:0 12px 30px rgba(0,0,0,0.2); color:white; font-size:26px; text-decoration:none; }
     .call-btn { background:#0a8f2d; }
     .wa-btn { background:#25D366; }
+    .language-wrap { display:flex; align-items:center; }
+    .language-switcher { border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--navy); padding:8px 12px; font-weight:600; }
+    .sr-only { position:absolute; left:-9999px; }
+    @media (max-width:900px){ .language-wrap{margin-top:10px;width:100%;} .language-switcher{width:100%;} }
   </style>
 </head>
 <body>
@@ -24,10 +28,10 @@
       <nav class="main-nav">
         <button class="mobile-toggle" aria-label="Toggle menu">☰</button>
         <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="company.html">Company</a>
+          <a href="index.html" data-i18n="home">Home</a>
+          <a href="company.html" data-i18n="company">Company</a>
           <div class="dropdown">
-            <button class="drop-trigger" type="button">Services ▾</button>
+            <button class="drop-trigger" type="button" data-i18n="services">Services ▾</button>
             <div class="dropdown-menu">
               <a href="highway.html">Highway</a>
               <a href="road.html">Road</a>
@@ -38,9 +42,27 @@
               <a href="construction.html">Construction</a>
             </div>
           </div>
-          <a href="gallery.html" class="active">Projects</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="apply.html">Contact</a>
+          <a href="gallery.html" class="active" data-i18n="projects">Projects</a>
+          <a href="privacy.html" data-i18n="privacy">Privacy</a>
+          <a href="apply.html" data-i18n="contact">Contact</a>
+          <div class="language-wrap">
+            <label class="sr-only" for="language-switcher">Language</label>
+            <select id="language-switcher" class="language-switcher" aria-label="Select page language">
+              <option value="en">English</option>
+              <option value="hi">हिन्दी</option>
+              <option value="ta">தமிழ்</option>
+              <option value="te">తెలుగు</option>
+              <option value="kn">ಕನ್ನಡ</option>
+              <option value="ml">മലയാളം</option>
+              <option value="mr">मराठी</option>
+              <option value="gu">ગુજરાતી</option>
+              <option value="bn">বাংলা</option>
+              <option value="pa">ਪੰਜਾਬੀ</option>
+              <option value="or">ଓଡ଼ିଆ</option>
+              <option value="ru">Русский</option>
+              <option value="fr">Français</option>
+            </select>
+          </div>
         </div>
       </nav>
     </div>
@@ -92,7 +114,7 @@
         <a href="index.html" class="brand footer-brand"><img src="assets/IMG-20260927-WA7171.jpg" alt="logo" /><span>Shri Pawan Shakti Construction</span></a>
         <p>Quality-focused construction and infrastructure work for long-term value.</p>
       </div>
-      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="company.html">Company</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="apply.html">Contact</a></li></ul></div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html" data-i18n="home">Home</a></li><li><a href="company.html" data-i18n="company">Company</a></li><li><a href="privacy.html" data-i18n="privacy">Privacy</a></li><li><a href="apply.html" data-i18n="contact">Contact</a></li></ul></div>
       <div><h4>Services</h4><ul><li><a href="highway.html">Highway</a></li><li><a href="road.html">Road</a></li><li><a href="civil.html">Civil</a></li><li><a href="electrical.html">Electrical</a></li></ul></div>
       <div><h4>Contact</h4><ul><li>☎ 8878128338</li><li>✉ shripawanshakticonstruction@gmail.com</li></ul></div>
     </div>
