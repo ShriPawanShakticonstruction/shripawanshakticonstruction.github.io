@@ -1,37 +1,42 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhilasha Construction | Building India's Infrastructure</title>
-  <meta name="description" content="Abhilasha Construction — Highway, Road, Civil, Electrical and Building construction services.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/style.css">
-  <script>
-    // small accessibility helpers
-    function toggleMobileMenu(){document.querySelector('.navlinks').classList.toggle('open')}
-    function closeDropdowns(){document.querySelectorAll('.dropdownMenu').forEach(m=>m.style.display='none')}
-    document.addEventListener('click', closeDropdowns)
-    function toggleDropdownClick(e){e.stopPropagation();const m=e.currentTarget.nextElementSibling; m.style.display = (m.style.display==='block') ? 'none' : 'block'}
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhilasha Construction | Infrastructure & Building Experts</title>
+  <meta name="description" content="Abhilasha Construction delivers road, highway, civil, electrical, railway and building construction solutions with reliable project execution." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <div class="topbar"><div class="container"><div>Trusted infrastructure partner in Dabra, Madhya Pradesh</div><div><a href="tel:8878128338" style="color:#e6f0fb;margin-left:12px">☎ 8878128338</a><a href="mailto:shripawanshakticonstruction@gmail.com" style="color:#e6f0fb;margin-left:12px">✉</a></div></div></div>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Trusted infrastructure partner in Dabra, Madhya Pradesh</span>
+      <div class="top-links">
+        <a href="tel:8878128338">☎ 8878128338</a>
+        <a href="mailto:shripawanshakticonstruction@gmail.com">✉ Email</a>
+      </div>
+    </div>
+  </div>
 
-  <header>
-    <div class="container nav">
-      <div class="brand"><a href="index.html" style="display:flex;align-items:center;gap:10px"><img src="/assets/logo.svg" alt="logo"> <span>Abhilasha Construction</span></a></div>
-      <nav>
-        <button class="menuBtn" onclick="toggleMobileMenu()">☰</button>
-        <div class="navlinks">
-          <a href="index.html">Home</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="Abhilasha Construction home">
+        <img src="assets/logo.svg" alt="Abhilasha Construction logo" />
+        <span>Abhilasha Construction</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="mobile-toggle" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
           <a href="company.html">Company</a>
           <div class="dropdown">
-            <div class="dropdownBtn" onclick="toggleDropdownClick(event)" aria-haspopup="true" aria-expanded="false">Services ▾</div>
-            <div class="dropdownMenu" id="servicesMenu">
+            <button class="drop-trigger" type="button">Services ▾</button>
+            <div class="dropdown-menu">
               <a href="highway.html">Highway</a>
               <a href="road.html">Road</a>
               <a href="civil.html">Civil</a>
@@ -43,31 +48,221 @@
           </div>
           <a href="gallery.html">Projects</a>
           <a href="apply.html">Contact</a>
-          <a href="admin.html" class="btn">Login</a>
+          <a href="admin.html" class="nav-cta">Login</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero"><div class="container heroContent"><h1>Engineering • Execution • Excellence</h1><p>Delivering safe, durable and timely infrastructure projects across Madhya Pradesh.</p><a class="btn" href="apply.html">Get a Quote</a></div></section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Our core services</h2>
-        <div class="servicesGrid">
-          <div class="serviceCard"><h3>Highway</h3><p class="muted">Design and construction of major highways and corridors.</p></div>
-          <div class="serviceCard"><h3>Road</h3><p class="muted">Rural & urban road construction and maintenance works.</p></div>
-          <div class="serviceCard"><h3>Civil</h3><p class="muted">Comprehensive civil engineering and site development.</p></div>
-          <div class="serviceCard"><h3>Electrical</h3><p class="muted">Power distribution, street lighting and electrical installations.</p></div>
-          <div class="serviceCard"><h3>Building</h3><p class="muted">Residential, commercial and institutional building projects.</p></div>
-          <div class="serviceCard"><h3>Railway</h3><p class="muted">Track works, structures and associated railway civil works.</p></div>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">Engineering • Execution • Excellence</p>
+          <h1>Building strong foundations for a better tomorrow.</h1>
+          <p class="tagline">We deliver reliable infrastructure, civil works, and construction solutions with quality, on-time execution, and durable outcomes.</p>
+          <div class="hero-actions">
+            <a href="apply.html" class="btn btn-primary">Get a Quote</a>
+            <a href="gallery.html" class="btn btn-secondary">Our Projects</a>
+          </div>
         </div>
       </div>
     </section>
 
+    <section class="stats-bar">
+      <div class="container stats-grid">
+        <div class="stat-item"><strong>15+</strong><span>Years of experience</span></div>
+        <div class="stat-item"><strong>50+</strong><span>Projects delivered</span></div>
+        <div class="stat-item"><strong>100%</strong><span>Commitment to quality</span></div>
+        <div class="stat-item"><strong>24/7</strong><span>Site support</span></div>
+      </div>
+    </section>
+
+    <section class="section intro-section">
+      <div class="container intro-grid">
+        <div class="intro-image"></div>
+        <div class="intro-copy">
+          <p class="eyebrow accent">Who we are</p>
+          <h2>Dependable construction solutions built for progress.</h2>
+          <p>Abhilasha Construction is a professional infrastructure and construction company dedicated to delivering safe, efficient and durable execution across highway, road, civil, electrical, railway and building sectors.</p>
+          <p>From planning to handover, our focus remains on quality workmanship, efficient project management, and long-term value for every client.</p>
+          <ul class="check-list">
+            <li>End-to-end execution support</li>
+            <li>Skilled workforce and project supervision</li>
+            <li>On-time delivery and budget discipline</li>
+            <li>Client-first communication and transparency</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow accent">Our services</p>
+          <h2>Infrastructure solutions for every stage of progress.</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon">🛣️</div>
+            <h3>Highway</h3>
+            <p>Design and construction of major highways and corridors.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🚧</div>
+            <h3>Road</h3>
+            <p>Rural and urban road construction, widening, and maintenance works.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🏗️</div>
+            <h3>Civil</h3>
+            <p>Comprehensive civil engineering, earthwork, and site development.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">⚡</div>
+            <h3>Electrical</h3>
+            <p>Power distribution, lighting, and electrical infrastructure works.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🏢</div>
+            <h3>Building</h3>
+            <p>Residential, commercial and institutional building works.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🚆</div>
+            <h3>Railway</h3>
+            <p>Track side works and supporting railway civil infrastructure.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow accent">Why choose us</p>
+          <h2>Execution that keeps your project moving.</h2>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-box">
+            <span>01</span>
+            <h3>Planning</h3>
+            <p>Clear project understanding and scope-based planning from the start.</p>
+          </div>
+          <div class="process-box">
+            <span>02</span>
+            <h3>Execution</h3>
+            <p>Strong site supervision, skilled team coordination, and disciplined workflow.</p>
+          </div>
+          <div class="process-box">
+            <span>03</span>
+            <h3>Quality</h3>
+            <p>Quality checks and material-focused supervision to maintain long-term value.</p>
+          </div>
+          <div class="process-box">
+            <span>04</span>
+            <h3>Handover</h3>
+            <p>Complete project delivery with attention to safety, finish and client satisfaction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-section">
+      <div class="container project-header">
+        <div>
+          <p class="eyebrow accent">Featured work</p>
+          <h2>Projects built with purpose and precision.</h2>
+        </div>
+        <a href="gallery.html" class="text-link">View all projects →</a>
+      </div>
+
+      <div class="container project-grid">
+        <article class="project-card">
+          <div class="project-image project-one"></div>
+          <div class="project-body">
+            <h3>Highway Development</h3>
+            <p>Road corridor development and continuity execution for long-term infrastructure support.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image project-two"></div>
+          <div class="project-body">
+            <h3>Road Infrastructure</h3>
+            <p>Earthwork, base preparation and surfacing to keep roads durable and serviceable.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image project-three"></div>
+          <div class="project-body">
+            <h3>Building & Civil Works</h3>
+            <p>Commercial and structural execution focused on safety, strength and finishing quality.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-strip">
+      <div class="container cta-inner">
+        <div>
+          <p class="eyebrow light">Let's build together</p>
+          <h2>Need a trusted construction partner?</h2>
+        </div>
+        <a href="apply.html" class="btn btn-light">Request a consultation</a>
+      </div>
+    </section>
   </main>
 
-  <footer><div class="container"><div style="display:flex;justify-content:space-between;align-items:center"><div>© Abhilasha Construction</div><div>☎ 8878128338</div></div></div></footer>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand">
+          <img src="assets/logo.svg" alt="Abhilasha Construction logo" />
+          <span>Abhilasha Construction</span>
+        </a>
+        <p>Modern infrastructure and construction services focused on quality, reliability and long-term value.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="company.html">Company</a></li>
+          <li><a href="gallery.html">Projects</a></li>
+          <li><a href="apply.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="highway.html">Highway</a></li>
+          <li><a href="road.html">Road</a></li>
+          <li><a href="civil.html">Civil</a></li>
+          <li><a href="electrical.html">Electrical</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>☎ 8878128338</li>
+          <li>✉ shripawanshakticonstruction@gmail.com</li>
+          <li>Dabra, Madhya Pradesh</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Abhilasha Construction. All rights reserved.</div>
+  </footer>
+
+  <script src="assets/main.js"></script>
 </body>
 </html>
