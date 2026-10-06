@@ -1,43 +1,107 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<title>Project Gallery | Shri Pawan Shakti Construction</title>
-<meta name="description" content="Explore our project gallery featuring road, electrical, building and civil construction work.">
-<style>
-:root{--navy:#0d1f2c;--gold:#d4a550;--gold2:#f3d27a;--cream:#f7f3ec;--muted:#586776;--line:#e7ebef}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#172432;line-height:1.6}a{text-decoration:none;color:inherit}.container{width:min(1180px,92%);margin:auto}.topbar{background:var(--navy);color:#dbe7ef;font-size:12px}.topbar .container{min-height:40px;display:flex;align-items:center;justify-content:space-between;gap:15px}.toplinks{display:flex;gap:18px;flex-wrap:wrap}.header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{display:flex;align-items:center;gap:11px}.logo img{width:48px;height:48px;border-radius:11px;object-fit:cover}.brand small,.brand strong{display:block;line-height:1.05}.brand small{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:900}.brand strong{font-size:17px;color:var(--navy)}.navLinks{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:700;color:#435160}.navLinks a:hover,.navLinks a.active{color:var(--gold)}.button{display:inline-flex;align-items:center;justify-content:center;border-radius:9px;padding:11px 17px;font-weight:800}.buttonGold{background:var(--gold);color:#fff}.menu{display:none;border:0;background:none;color:var(--navy);font-size:28px;cursor:pointer}.hero{background:linear-gradient(90deg,rgba(7,18,28,.9),rgba(7,18,28,.6)),url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=85') center/cover;min-height:330px;display:flex;align-items:center;color:#fff}.eyebrow{font-size:12px;letter-spacing:3px;font-weight:900;color:var(--gold2);margin-bottom:12px}.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.08;margin:0 0 12px}.hero p{max-width:620px;color:#e0eaf0;font-size:1.05rem}.section{padding:58px 0}.filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:32px}.filterBtn{border:2px solid var(--line);background:#fff;color:var(--navy);padding:10px 19px;border-radius:8px;font-weight:800;cursor:pointer}.filterBtn.active,.filterBtn:hover{background:var(--gold);color:#fff;border-color:var(--gold)}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.galleryItem{position:relative;aspect-ratio:1.2;overflow:hidden;border-radius:15px;background:#ddd;box-shadow:0 12px 28px rgba(13,31,44,.12);cursor:pointer;transition:.25s}.galleryItem:hover{transform:translateY(-5px)}.galleryItem img{width:100%;height:100%;object-fit:cover}.overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;background:linear-gradient(transparent,rgba(5,16,25,.85));color:#fff}.category{font-size:11px;letter-spacing:2px;color:var(--gold2);font-weight:900}.title{font-size:1.15rem;font-weight:800;margin-top:6px}.lightbox{display:none;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:20px}.lightbox.show{display:flex}.lightboxBox{max-width:900px;width:100%;position:relative}.lightboxImg{display:block;width:100%;max-height:75vh;object-fit:contain;border-radius:12px}.lightboxInfo{background:#fff;padding:16px 20px;border-radius:0 0 12px 12px}.lightboxInfo strong{display:block;color:var(--navy);font-size:1.15rem}.close{position:absolute;right:-5px;top:-48px;color:#fff;font-size:40px;background:none;border:0;cursor:pointer}.footer{background:#0a1822;color:#c3d2dd;padding:30px 0}.footerBar{display:flex;justify-content:space-between;align-items:center;gap:18px}.legalLinks{display:flex;gap:12px;flex-wrap:wrap}.legalLinks a:hover{color:var(--gold2)}@media(max-width:960px){.navLinks{display:none}.menu{display:block}.nav.open .navLinks{display:flex;position:absolute;top:80px;left:0;right:0;background:#fff;padding:20px 5%;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.gallery{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.topbar .container,.footerBar{flex-direction:column;text-align:center}.toplinks{justify-content:center}.gallery{grid-template-columns:1fr}.section{padding:42px 0}.close{top:-35px;font-size:32px}} 
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Gallery | Shri Pawan Shakti Construction</title>
+  <meta name="description" content="Explore our recent project gallery including road, highway, civil, electrical, building and railway construction work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 26px; }
+    .project-tile { background: #fff; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: 0 18px 40px rgba(17,45,69,0.05); }
+    .project-tile .media { height: 220px; background-size: cover; background-position: center; }
+    .project-tile .body { padding: 18px; }
+    .project-tile h3 { margin: 0 0 8px; color: var(--navy); }
+    .project-tile p { margin: 0; color: var(--muted); }
+    @media (max-width: 860px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .gallery-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
-<div class="topbar"><div class="container"><span>Trusted construction specialists in Dabra, Madhya Pradesh</span><div class="toplinks"><a href="tel:8878128338">☎ 8878128338</a><a href="mailto:shripawanshakticonstruction@gmail.com">✉ Email</a></div></div></div>
-<header class="header"><div class="container nav" id="nav"><a class="logo" href="index.html"><img src="company-logo.jpg" alt="Company logo"><span class="brand"><small>SHRI PAWAN SHAKTI</small><strong>CONSTRUCTION</strong></span></a><nav class="navLinks"><a href="index.html">Home</a><a href="index.html#services">Services</a><a class="active" href="gallery.html">Projects Gallery</a><a href="index.html#about">About</a><a href="index.html#apply">Apply</a><a href="index.html#contact">Contact</a></nav><a class="button buttonGold" href="index.html#apply">Get Quote</a><button class="menu" aria-label="Open menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button></div></header>
-<main>
-<section class="hero"><div class="container"><p class="eyebrow">PROJECT GALLERY</p><h1>Our work. Our strength.</h1><p>Explore construction visuals across road development, electrical line work, building construction and civil infrastructure.</p></div></section>
-<section class="section"><div class="container"><div class="filters"><button class="filterBtn active" data-filter="all">All Projects</button><button class="filterBtn" data-filter="road">Road Work</button><button class="filterBtn" data-filter="electrical">Electrical</button><button class="filterBtn" data-filter="building">Building</button><button class="filterBtn" data-filter="civil">Civil Works</button></div><div class="gallery" id="gallery"></div></div></section>
-</main>
-<div class="lightbox" id="lightbox"><div class="lightboxBox"><button class="close" onclick="closeLightbox()">×</button><img id="lightboxImg" class="lightboxImg" alt="Project photo"><div class="lightboxInfo"><strong id="lightboxTitle"></strong><span id="lightboxDesc"></span></div></div></div>
-<footer class="footer"><div class="container footerBar"><div><strong>Shri Pawan Shakti Construction</strong><div>Road • Electrical • Building • Civil</div></div><div class="legalLinks"><a href="terms.html">Terms & Conditions</a><a href="index.html">Home</a></div></div></footer>
-<script>
-const projects=[
-{c:'road',t:'Highway Expansion Project',d:'Modern road development and infrastructure work',i:'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=85'},
-{c:'road',t:'Road Formation Work',d:'Earthwork and road base preparation',i:'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85'},
-{c:'road',t:'Asphalt Paving Operation',d:'Professional paving and road finishing',i:'https://images.unsplash.com/photo-1517089535815-2c18c65c97f2?auto=format&fit=crop&w=1000&q=85'},
-{c:'electrical',t:'Electrical Pole Installation',d:'Utility poles for electrical line infrastructure',i:'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1000&q=85'},
-{c:'electrical',t:'Power Line Infrastructure',d:'Reliable electrical utility setup',i:'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1000&q=85'},
-{c:'building',t:'Commercial Building Work',d:'Strong structural construction and finishing',i:'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=85'},
-{c:'building',t:'Modern Structure Project',d:'Quality building construction execution',i:'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1000&q=85'},
-{c:'building',t:'Foundation Construction',d:'Strong foundation and base work',i:'https://images.unsplash.com/photo-1590644365607-1c5a63a3a6cc?auto=format&fit=crop&w=1000&q=85'},
-{c:'civil',t:'Civil Infrastructure Work',d:'Complete civil works execution',i:'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=85'},
-{c:'civil',t:'Drainage & Structure Work',d:'Practical drainage and civil solutions',i:'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1000&q=85'},
-{c:'civil',t:'Site Development',d:'Professional site preparation and execution',i:'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=85'},
-{c:'civil',t:'Machinery & Earthwork',d:'Heavy equipment and earthwork operation',i:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=85'}];
-let filter='all';
-const gallery=document.getElementById('gallery');
-function render(){gallery.innerHTML='';projects.filter(p=>filter==='all'||p.c===filter).forEach(p=>{const el=document.createElement('article');el.className='galleryItem';el.innerHTML='<img src="'+p.i+'" alt="'+p.t+'" loading="lazy"><div class="overlay"><span class="category">'+p.c.toUpperCase()+'</span><span class="title">'+p.t+'</span></div>';el.onclick=()=>openLightbox(p);gallery.appendChild(el)})}
-document.querySelectorAll('.filterBtn').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filterBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');filter=b.dataset.filter;render()});
-function openLightbox(p){document.getElementById('lightbox').classList.add('show');document.getElementById('lightboxImg').src=p.i;document.getElementById('lightboxTitle').textContent=p.t;document.getElementById('lightboxDesc').textContent=p.d}
-function closeLightbox(){document.getElementById('lightbox').classList.remove('show')}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});render();
-</script>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand"><img src="assets/logo.svg" alt="logo" /><span>Shri Pawan Shakti Construction</span></a>
+      <nav class="main-nav">
+        <button class="mobile-toggle" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="company.html">Company</a>
+          <div class="dropdown">
+            <button class="drop-trigger" type="button">Services ▾</button>
+            <div class="dropdown-menu">
+              <a href="highway.html">Highway</a>
+              <a href="road.html">Road</a>
+              <a href="civil.html">Civil</a>
+              <a href="electrical.html">Electrical</a>
+              <a href="building.html">Building</a>
+              <a href="railway.html">Railway</a>
+              <a href="construction.html">Construction</a>
+            </div>
+          </div>
+          <a href="gallery.html" class="active">Projects</a>
+          <a href="apply.html">Contact</a>
+          <a href="admin.html" class="nav-cta">Login</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section-light">
+      <div class="container">
+        <p class="eyebrow accent">Projects</p>
+        <h1 style="margin:0; font-family:'Barlow Condensed',sans-serif; font-size: clamp(2.4rem, 5vw, 4rem); color: var(--navy);">Work that reflects strength, design and delivery.</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="gallery-grid">
+          <article class="project-tile">
+            <div class="media" style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80')"></div>
+            <div class="body"><h3>Highway Development</h3><p>Road corridor expansion with structured execution and durable finishing.</p></div>
+          </article>
+          <article class="project-tile">
+            <div class="media" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80')"></div>
+            <div class="body"><h3>Road Infrastructure</h3><p>Efficient earthwork, pavement preparation, and service road development.</p></div>
+          </article>
+          <article class="project-tile">
+            <div class="media" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80')"></div>
+            <div class="body"><h3>Building Construction</h3><p>Structural and finishing works focused on safety, durability and craftsmanship.</p></div>
+          </article>
+          <article class="project-tile">
+            <div class="media" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80')"></div>
+            <div class="body"><h3>Electrical Works</h3><p>Distribution and utility support with quality installations and dependable output.</p></div>
+          </article>
+          <article class="project-tile">
+            <div class="media" style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80')"></div>
+            <div class="body"><h3>Civil Works</h3><p>Concrete structures, foundation support, drainage, and engineering execution.</p></div>
+          </article>
+          <article class="project-tile">
+            <div class="media" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80')"></div>
+            <div class="body"><h3>Railway Support</h3><p>Related works and infrastructure support for railway project environments.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand"><img src="assets/logo.svg" alt="logo" /><span>Shri Pawan Shakti Construction</span></a>
+        <p>Solutions designed around site demands, quality expectations and long-term value.</p>
+      </div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="company.html">Company</a></li><li><a href="apply.html">Contact</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="highway.html">Highway</a></li><li><a href="road.html">Road</a></li><li><a href="civil.html">Civil</a></li><li><a href="electrical.html">Electrical</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>☎ 8878128338</li><li>✉ shripawanshakticonstruction@gmail.com</li></ul></div>
+    </div>
+    <div class="copyright">© 2026 Shri Pawan Shakti Construction. All rights reserved.</div>
+  </footer>
+
+  <script src="assets/main.js"></script>
 </body>
 </html>
