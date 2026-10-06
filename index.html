@@ -8,46 +8,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--ink:#102b46;--blue:#123f69;--orange:#f47a20;--yellow:#ffb52d;--light:#f4f7f9;--text:#3f4b56;--line:#e1e7ec;--white:#fff;--shadow:0 15px 45px rgba(13,43,70,.12)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.65;background:#fff}a{text-decoration:none;color:inherit}
-    .container{width:min(1180px,100%);margin:0 auto;padding:0 14px}
-    .topbar{background:var(--ink);color:#dce8f1;font-size:12px}
-    .topbar .container{min-height:38px;display:flex;align-items:center;justify-content:space-between}
-    header{background:#fff;position:relative;z-index:10;box-shadow:0 3px 18px rgba(0,0,0,.06)}
-    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
-    .brand img{width:52px;height:52px;border-radius:8px;object-fit:cover}
-    .navlinks{display:flex;gap:18px;align-items:center}
-    .navlinks a{padding:10px 8px;border-radius:6px}
-    .dropdown{position:relative}
-    .dropdownBtn{display:flex;align-items:center;gap:8px;cursor:pointer}
-    .dropdownMenu{position:absolute;top:42px;left:0;background:#fff;box-shadow:var(--shadow);border-radius:8px;padding:10px;display:none;min-width:200px}
-    .dropdownMenu a{display:block;padding:8px 10px;border-radius:6px;color:var(--ink)}
-    .menuBtn{display:none}
-    .hero{min-height:420px;display:flex;align-items:center;color:#fff;position:relative;background:linear-gradient(90deg,rgba(7,30,51,.94) 0%,rgba(12,54,87,.7) 48%,rgba(12,54,87,.15) 100%),url('assets/IMG-20260927-WA7171.jpg');background-size:cover}
-    .heroContent{padding:90px 0}
-    .hero h1{font-size:44px;margin:0}
-    .section{padding:60px 0}
-    footer{background:#091d2e;color:#cbd8e1;padding:40px 0}
-    @media(max-width:900px){.navlinks{display:none}.menuBtn{display:block}}
-  </style>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css">
+  <script>
+    // small accessibility helpers
+    function toggleMobileMenu(){document.querySelector('.navlinks').classList.toggle('open')}
+    function closeDropdowns(){document.querySelectorAll('.dropdownMenu').forEach(m=>m.style.display='none')}
+    document.addEventListener('click', closeDropdowns)
+    function toggleDropdownClick(e){e.stopPropagation();const m=e.currentTarget.nextElementSibling; m.style.display = (m.style.display==='block') ? 'none' : 'block'}
+  </script>
 </head>
 <body>
-  <div class="topbar"><div class="container"><div>Trusted infrastructure partner in Dabra, Madhya Pradesh</div><div><a href="tel:8878128338" style="color:#dce8f1;margin-left:12px">☎ 8878128338</a><a href="mailto:shripawanshakticonstruction@gmail.com" style="color:#dce8f1;margin-left:12px">✉</a></div></div></div>
+  <div class="topbar"><div class="container"><div>Trusted infrastructure partner in Dabra, Madhya Pradesh</div><div><a href="tel:8878128338" style="color:#e6f0fb;margin-left:12px">☎ 8878128338</a><a href="mailto:shripawanshakticonstruction@gmail.com" style="color:#e6f0fb;margin-left:12px">✉</a></div></div></div>
+
   <header>
     <div class="container nav">
-      <div style="display:flex;align-items:center;gap:18px">
-        <a class="brand" href="index.html"><img src="assets/logo.svg" alt="logo"><span>Abhilasha Construction</span></a>
-      </div>
-
+      <div class="brand"><a href="index.html" style="display:flex;align-items:center;gap:10px"><img src="/assets/logo.svg" alt="logo"> <span>Abhilasha Construction</span></a></div>
       <nav>
-        <button class="menuBtn" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+        <button class="menuBtn" onclick="toggleMobileMenu()">☰</button>
         <div class="navlinks">
           <a href="index.html">Home</a>
           <a href="company.html">Company</a>
           <div class="dropdown">
-            <div class="dropdownBtn" onclick="toggleDropdown(event)">Services ▾</div>
+            <div class="dropdownBtn" onclick="toggleDropdownClick(event)" aria-haspopup="true" aria-expanded="false">Services ▾</div>
             <div class="dropdownMenu" id="servicesMenu">
               <a href="highway.html">Highway</a>
               <a href="road.html">Road</a>
@@ -60,27 +43,31 @@
           </div>
           <a href="gallery.html">Projects</a>
           <a href="apply.html">Contact</a>
-          <a href="admin.html" style="background:var(--orange);color:#fff;padding:8px 12px;border-radius:6px">Login</a>
+          <a href="admin.html" class="btn">Login</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero"><div class="container heroContent"><h1>Abhilasha Construction</h1><p>Engineering • Execution • Excellence</p></div></section>
+    <section class="hero"><div class="container heroContent"><h1>Engineering • Execution • Excellence</h1><p>Delivering safe, durable and timely infrastructure projects across Madhya Pradesh.</p><a class="btn" href="apply.html">Get a Quote</a></div></section>
 
-    <section class="section"><div class="container"><h2>Our services</h2><p>Click Services → choose item to view detailed page.</p></div></section>
+    <section class="section">
+      <div class="container">
+        <h2>Our core services</h2>
+        <div class="servicesGrid">
+          <div class="serviceCard"><h3>Highway</h3><p class="muted">Design and construction of major highways and corridors.</p></div>
+          <div class="serviceCard"><h3>Road</h3><p class="muted">Rural & urban road construction and maintenance works.</p></div>
+          <div class="serviceCard"><h3>Civil</h3><p class="muted">Comprehensive civil engineering and site development.</p></div>
+          <div class="serviceCard"><h3>Electrical</h3><p class="muted">Power distribution, street lighting and electrical installations.</p></div>
+          <div class="serviceCard"><h3>Building</h3><p class="muted">Residential, commercial and institutional building projects.</p></div>
+          <div class="serviceCard"><h3>Railway</h3><p class="muted">Track works, structures and associated railway civil works.</p></div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer><div class="container"><div style="display:flex;justify-content:space-between;align-items:center"><div>© Abhilasha Construction</div><div>☎ 8878128338</div></div></div></footer>
-
-  <script>
-    function toggleDropdown(e){
-      e.stopPropagation();
-      const menu=document.getElementById('servicesMenu');
-      menu.style.display = (menu.style.display==='block') ? 'none' : 'block';
-    }
-    document.addEventListener('click',()=>{const m=document.getElementById('servicesMenu'); if(m) m.style.display='none'});
-  </script>
 </body>
 </html>
