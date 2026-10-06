@@ -15,6 +15,12 @@
     .float-btn { display:flex; align-items:center; justify-content:center; width:58px; height:58px; border-radius:50%; box-shadow:0 12px 30px rgba(0,0,0,0.2); color:white; font-size:26px; text-decoration:none; }
     .call-btn { background:#0a8f2d; }
     .wa-btn { background:#25D366; }
+    .lang-switcher { position:relative; }
+    .lang-trigger { background:#fff; border:1px solid var(--line); color:var(--navy); border-radius:10px; padding:8px 12px; cursor:pointer; font-weight:700; }
+    .lang-menu { position:absolute; right:0; top:45px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:8px; min-width:180px; display:none; box-shadow:0 18px 40px rgba(17,45,69,0.08); z-index:50; }
+    .lang-switcher.open .lang-menu { display:block; }
+    .lang-option { width:100%; text-align:left; border:none; background:transparent; color:var(--navy); padding:8px 10px; border-radius:8px; cursor:pointer; }
+    .lang-option:hover { background:var(--light); }
   </style>
 </head>
 <body>
