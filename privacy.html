@@ -4,49 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | Shri Pawan Shakti Construction</title>
-  <meta name="description" content="Privacy policy and operational rules for Shri Pawan Shakti Construction, including commitments, honesty, payment clarity, and project conduct standards." />
+  <meta name="description" content="Privacy policy and operational rules for Shri Pawan Shakti Construction, including commitments, honesty, payment clarity, labour safety and project conduct standards." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --navy: #112d45;
-      --orange: #f47a20;
-      --gold: #f4c86d;
-      --light: #f5f7fa;
-      --line: #e5edf3;
-      --muted: #64748b;
-      --white: #ffffff;
-    }
+    :root { --navy:#112d45; --orange:#f47a20; --gold:#f4c86d; --light:#f5f7fa; --line:#e5edf3; --muted:#64748b; --white:#ffffff; }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #f8f4ed 0%, #ffffff 100%);
-      color: #1e2d39;
-      line-height: 1.8;
-    }
-    .container { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
-    .topbar { background: var(--navy); color: #fff; padding: 12px 0; font-size: 14px; }
+    body { margin:0; font-family:Arial,sans-serif; background:linear-gradient(180deg, #f8f4ed 0%, #ffffff 100%); color:#1e2d39; line-height:1.8; }
+    .container { width:min(1100px, calc(100% - 32px)); margin:0 auto; }
+    .topbar { background:var(--navy); color:#fff; padding:12px 0; font-size:14px; }
     .topbar-inner { display:flex; justify-content:space-between; align-items:center; gap:16px; }
-    .header { background: rgba(255,255,255,0.96); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+    .header { background:rgba(255,255,255,0.96); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:10; }
     .nav-wrap { display:flex; align-items:center; justify-content:space-between; min-height:80px; gap:14px; }
     .brand { display:inline-flex; align-items:center; gap:10px; font-weight:800; color:var(--navy); text-decoration:none; }
     .brand img { width:60px; height:60px; border-radius:12px; object-fit:cover; }
     .nav-links { display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
     .nav-links a { text-decoration:none; color:var(--navy); font-weight:600; padding:8px 10px; border-radius:8px; }
-    .nav-links a:hover { background: var(--light); }
-    .main { padding: 50px 0 80px; }
-    .privacy-box { background: #fff; border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 18px 40px rgba(17,45,69,0.06); padding: 28px; }
+    .nav-links a:hover { background:var(--light); }
+    .lang-switcher { position:relative; }
+    .lang-trigger { background:#fff; border:1px solid var(--line); color:var(--navy); border-radius:10px; padding:8px 12px; cursor:pointer; font-weight:700; }
+    .lang-menu { position:absolute; right:0; top:45px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:8px; min-width:180px; display:none; box-shadow:0 18px 40px rgba(17,45,69,0.08); }
+    .lang-switcher.open .lang-menu { display:block; }
+    .lang-option { width:100%; text-align:left; border:none; background:transparent; color:var(--navy); padding:8px 10px; border-radius:8px; cursor:pointer; }
+    .lang-option:hover { background:var(--light); }
+    .main { padding:50px 0 80px; }
+    .privacy-box { background:#fff; border:1px solid var(--line); border-radius:22px; box-shadow:0 18px 40px rgba(17,45,69,0.06); padding:28px; }
     .eyebrow { display:inline-block; color:var(--orange); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; font-size:12px; margin-bottom:12px; }
-    h1 { margin:0 0 12px; font-size:clamp(2.2rem,4vw,3.5rem); line-height:1.1; color:var(--navy); }
+    h1 { margin:0 0 12px; font-family:'Barlow Condensed',sans-serif; font-size:clamp(2.2rem,4vw,3.5rem); line-height:1.1; color:var(--navy); }
     .lead { color:var(--muted); font-size:1.05rem; margin:0 0 24px; }
     .rules { margin:0; padding-left:22px; color:#243447; }
     .rules li { margin: 10px 0; }
-    .highlight { background: linear-gradient(135deg, #fff5e6, #eef7ff); border-left: 5px solid var(--orange); padding: 18px 18px; border-radius: 12px; margin: 20px 0; color: var(--navy); font-weight: 600; }
-    .small-note { color: var(--muted); font-size: 0.95rem; margin-top: 20px; }
-    .footer { background: #091d2e; color: #dfeaf7; padding: 30px 0; text-align:center; }
-    .language-wrap { display:flex; align-items:center; }
-    .language-switcher { border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--navy); padding:8px 12px; font-weight:600; }
-    .sr-only { position:absolute; left:-9999px; }
-    @media (max-width: 700px) { .topbar-inner, .nav-wrap { flex-direction: column; align-items:flex-start; } .privacy-box { padding: 20px; } .language-wrap { width:100%; } .language-switcher { width:100%; } }
+    .highlight { background:linear-gradient(135deg, #fff5e6, #eef7ff); border-left:5px solid var(--orange); padding:18px; border-radius:12px; margin:20px 0; color:var(--navy); font-weight:600; }
+    .small-note { color:var(--muted); font-size:0.95rem; margin-top:20px; }
+    .footer { background:#091d2e; color:#dfeaf7; padding:30px 0; text-align:center; }
+    @media (max-width: 700px) { .topbar-inner, .nav-wrap { flex-direction:column; align-items:flex-start; } .privacy-box { padding:20px; } }
   </style>
 </head>
 <body>
@@ -59,33 +51,31 @@
 
   <header class="header">
     <div class="container nav-wrap">
-      <a href="index.html" class="brand">
-        <img src="assets/IMG-20260927-WA7171.jpg" alt="logo" />
-        <span>Shri Pawan Shakti Construction</span>
-      </a>
+      <a href="index.html" class="brand"><img src="assets/IMG-20260927-WA7171.jpg" alt="logo" /><span>Shri Pawan Shakti Construction</span></a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html" data-i18n="home">Home</a>
-        <a href="company.html" data-i18n="company">Company</a>
-        <a href="gallery.html" data-i18n="projects">Projects</a>
-        <a href="privacy.html" style="background:#f5f7fa;" data-i18n="privacy">Privacy</a>
-        <a href="apply.html" data-i18n="contact">Contact</a>
-        <div class="language-wrap">
-          <label class="sr-only" for="language-switcher">Language</label>
-          <select id="language-switcher" class="language-switcher" aria-label="Select page language">
-            <option value="en">English</option>
-            <option value="hi">हिन्दी</option>
-            <option value="ta">தமிழ்</option>
-            <option value="te">తెలుగు</option>
-            <option value="kn">ಕನ್ನಡ</option>
-            <option value="ml">മലയാളം</option>
-            <option value="mr">मराठी</option>
-            <option value="gu">ગુજરાતી</option>
-            <option value="bn">বাংলা</option>
-            <option value="pa">ਪੰਜਾਬੀ</option>
-            <option value="or">ଓଡ଼ିଆ</option>
-            <option value="ru">Русский</option>
-            <option value="fr">Français</option>
-          </select>
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="company.html" data-i18n="nav_company">Company</a>
+        <a href="gallery.html" data-i18n="nav_projects">Projects</a>
+        <a href="privacy.html" style="background:#f5f7fa;" data-i18n="nav_privacy">Privacy</a>
+        <a href="apply.html" data-i18n="nav_contact">Contact</a>
+
+        <div class="lang-switcher">
+          <button type="button" class="lang-trigger" aria-label="Select language">🌐 <span data-i18n="lang_label">Language</span> ▾</button>
+          <div class="lang-menu">
+            <button type="button" class="lang-option" data-lang="en">English</button>
+            <button type="button" class="lang-option" data-lang="hi">हिन्दी</button>
+            <button type="button" class="lang-option" data-lang="ta">தமிழ்</button>
+            <button type="button" class="lang-option" data-lang="te">తెలుగు</button>
+            <button type="button" class="lang-option" data-lang="kn">ಕನ್ನಡ</button>
+            <button type="button" class="lang-option" data-lang="ml">മലയാളം</button>
+            <button type="button" class="lang-option" data-lang="mr">मराठी</button>
+            <button type="button" class="lang-option" data-lang="gu">ગુજરાતી</button>
+            <button type="button" class="lang-option" data-lang="bn">বাংলা</button>
+            <button type="button" class="lang-option" data-lang="pa">ਪੰਜਾਬੀ</button>
+            <button type="button" class="lang-option" data-lang="or">ଓଡ଼ିଆ</button>
+            <button type="button" class="lang-option" data-lang="ru">Русский</button>
+            <button type="button" class="lang-option" data-lang="fr">Français</button>
+          </div>
         </div>
       </nav>
     </div>
@@ -96,42 +86,41 @@
       <div class="privacy-box">
         <span class="eyebrow">Privacy Policy</span>
         <h1>Construction company rules, working policies, and client responsibility</h1>
-        <p class="lead">This policy explains the basic working rules, conduct standards, and responsibilities of Shri Pawan Shakti Construction for clients, workers, contractors, suppliers, and project partners. The aim is to build trust, safety, and fairness in every construction project.</p>
+        <p class="lead">This policy explains the working system of Shri Pawan Shakti Construction for clients, workers, contractors, and business partners. The goal is to keep work honest, safe, clear, and professional in every construction project.</p>
 
-        <div class="highlight">Important: Every project must have clear written terms for scope, cost, time, payment schedule, material quality, and final handover. This helps avoid confusion and dispute.</div>
+        <div class="highlight">Important: In any construction work, scope, amount, material quality, working time, payment schedule, and final completion date must be clear before work begins. Written understanding is necessary to reduce confusion and disputes.</div>
 
         <ol class="rules">
-          <li>All parties must agree on project scope, cost, quality of work, material type, timeline, and payment plan before work starts. Clear terms make business safe and fair.</li>
-          <li>We work in road, highway, building, civil, electrical, and railway projects. Good quality material, proper supervision, and proper tools are all important for success.</li>
-          <li>Clients must be updated about work progress, delays, price changes, material issues, and site conditions. Honest communication is a key part of good work.</li>
-          <li>Any worker, contractor, or partner who joins the project must follow site rules, safety rules, working time, quality standards, and discipline at work.</li>
-          <li>Leaving a project without proper notice, after agreement, without valid reason, is not acceptable. This causes loss, delay, and legal trouble.</li>
-          <li>Cheating, false claims, poor quality work, fake records, or hidden cost is not allowed. Such actions damage trust and may lead to legal action.</li>
-          <li>Safety is the top priority. Workers must use protection gear, follow machine safety rules, keep the site clean, and avoid risky work without proper control.</li>
-          <li>Payment must be clear and recorded. Any advance, balance, deduction, penalty, or final settlement must be explained in writing so both sides understand the same thing.</li>
-          <li>Any extra work or changed scope must be approved in writing. Without written approval, extra cost and delay can lead to dispute.</li>
-          <li>We must follow Indian labour laws, site safety standards, project rules, and business requirements. Illegal work, fake documents, and hidden cash deals are not acceptable.</li>
-          <li>Every project needs a proper time plan. If work is delayed, the reason must be explained early and a solution must be made. Delay is not a reason to hide facts.</li>
-          <li>Records of labour, payment, material, machine use, and completion status must be maintained. Good records protect all parties.</li>
-          <li>Material and work quality must be checked at each step. We do not accept low quality product, fake quality claims, or work done without inspection.</li>
-          <li>All workers and contractors deserve fair treatment, basic safety, and respect. Abuse, violence, or unfair behaviour is not accepted at any site.</li>
-          <li>Project handover must include final quality checks, finishing work, cleaning, and proper inspection. Final payment and completion should happen only after quality is checked.</li>
-          <li>We do not allow theft, fraud, fake invoices, unlawful payment, or dishonest behaviour in any form. This is against company values and the law.</li>
-          <li>We believe business should be built on trust, truth, respect, and long-term relationship. Shortcuts and fake promises can damage a project and the company.</li>
-          <li>Clients should also provide timely decision-making, site access, approvals, and correct information. Good teamwork is needed for smooth project delivery.</li>
-          <li>Planning, design review, site preparation, execution, checking, and final handover must be carried out in a structured way. Each stage matters.</li>
-          <li>Our company policy supports lawful project work, safe labour practice, clean business dealing, and real quality. We aim to build long-term trust with every stakeholder.</li>
+          <li>Every project must have a clear agreement on the work to be done, payment plan, material quality standards, working time, and completion date. If something is not written, it becomes difficult to prove later.</li>
+          <li>Construction work includes road work, highway work, railway support, civil work, building work, and electrical work. Each type of job needs proper planning, skilled labour, quality material, site supervision, and safe working conditions.</li>
+          <li>Clients must receive clear facts about progress, material issue, delays, site condition, extra work, and costs. Honest communication is the foundation of trust in any project.</li>
+          <li>Workers and contractors must follow the project schedule, discipline, safety rules, attendance, and work instructions. Professional behaviour is required at every site.</li>
+          <li>Once a person joins a project, leaving the job without proper notice or valid reason may be treated as a breach of discipline. It can affect the project, team, and site progress.</li>
+          <li>No party should use cheating, false claims, fake measurement, poor-quality material, or hidden cost. Honest work and proper record keeping are important for long-term trust.</li>
+          <li>Safety is a serious part of any construction site. Protective gear, machine safety, safe working practice, and proper supervision are necessary for workers and the public.</li>
+          <li>Payment should be clear and documented. If an advance is paid, its purpose, deduction rules, final settlement, and due date must be known. Every payment should have proper records.</li>
+          <li>Any extra work, change in scope, cost variation, or delay must be approved in writing. Without approval, future disputes can arise.</li>
+          <li>Construction work should follow the relevant Indian legal rules and site regulations, including labour safety, wages, tax rules, and construction worker welfare standards.</li>
+          <li>Project time should be realistic. If delays happen, reasons must be explained clearly to the client or stakeholder and proper solution should be agreed.</li>
+          <li>Material, labour, machinery, and finance records must be kept properly. Good records help avoid confusion, legal issues, and broken trust.</li>
+          <li>Any theft, fake invoice, unfair cost claim, low-quality material use, or cheating must be treated as a serious violation. This hurts the project and the company’s reputation.</li>
+          <li>Each employee, worker, and contractor must follow respectful behaviour, fairness, and professional discipline. A proper site needs order, respect, and team support.</li>
+          <li>Final checking is necessary before project handover. Site quality, finishing work, safety checks, and completed scope must be verified before closing the project.</li>
+          <li>We do not support fraud, hidden work, illegal payment, fake approval, or dishonest completion claims. Honest business is the basis of strong relationship and long success.</li>
+          <li>Workers and contractors deserve safe work conditions, fair payment, clear instructions, and respect. A stable project requires clear cooperation from everyone.</li>
+          <li>Clients should also respect the project rules, payment schedule, and site safety measures. Good cooperation helps both sides complete the work efficiently and correctly.</li>
+          <li>Project management must always include planning, measurement, execution, quality check, and handover. This gives a practical and professional result for the client.</li>
+          <li>We work under the principle that a reliable construction company should be honest, disciplined, law-aware, and protective of worker rights and client trust.</li>
         </ol>
 
-        <div class="highlight">This document is a general policy for fair business practice. It is not a legal opinion. Actual legal matters should be reviewed by a qualified professional. Important Indian laws that relate to such work include: The Building and Other Construction Workers (Regulation of Employment and Conditions of Service) Act, 1996; The Contract Labour (Regulation and Abolition) Act, 1970; The Minimum Wages Act, 1948; The Payment of Wages Act, 1936; The Workmen Compensation Act, 1923; The Industrial Disputes Act, 1947; and the relevant labour, tax, and safety rules of the Government of India.</div>
+        <div class="highlight">Relevant Indian legal framework often connected with construction work includes: The Companies Act, 2013; The Contract Labour (Regulation and Abolition) Act, 1970; The Building and Other Construction Workers (Regulation of Employment and Conditions of Service) Act, 1996; The Minimum Wages Act, 1948; The Payment of Wages Act, 1936; The Factories Act, 1948; The Employees’ Provident Funds and Miscellaneous Provisions Act, 1952; The Workmen Compensation Act, 1923; The GST Act, 2017; and applicable labour, safety, and tax rules under Indian law.</div>
 
-        <p class="small-note">This policy is made for simple understanding. It is not a full legal document. For full legal review, the law should be checked with a lawyer or compliance expert. Shri Pawan Shakti Construction follows honest work, safe practice, and fair dealing in every project and business relationship.</p>
+        <p class="small-note">This page is a general operating and ethical policy for business clarity. It is not a legal opinion. For final legal or contract issues, proper legal advice should be taken before signing any work agreement.</p>
       </div>
     </div>
   </main>
 
   <footer class="footer">© 2026 Shri Pawan Shakti Construction. All rights reserved.</footer>
-
   <script src="assets/main.js"></script>
 </body>
 </html>
