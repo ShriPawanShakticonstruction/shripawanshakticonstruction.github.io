@@ -1,911 +1,121 @@
 <!doctype html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Apply — Shri Pawan Shakti Construction</title>
-
-<style>
-:root{
-  --gold:#c9a55a;
-  --cream:#f7f3eb;
-  --ink:#171717;
-  --line:#e6dece
-}
-
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:var(--cream);
-  color:var(--ink)
-}
-
-.wrap{
-  max-width:900px;
-  margin:30px auto;
-  padding:20px
-}
-
-.head{
-  text-align:center;
-  margin-bottom:20px
-}
-
-.head img{
-  width:92px;
-  height:92px;
-  border-radius:18px;
-  object-fit:cover;
-  box-shadow:0 8px 24px rgba(0,0,0,.08)
-}
-
-.head h1{
-  margin:14px 0 6px;
-  font-size:2rem
-}
-
-.head p{
-  margin:0;
-  color:#555
-}
-
-.tabs{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-bottom:20px
-}
-
-.tab{
-  background:#fff;
-  border:1px solid var(--line);
-  padding:12px 18px;
-  border-radius:999px;
-  cursor:pointer;
-  font-weight:700;
-  color:var(--ink)
-}
-
-.tab.active{
-  background:var(--gold);
-  color:#fff;
-  border-color:var(--gold)
-}
-
-.card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:24px;
-  box-shadow:0 8px 24px rgba(0,0,0,.04)
-}
-
-.form{
-  display:none
-}
-
-.form.active{
-  display:block
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:16px
-}
-
-.grid>div{
-  display:flex;
-  flex-direction:column
-}
-
-.label{
-  font-weight:700;
-  margin-bottom:8px
-}
-
-.input,
-select,
-textarea{
-  width:100%;
-  padding:12px 14px;
-  border:1px solid #d8d1c4;
-  border-radius:10px;
-  font-size:1rem;
-  background:#fff
-}
-
-textarea{
-  min-height:120px;
-  resize:vertical
-}
-
-.resumeSection{
-  border:1px dashed #cbbf9a;
-  border-radius:12px;
-  padding:14px;
-  background:#faf7f1
-}
-
-.uploadHint{
-  margin-top:8px;
-  color:#666;
-  font-size:.9rem
-}
-
-.submitBtn{
-  margin-top:18px;
-  width:100%;
-  border:none;
-  border-radius:12px;
-  padding:15px 18px;
-  background:linear-gradient(135deg,#c9a55a,#b38b3d);
-  color:#fff;
-  font-weight:700;
-  font-size:1rem;
-  cursor:pointer
-}
-
-.submitBtn:disabled{
-  opacity:.7;
-  cursor:not-allowed
-}
-
-.back{
-  display:inline-block;
-  margin-top:18px;
-  color:#5f4a18;
-  font-weight:700
-}
-
-/* SUCCESS / ERROR MESSAGE */
-
-.message{
-  display:none;
-  position:fixed;
-  top:20px;
-  right:20px;
-  z-index:99999;
-  max-width:380px;
-  padding:15px 18px;
-  border-radius:12px;
-  color:#fff;
-  font-weight:700;
-  box-shadow:0 8px 25px rgba(0,0,0,.20);
-  line-height:1.4
-}
-
-.success{
-  background:#278a4b
-}
-
-.error{
-  background:#b83232
-}
-
-@media(max-width:640px){
-
-  .grid{
-    grid-template-columns:1fr
-  }
-
-  .wrap{
-    padding:12px
-  }
-
-  .head h1{
-    font-size:1.5rem
-  }
-
-  .message{
-    left:12px;
-    right:12px;
-    top:12px;
-    max-width:none
-  }
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | Shri Pawan Shakti Construction</title>
+  <meta name="description" content="Contact Shri Pawan Shakti Construction for highway, civil, road, electrical and building projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    body{margin:0;background:#f7f4ee;color:#1c1c1c;font-family:Inter,Arial,sans-serif}.wrap{max-width:980px;margin:32px auto;padding:0 16px}.top-box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 18px 40px rgba(17,45,69,.05)}.form-box{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;margin-top:24px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 18px 40px rgba(17,45,69,.05)}label{display:block;font-weight:700;margin-bottom:8px;color:var(--navy)}input,select,textarea{width:100%;padding:12px 14px;border:1px solid #dfe7ee;border-radius:10px;font:inherit;background:#fff}textarea{min-height:120px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:10px;background:var(--orange);color:#fff;border:0;font-weight:700;cursor:pointer}.contact-list{margin:0;padding:0;list-style:none;display:grid;gap:12px;color:var(--muted)}.contact-list li{padding:6px 0;border-bottom:1px solid var(--line)}.brand-line{display:flex;align-items:center;gap:12px}.brand-line img{width:46px;height:46px;border-radius:12px}.@media (max-width:780px){.form-box,.row{grid-template-columns:1fr}} 
+  </style>
 </head>
-
 <body>
-
-<!-- SUCCESS MESSAGE -->
-<div id="successMessage" class="message success">
-  आपका मैसेज भेज दिया गया है। हमारी कंपनी जल्द ही आपसे संपर्क करेगी।
-</div>
-
-<!-- ERROR MESSAGE -->
-<div id="errorMessage" class="message error">
-  मैसेज भेजने में समस्या हुई। कृपया दोबारा कोशिश करें।
-</div>
-
-
-<div class="wrap">
-
-  <div class="head">
-
-    <img
-      src="assets/IMG-20260927-WA7171.jpg"
-      alt="Company Logo"
-    >
-
-    <h1>Shri Pawan Shakti Construction</h1>
-
-    <p>
-      Construction work और job के लिए आवेदन करें
-    </p>
-
-  </div>
-
-
-  <!-- TABS -->
-
-  <div class="tabs">
-
-    <button
-      type="button"
-      class="tab active"
-      data-tab="work"
-    >
-      🏗️ Apply for Work
-    </button>
-
-    <button
-      type="button"
-      class="tab"
-      data-tab="job"
-    >
-      💼 Apply for Job
-    </button>
-
-  </div>
-
-
-  <div class="card">
-
-
-    <!-- ========================= -->
-    <!-- APPLY FOR WORK -->
-    <!-- ========================= -->
-
-    <form
-      class="form active"
-      data-form="work"
-      enctype="multipart/form-data"
-    >
-
-      <input
-        type="hidden"
-        name="_captcha"
-        value="false"
-      >
-
-      <input
-        type="hidden"
-        name="_template"
-        value="table"
-      >
-
-      <input
-        type="hidden"
-        name="_subject"
-        value="New Work Enquiry - Pawan Shakti"
-      >
-
-
-      <h2>Apply for Work</h2>
-
-
-      <div class="grid">
-
-        <div>
-
-          <label class="label">
-            पूरा नाम *
-          </label>
-
-          <input
-            name="Name"
-            required
-            class="input"
-          >
-
-        </div>
-
-
-        <div>
-
-          <label class="label">
-            मोबाइल नंबर *
-          </label>
-
-          <input
-            name="Phone"
-            type="tel"
-            required
-            class="input"
-          >
-
-        </div>
-
-
-        <div>
-
-          <label class="label">
-            Email
-          </label>
-
-          <input
-            name="email"
-            type="email"
-            class="input"
-          >
-
-        </div>
-
-
-        <div>
-
-          <label class="label">
-            काम का प्रकार *
-          </label>
-
-          <select
-            name="WorkType"
-            required
-            class="input"
-          >
-
-            <option value="">
-              -- चुनें --
-            </option>
-
-            <option>
-              Road Construction
-            </option>
-
-            <option>
-              Electrical Work
-            </option>
-
-            <option>
-              Building Construction
-            </option>
-
-            <option>
-              Civil Work
-            </option>
-
-            <option>
-              Government Tender
-            </option>
-
-            <option>
-              Other
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div style="grid-column:1/-1;">
-
-          <label class="label">
-            विवरण / बजट *
-          </label>
-
-          <textarea
-            name="Details"
-            required
-            class="input"
-          ></textarea>
-
-        </div>
-
-
-        <div style="grid-column:1/-1;">
-
-          <div class="resumeSection">
-
-            <label class="label">
-              📄 Company Documents (Optional)
-            </label>
-
-            <input
-              type="file"
-              name="attachment"
-              class="input"
-              accept=".pdf,.doc,.docx,.jpg,.png"
-            >
-
-            <div class="uploadHint">
-              PDF, DOC, JPG, PNG - Max 5MB
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand"><img src="assets/logo.svg" alt="logo" /><span>Shri Pawan Shakti Construction</span></a>
+      <nav class="main-nav">
+        <button class="mobile-toggle" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="company.html">Company</a>
+          <div class="dropdown">
+            <button class="drop-trigger" type="button">Services ▾</button>
+            <div class="dropdown-menu">
+              <a href="highway.html">Highway</a>
+              <a href="road.html">Road</a>
+              <a href="civil.html">Civil</a>
+              <a href="electrical.html">Electrical</a>
+              <a href="building.html">Building</a>
+              <a href="railway.html">Railway</a>
+              <a href="construction.html">Construction</a>
             </div>
-
           </div>
-
+          <a href="gallery.html">Projects</a>
+          <a href="apply.html" class="active">Contact</a>
+          <a href="admin.html" class="nav-cta">Login</a>
         </div>
+      </nav>
+    </div>
+  </header>
 
+  <main class="wrap">
+    <div class="top-box">
+      <p class="eyebrow accent" style="margin:0 0 10px;">Contact us</p>
+      <h1 style="margin:0; font-family:'Barlow Condensed',sans-serif; font-size:clamp(2.4rem,5vw,4rem); color:var(--navy); line-height:1;">Let's talk about your project.</h1>
+    </div>
 
-        <div style="grid-column:1/-1;">
-
-          <button
-            class="submitBtn"
-            type="submit"
-          >
-            📤 Apply for Work
-          </button>
-
-        </div>
-
+    <div class="form-box">
+      <div class="card">
+        <form>
+          <div class="row">
+            <div>
+              <label>Name</label>
+              <input type="text" placeholder="Your name" />
+            </div>
+            <div>
+              <label>Phone</label>
+              <input type="tel" placeholder="Your phone number" />
+            </div>
+          </div>
+          <div class="row" style="margin-top:16px;">
+            <div>
+              <label>Email</label>
+              <input type="email" placeholder="Your email" />
+            </div>
+            <div>
+              <label>Service</label>
+              <select>
+                <option>Highway</option>
+                <option>Road</option>
+                <option>Civil</option>
+                <option>Electrical</option>
+                <option>Building</option>
+                <option>Railway</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <label>Project Details</label>
+            <textarea placeholder="Tell us about your project"></textarea>
+          </div>
+          <div style="margin-top:20px;">
+            <button type="submit" class="btn">Send enquiry</button>
+          </div>
+        </form>
       </div>
 
-    </form>
-
-
-
-    <!-- ========================= -->
-    <!-- APPLY FOR JOB -->
-    <!-- ========================= -->
-
-    <form
-      class="form"
-      data-form="job"
-      enctype="multipart/form-data"
-    >
-
-      <input
-        type="hidden"
-        name="_captcha"
-        value="false"
-      >
-
-      <input
-        type="hidden"
-        name="_template"
-        value="table"
-      >
-
-      <input
-        type="hidden"
-        name="_subject"
-        value="New Job Application - Pawan Shakti"
-      >
-
-
-      <h2>Apply for Job</h2>
-
-
-      <div class="grid">
-
-
-        <div>
-
-          <label class="label">
-            पूरा नाम *
-          </label>
-
-          <input
-            name="Name"
-            required
-            class="input"
-          >
-
+      <div class="card">
+        <div class="brand-line">
+          <img src="assets/logo.svg" alt="logo" />
+          <strong style="color:var(--navy);font-size:1.05rem;">Shri Pawan Shakti Construction</strong>
         </div>
-
-
-        <div>
-
-          <label class="label">
-            मोबाइल नंबर *
-          </label>
-
-          <input
-            name="Phone"
-            type="tel"
-            required
-            class="input"
-          >
-
-        </div>
-
-
-        <div>
-
-          <label class="label">
-            Email *
-          </label>
-
-          <input
-            name="email"
-            type="email"
-            required
-            class="input"
-          >
-
-        </div>
-
-
-        <div>
-
-          <label class="label">
-            पद *
-          </label>
-
-          <select
-            name="Position"
-            required
-            class="input"
-          >
-
-            <option value="">
-              -- चुनें --
-            </option>
-
-            <option>
-              Site Engineer
-            </option>
-
-            <option>
-              Foreman
-            </option>
-
-            <option>
-              Skilled Labor
-            </option>
-
-            <option>
-              Driver
-            </option>
-
-            <option>
-              Other
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div>
-
-          <label class="label">
-            अनुभव *
-          </label>
-
-          <input
-            name="Experience"
-            type="number"
-            required
-            class="input"
-          >
-
-        </div>
-
-
-        <div>
-
-          <label class="label">
-            योग्यता *
-          </label>
-
-          <select
-            name="Qualification"
-            required
-            class="input"
-          >
-
-            <option value="">
-              -- चुनें --
-            </option>
-
-            <option>
-              10th Pass
-            </option>
-
-            <option>
-              12th Pass
-            </option>
-
-            <option>
-              Diploma
-            </option>
-
-            <option>
-              Graduate
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div style="grid-column:1/-1;">
-
-          <label class="label">
-            आपके बारे में *
-          </label>
-
-          <textarea
-            name="About"
-            required
-            class="input"
-          ></textarea>
-
-        </div>
-
-
-        <div style="grid-column:1/-1;">
-
-          <div class="resumeSection">
-
-            <label class="label">
-              📄 Resume/CV *
-            </label>
-
-            <input
-              type="file"
-              name="attachment"
-              class="input"
-              accept=".pdf,.doc,.docx"
-              required
-            >
-
-            <div class="uploadHint">
-              PDF / DOC - Max 5MB
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div style="grid-column:1/-1;">
-
-          <button
-            class="submitBtn"
-            type="submit"
-          >
-            📤 Apply for Job
-          </button>
-
-        </div>
-
+        <ul class="contact-list" style="margin-top:18px;">
+          <li>Phone: 8878128338</li>
+          <li>Email: shripawanshakticonstruction@gmail.com</li>
+          <li>Location: Dabra, Madhya Pradesh</li>
+          <li>Business: Highway, road, civil, electrical, building work</li>
+        </ul>
       </div>
-
-    </form>
-
-  </div>
-
-
-  <a
-    class="back"
-    href="index.html"
-  >
-    ← मुख्य वेबसाइट पर वापस जाएँ
-  </a>
-
-</div>
-
-
-
-<script>
-
-/* ========================= */
-/* TABS */
-/* ========================= */
-
-const tabs = document.querySelectorAll('.tab');
-
-const forms = document.querySelectorAll('.form');
-
-const successMessage =
-  document.getElementById('successMessage');
-
-const errorMessage =
-  document.getElementById('errorMessage');
-
-
-tabs.forEach(tab => {
-
-  tab.addEventListener('click', () => {
-
-    tabs.forEach(x =>
-      x.classList.remove('active')
-    );
-
-    forms.forEach(x =>
-      x.classList.remove('active')
-    );
-
-    tab.classList.add('active');
-
-    const selectedForm =
-      document.querySelector(
-        `.form[data-form="${tab.dataset.tab}"]`
-      );
-
-    selectedForm.classList.add('active');
-
-  });
-
-});
-
-
-
-/* ========================= */
-/* MESSAGE */
-/* ========================= */
-
-function showMessage(element){
-
-  element.style.display = 'block';
-
-  setTimeout(() => {
-
-    element.style.display = 'none';
-
-  }, 5000);
-
-}
-
-
-
-/* ========================= */
-/* FORM SUBMISSION */
-/* ========================= */
-
-forms.forEach(form => {
-
-  form.addEventListener('submit', async function(event){
-
-    /*
-      VERY IMPORTANT:
-      Browser का normal submit पूरी तरह रोक रहे हैं।
-      इसलिए FormSubmit का Thank You page नहीं खुलेगा।
-    */
-
-    event.preventDefault();
-
-    event.stopPropagation();
-
-
-    const button =
-      form.querySelector('.submitBtn');
-
-    const oldText =
-      button.innerHTML;
-
-
-    button.disabled = true;
-
-    button.innerHTML =
-      '⏳ भेजा जा रहा है...';
-
-
-    successMessage.style.display = 'none';
-
-    errorMessage.style.display = 'none';
-
-
-    try {
-
-      /*
-        Form data तैयार करना
-      */
-
-      const formData =
-        new FormData(form);
-
-
-      /*
-        FormSubmit AJAX endpoint
-
-        ध्यान:
-        यहाँ /ajax/ इस्तेमाल हो रहा है,
-        इसलिए normal FormSubmit page नहीं खुलेगा।
-      */
-
-      const response = await fetch(
-
-        'https://formsubmit.co/ajax/shripawanshakticonstruction@gmail.com',
-
-        {
-          method:'POST',
-
-          headers:{
-            'Accept':'application/json'
-          },
-
-          body:formData
-        }
-
-      );
-
-
-      /*
-        Server response पढ़ना
-      */
-
-      const result =
-        await response.json();
-
-
-      console.log(
-        'FormSubmit response:',
-        result
-      );
-
-
-      /*
-        SUCCESS
-      */
-
-      if(
-        response.ok &&
-        result.success !== false
-      ){
-
-        form.reset();
-
-        showMessage(
-          successMessage
-        );
-
-      }
-
-      /*
-        ERROR
-      */
-
-      else{
-
-        console.error(
-          'FormSubmit error:',
-          result
-        );
-
-        showMessage(
-          errorMessage
-        );
-
-      }
-
-    }
-
-
-    catch(error){
-
-      console.error(
-        'Submit error:',
-        error
-      );
-
-      showMessage(
-        errorMessage
-      );
-
-    }
-
-
-    finally{
-
-      button.disabled = false;
-
-      button.innerHTML =
-        oldText;
-
-    }
-
-  });
-
-});
-
-</script>
-
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand"><img src="assets/logo.svg" alt="logo" /><span>Shri Pawan Shakti Construction</span></a>
+        <p>Strong construction support for roads, civil work and infrastructure projects.</p>
+      </div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="company.html">Company</a></li><li><a href="gallery.html">Projects</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="highway.html">Highway</a></li><li><a href="road.html">Road</a></li><li><a href="civil.html">Civil</a></li><li><a href="electrical.html">Electrical</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>☎ 8878128338</li><li>✉ shripawanshakticonstruction@gmail.com</li></ul></div>
+    </div>
+    <div class="copyright">© 2026 Shri Pawan Shakti Construction. All rights reserved.</div>
+  </footer>
+
+  <script src="assets/main.js"></script>
 </body>
 </html>
