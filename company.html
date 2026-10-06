@@ -9,6 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .floating-actions { position: fixed; right: 18px; bottom: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 2000; }
+    .float-btn { display:flex; align-items:center; justify-content:center; width:58px; height:58px; border-radius:50%; box-shadow:0 12px 30px rgba(0,0,0,0.2); color:white; font-size:26px; text-decoration:none; }
+    .call-btn { background:#0a8f2d; }
+    .wa-btn { background:#25D366; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -32,8 +38,8 @@
             </div>
           </div>
           <a href="gallery.html">Projects</a>
+          <a href="privacy.html">Privacy</a>
           <a href="apply.html">Contact</a>
-          <a href="admin.html" class="nav-cta">Login</a>
         </div>
       </nav>
     </div>
@@ -95,12 +101,17 @@
         <a href="index.html" class="brand footer-brand"><img src="assets/IMG-20260927-WA7171.jpg" alt="logo" /><span>Shri Pawan Shakti Construction</span></a>
         <p>Reliable construction solutions for roads, buildings and infrastructure work.</p>
       </div>
-      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="gallery.html">Projects</a></li><li><a href="apply.html">Contact</a></li></ul></div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="gallery.html">Projects</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="apply.html">Contact</a></li></ul></div>
       <div><h4>Services</h4><ul><li><a href="highway.html">Highway</a></li><li><a href="road.html">Road</a></li><li><a href="civil.html">Civil</a></li><li><a href="electrical.html">Electrical</a></li></ul></div>
       <div><h4>Contact</h4><ul><li>☎ 8878128338</li><li>✉ shripawanshakticonstruction@gmail.com</li><li>Dabra, MP</li></ul></div>
     </div>
     <div class="copyright">© 2026 Shri Pawan Shakti Construction. All rights reserved.</div>
   </footer>
+
+  <div class="floating-actions">
+    <a class="float-btn call-btn" href="tel:8878128338" aria-label="Call now">📞</a>
+    <a class="float-btn wa-btn" href="https://wa.me/918878128338" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+  </div>
 
   <script src="assets/main.js"></script>
 </body>

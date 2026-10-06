@@ -4,12 +4,119 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shri Pawan Shakti Construction | Infrastructure & Building Experts</title>
-  <meta name="description" content="Shri Pawan Shakti Construction delivers road, highway, civil, electrical, railway and building construction solutions with reliable project execution." />
+  <meta name="description" content="Shri Pawan Shakti Construction delivers road, highway, civil, electrical, railway and building construction solutions with quality work and trusted execution." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .floating-actions {
+      position: fixed;
+      right: 18px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 2000;
+    }
+    .float-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      color: white;
+      font-size: 26px;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+    .float-btn:hover { transform: scale(1.08); }
+    .call-btn { background: #0a8f2d; }
+    .wa-btn { background: #25D366; }
+    .service-photo-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .service-photo-card {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 18px 35px rgba(12,35,55,0.08);
+      border: 1px solid var(--line);
+    }
+    .service-photo-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .service-photo-card .caption {
+      padding: 14px 16px;
+      font-weight: 600;
+      color: var(--navy);
+      background: #fff;
+    }
+    .promo-panel {
+      background: linear-gradient(135deg, #f8f3ea, #edf4fa);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 18px 40px rgba(17,45,69,0.06);
+    }
+    .promo-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 26px;
+      align-items: center;
+    }
+    .promo-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .promo-badges span {
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .promo-image {
+      min-height: 280px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(17,45,69,0.15), rgba(17,45,69,0.1)),
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    }
+    .home-cta-section {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .contact-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(17,45,69,0.05);
+      padding: 24px;
+    }
+    .contact-box h3 { margin: 0 0 12px; color: var(--navy); }
+    .contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; color: var(--muted); }
+    .contact-list li { display: flex; align-items: center; gap: 10px; }
+    .contact-list strong { color: var(--navy); }
+    @media (max-width: 900px) {
+      .promo-grid, .home-cta-section, .service-photo-strip { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
   <div class="topbar">
@@ -47,6 +154,7 @@
             </div>
           </div>
           <a href="gallery.html">Projects</a>
+          <a href="privacy.html">Privacy</a>
           <a href="apply.html">Contact</a>
         </div>
       </nav>
@@ -59,7 +167,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Engineering • Execution • Excellence</p>
           <h1>Building strong foundations for a better tomorrow.</h1>
-          <p class="tagline">We deliver reliable infrastructure, civil works, and construction solutions with quality, on-time execution, and durable outcomes.</p>
+          <p class="tagline">We deliver reliable infrastructure, civil works, and construction solutions with quality execution, strong supervision, and complete commitment to every project.</p>
           <div class="hero-actions">
             <a href="apply.html" class="btn btn-primary">Get a Quote</a>
             <a href="gallery.html" class="btn btn-secondary">Our Projects</a>
@@ -83,14 +191,36 @@
         <div class="intro-copy">
           <p class="eyebrow accent">Who we are</p>
           <h2>Dependable construction solutions built for progress.</h2>
-          <p>Shri Pawan Shakti Construction is a professional infrastructure and construction company dedicated to delivering safe, efficient and durable execution across highway, road, civil, electrical, railway and building projects.</p>
-          <p>From planning to handover, our focus remains on quality workmanship, efficient project management, and long-term value for every client.</p>
+          <p>Shri Pawan Shakti Construction is a professional infrastructure and construction company focused on road, highway, railway, civil, building, and electrical work. We work with honesty, discipline, and a practical approach to execution.</p>
+          <p>From planning to finishing, our team ensures quality, safety, and practical results for each project. We believe strong work culture and clear commitments create long-term trust.</p>
           <ul class="check-list">
             <li>End-to-end execution support</li>
             <li>Skilled workforce and project supervision</li>
             <li>On-time delivery and budget discipline</li>
             <li>Client-first communication and transparency</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="promo-panel">
+          <div class="promo-grid">
+            <div>
+              <p class="eyebrow accent">Our strength</p>
+              <h2 style="margin:0; font-family:'Barlow Condensed',sans-serif; font-size:clamp(2.2rem,4vw,3.6rem); line-height:1; color:var(--navy);">Trusted work. Strong execution. Safe delivery.</h2>
+              <div class="promo-badges">
+                <span>Road Work</span>
+                <span>Highway Project</span>
+                <span>Railway Support</span>
+                <span>Building Works</span>
+                <span>Civil Work</span>
+                <span>Electrical Projects</span>
+              </div>
+            </div>
+            <div class="promo-image"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -106,38 +236,62 @@
           <article class="service-card">
             <div class="icon">🛣️</div>
             <h3>Highway</h3>
-            <p>Design and construction of major highways and corridors.</p>
+            <p>Design and construction of major highways and corridors with safety-focused execution.</p>
           </article>
 
           <article class="service-card">
             <div class="icon">🚧</div>
             <h3>Road</h3>
-            <p>Rural and urban road construction, widening, and maintenance works.</p>
+            <p>Rural and urban road construction, widening, and maintenance work for long-term durability.</p>
           </article>
 
           <article class="service-card">
             <div class="icon">🏗️</div>
             <h3>Civil</h3>
-            <p>Comprehensive civil engineering, earthwork, and site development.</p>
+            <p>Comprehensive civil engineering, earthwork, and site development services.</p>
           </article>
 
           <article class="service-card">
             <div class="icon">⚡</div>
             <h3>Electrical</h3>
-            <p>Power distribution, lighting, and electrical infrastructure works.</p>
+            <p>Power distribution, lighting, and electrical infrastructure work to support project needs.</p>
           </article>
 
           <article class="service-card">
             <div class="icon">🏢</div>
             <h3>Building</h3>
-            <p>Residential, commercial and institutional building works.</p>
+            <p>Residential, commercial, and institutional building works with clear site management.</p>
           </article>
 
           <article class="service-card">
             <div class="icon">🚆</div>
             <h3>Railway</h3>
-            <p>Track side works and supporting railway civil infrastructure.</p>
+            <p>Trackside support and railway civil infrastructure work for reliable execution.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow accent">Project snapshots</p>
+          <h2>Work that speaks for itself.</h2>
+        </div>
+
+        <div class="service-photo-strip">
+          <div class="service-photo-card">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80" alt="Road construction" />
+            <div class="caption">Road Development</div>
+          </div>
+          <div class="service-photo-card">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80" alt="Highway work" />
+            <div class="caption">Highway Work</div>
+          </div>
+          <div class="service-photo-card">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80" alt="Railway work" />
+            <div class="caption">Railway Support</div>
+          </div>
         </div>
       </div>
     </section>
@@ -153,22 +307,22 @@
           <div class="process-box">
             <span>01</span>
             <h3>Planning</h3>
-            <p>Clear project understanding and scope-based planning from the start.</p>
+            <p>Clear project understanding and detailed planning from the start.</p>
           </div>
           <div class="process-box">
             <span>02</span>
             <h3>Execution</h3>
-            <p>Strong site supervision, skilled team coordination, and disciplined workflow.</p>
+            <p>Strong site supervision and skilled coordination for smooth work flow.</p>
           </div>
           <div class="process-box">
             <span>03</span>
             <h3>Quality</h3>
-            <p>Quality checks and material-focused supervision to maintain long-term value.</p>
+            <p>Material-focused quality checks and structured workmanship standards.</p>
           </div>
           <div class="process-box">
             <span>04</span>
             <h3>Handover</h3>
-            <p>Complete project delivery with attention to safety, finish and client satisfaction.</p>
+            <p>Final project delivery with safety, finish, and client satisfaction in focus.</p>
           </div>
         </div>
       </div>
@@ -196,7 +350,7 @@
           <div class="project-image project-two"></div>
           <div class="project-body">
             <h3>Road Infrastructure</h3>
-            <p>Earthwork, base preparation and surfacing to keep roads durable and serviceable.</p>
+            <p>Earthwork, base preparation, and surfacing to keep roads durable and serviceable.</p>
           </div>
         </article>
 
@@ -204,9 +358,35 @@
           <div class="project-image project-three"></div>
           <div class="project-body">
             <h3>Building & Civil Works</h3>
-            <p>Commercial and structural execution focused on safety, strength and finishing quality.</p>
+            <p>Commercial and structural work focused on safety, durability, and finishing quality.</p>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container home-cta-section">
+        <div class="promo-panel" style="margin:0;">
+          <p class="eyebrow accent">Need a construction partner?</p>
+          <h2 style="margin:0; font-family:'Barlow Condensed',sans-serif; font-size:clamp(2.4rem,4vw,3.4rem); color:var(--navy); line-height:1;">Let us help with your next project.</h2>
+          <div class="promo-badges">
+            <span>Fast Response</span>
+            <span>Site Ready</span>
+            <span>Skilled Team</span>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <h3>Contact us</h3>
+          <ul class="contact-list">
+            <li><span>📞</span> <strong>Phone:</strong> 8878128338</li>
+            <li><span>✉️</span> <strong>Email:</strong> shripawanshakticonstruction@gmail.com</li>
+            <li><span>📍</span> <strong>Location:</strong> Dabra, Madhya Pradesh</li>
+          </ul>
+          <div style="margin-top:18px;">
+            <a href="apply.html" class="btn btn-primary" style="width:100%;">Send Enquiry</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -236,6 +416,7 @@
         <ul>
           <li><a href="company.html">Company</a></li>
           <li><a href="gallery.html">Projects</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="apply.html">Contact</a></li>
         </ul>
       </div>
@@ -255,12 +436,17 @@
         <ul>
           <li>☎ 8878128338</li>
           <li>✉ shripawanshakticonstruction@gmail.com</li>
-          <li>Dabra, Madhya Pradesh</li>
+          <li>📍 Dabra, Madhya Pradesh</li>
         </ul>
       </div>
     </div>
     <div class="copyright">© 2026 Shri Pawan Shakti Construction. All rights reserved.</div>
   </footer>
+
+  <div class="floating-actions">
+    <a class="float-btn call-btn" href="tel:8878128338" aria-label="Call now">📞</a>
+    <a class="float-btn wa-btn" href="https://wa.me/918878128338" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+  </div>
 
   <script src="assets/main.js"></script>
 </body>
