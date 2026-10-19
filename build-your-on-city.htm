@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Your Own City | Shri Pawan Shakti Construction</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f6fa;color:#172235}
+header{background:#fff;padding:18px;border-bottom:4px solid #f6b900;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+header strong{font-size:17px}
+a{color:#172235;text-decoration:none;font-weight:bold}
+main{max-width:1100px;margin:auto;padding:20px}
+h1{margin-bottom:8px}
+p{color:#586579}
+.app{display:grid;grid-template-columns:250px 1fr;gap:16px}
+.panel,.game{background:white;border:1px solid #ddd;border-radius:15px;padding:16px}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+button{padding:11px;border:1px solid #ddd;border-radius:9px;background:#f6f8fb;font-weight:bold;cursor:pointer}
+button.active,button.primary{background:#f6b900;border-color:#e5aa00}
+label{display:block;font-weight:bold;margin-top:18px}
+input{width:100%;margin-top:8px}
+input[type=color]{height:42px}
+#scene{height:440px;position:relative;overflow:hidden;border-radius:12px;background:linear-gradient(#bce5ff 0 48%,#91c982 48%);perspective:700px}
+.sun{position:absolute;right:30px;top:25px;background:#ffdc70;width:48px;height:48px;border-radius:50%}
+#city{position:absolute;width:76%;height:60%;left:12%;top:23%;transform:rotateX(48deg) rotateZ(-35deg);transform-style:preserve-3d;background-color:#acd69a;background-image:linear-gradient(#ffffff66 2px,transparent 2px),linear-gradient(90deg,#ffffff66 2px,transparent 2px);background-size:10% 10%;border:3px solid #719d62}
+.road{position:absolute;background:#69727d;border:2px solid #505965;height:14%;width:100%;top:43%}
+.road:after{content:"";display:block;margin-top:5%;border-top:2px dashed #ffe69a}
+.item{position:absolute;cursor:pointer;transform:translateZ(10px);animation:appear .35s ease-out}
+.building{width:13%;height:28%;background:var(--paint,#e9b45d);border:2px solid #886c43;box-shadow:inset -9px 0 #0002}
+.building:before{content:"";position:absolute;top:-15%;left:-2px;width:100%;height:15%;background:#f6d69b;border:2px solid #886c43}
+.building:after{content:"";position:absolute;inset:15%;background:repeating-linear-gradient(90deg,#c9efff 0 25%,transparent 25% 50%),repeating-linear-gradient(#c9efff 0 25%,transparent 25% 50%)}
+.tower{height:45%;width:12%}
+.tree{font-size:30px;filter:drop-shadow(3px 4px #0002)}
+.car{font-size:27px}
+.bridge{width:30%;height:9%;background:#aab2bd;border:3px solid #68717d}
+@keyframes appear{from{opacity:0;transform:translateY(-15px)}to{opacity:1}}
+.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.note{font-size:13px}
+@media(max-width:700px){.app{grid-template-columns:1fr}#scene{height:360px}#city{width:78%;left:10%}}
+</style>
+</head>
+
+<body>
+<header>
+<strong>🏗️ SHRI PAWAN SHAKTI CONSTRUCTION</strong>
+<a href="index.html">← Back to Home</a>
+</header>
+
+<main>
+<h1>🏙️ Build Your Own City</h1>
+<p>Build your dream city! Add buildings, roads, bridges, trees and vehicles.</p>
+
+<div class="app">
+<section class="panel">
+<h3>Choose Construction</h3>
+
+<div class="tools">
+<button class="active" data-tool="building">🏢 Building</button>
+<button data-tool="road">🛣️ Road</button>
+<button data-tool="bridge">🌉 Bridge</button>
+<button data-tool="tree">🌳 Tree</button>
+<button data-tool="car">🚗 Vehicle</button>
+<button data-tool="tower">🏙️ Tower</button>
+</div>
+
+<label>Building Colour</label>
+<input type="color" id="paint" value="#e9b45d">
+
+<label>Building Height</label>
+<input type="range" id="height" min="15" max="50" value="28">
+
+<div class="buttons">
+<button class="primary" id="animate">▶ Build Animation</button>
+<button id="random">✨ Quick City</button>
+<button id="reset">↻ Reset City</button>
+<button id="save">💾 Save Design</button>
+</div>
+
+<p class="note">Tap an empty place on the board to build. Tap an object to remove it.</p>
+</section>
+
+<section class="game">
+<h3>Your Construction Site</h3>
+<p id="count">0 items placed</p>
+<div id="scene">
+<div class="sun"></div>
+<div id="city">
+<div class="road"></div>
+</div>
+</div>
+<p class="note">Design your own mini city. This is a visual demo, not an engineering tool.</p>
+</section>
+</div>
+</main>
+
+<script>
+const city=document.getElementById("city");
+const paint=document.getElementById("paint");
+const height=document.getElementById("height");
+let selected="building";
+
+document.querySelectorAll("[data-tool]").forEach(button=>{
+ button.addEventListener("click",()=>{
+  selected=button.dataset.tool;
+  document.querySelectorAll("[data-tool]").forEach(b=>b.classList.remove("active"));
+  button.classList.add("active");
+ });
+});
+
+function updateCount(){
+ document.getElementById("count").textContent=
+ city.querySelectorAll(".item").length+" items placed";
+}
+
+function addItem(type,x,y){
+ const el=document.createElement("div");
+ el.className="item "+type;
+ el.style.left=x+"%";
+ el.style.top=y+"%";
+ el.title="Tap to remove";
+ if(type==="building"||type==="tower"){
+  el.style.setProperty("--paint",paint.value);
+  el.style.height=height.value+"%";
+ }
+ if(type==="tree")el.textContent="🌳";
+ if(type==="car")el.textContent="🚗";
+ if(type==="bridge")el.textContent="";
+ el.addEventListener("click",e=>{
+  e.stopPropagation();
+  el.remove();
+  updateCount();
+ });
+ city.appendChild(el);
+ updateCount();
+}
+
+city.addEventListener("click",e=>{
+ if(e.target!==city)return;
+ const r=city.getBoundingClientRect();
+ const x=Math.max(2,Math.min(85,(e.clientX-r.left)/r.width*100));
+ const y=Math.max(2,Math.min(80,(e.clientY-r.top)/r.height*100));
+
+ if(selected==="road"){
+  const road=document.createElement("div");
+  road.className="item road";
+  road.style.left="0";
+  road.style.top=y+"%";
+  road.style.width="100%";
+  road.style.height="12%";
+  road.addEventListener("click",e=>{
+   e.stopPropagation();road.remove();updateCount();
+  });
+  city.appendChild(road);
+  updateCount();
+ }else{
+  addItem(selected,x,y);
+ }
+});
+
+height.addEventListener("input",()=>{
+ city.querySelectorAll(".building,.tower").forEach(el=>{
+  el.style.height=height.value+"%";
+ });
+});
+
+document.getElementById("reset").onclick=()=>{
+ city.querySelectorAll(".item").forEach(el=>el.remove());
+ updateCount();
+};
+
+document.getElementById("random").onclick=()=>{
+ city.querySelectorAll(".item").forEach(el=>el.remove());
+ addItem("building",12,10);
+ addItem("tower",65,8);
+ addItem("tree",20,65);
+ addItem("tree",75,65);
+ addItem("bridge",48,55);
+ addItem("car",40,72);
+};
+
+document.getElementById("animate").onclick=()=>{
+ city.querySelectorAll(".item").forEach((el,i)=>{
+  el.style.animation="none";
+  void el.offsetWidth;
+  el.style.animation=`appear .5s ease-out ${i*.12}s both`;
+ });
+};
+
+document.getElementById("save").onclick=()=>{
+ const design={
+  color:paint.value,
+  height:height.value,
+  items:[...city.querySelectorAll(".item")].map(el=>({
+   type:el.classList[1],
+   left:el.style.left,
+   top:el.style.top,
+   height:el.style.height
+  }))
+ };
+ const blob=new Blob([JSON.stringify(design,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+ a.href=url;
+ a.download="my-city-design.json";
+ a.click();
+ URL.revokeObjectURL(url);
+};
+</script>
+</body>
+</html>
