@@ -1,121 +1,516 @@
-<!doctype html>
-<html lang="en">
+
+<!DOCTYPE html>
+<html lang="hi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact | Shri Pawan Shakti Construction</title>
-  <meta name="description" content="Contact Shri Pawan Shakti Construction for highway, civil, road, electrical and building projects." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10233f">
+  <meta name="description" content="Shri Pawan Shakti Construction में नौकरी, रिज़्यूमे, कंस्ट्रक्शन कॉन्ट्रैक्ट और टेंडर के लिए आवेदन करें।">
+  <title>Apply Online | Shri Pawan Shakti Construction</title>
+
   <style>
-    body{margin:0;background:#f7f4ee;color:#1c1c1c;font-family:Inter,Arial,sans-serif}.wrap{max-width:980px;margin:32px auto;padding:0 16px}.top-box{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px 26px;box-shadow:0 18px 40px rgba(17,45,69,.05)}.form-box{display:grid;grid-template-columns:1.3fr .7fr;gap:22px;margin-top:22px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 18px 40px rgba(17,45,69,.05)}.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.label,form label{display:block;margin-bottom:8px;font-weight:600;color:var(--navy)}input,textarea,select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#f9f9f7;font:inherit;box-sizing:border-box}textarea{min-height:140px;resize:vertical}.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#111;border:none;border-radius:999px;padding:14px 22px;font-weight:700;cursor:pointer;text-decoration:none}.brand-line{display:flex;align-items:center;gap:12px}.brand-line img{width:50px;height:50px;border-radius:12px;object-fit:cover}.contact-list{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px;color:var(--muted)}@media (max-width:740px){.form-box,.row{grid-template-columns:1fr}.top-box{padding:20px}}
-    .floating-actions { position: fixed; right: 18px; bottom: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 2000; }
-    .float-btn { display:flex; align-items:center; justify-content:center; width:58px; height:58px; border-radius:50%; box-shadow:0 12px 30px rgba(0,0,0,0.2); color:white; font-size:26px; text-decoration:none; }
-    .call-btn { background:#0a8f2d; }
-    .wa-btn { background:#25D366; }
-    .lang-switcher { position:relative; }
-    .lang-trigger { background:#fff; border:1px solid var(--line); color:var(--navy); border-radius:10px; padding:8px 12px; cursor:pointer; font-weight:700; }
-    .lang-menu { position:absolute; right:0; top:45px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:8px; min-width:180px; display:none; box-shadow:0 18px 40px rgba(17,45,69,0.08); z-index:50; }
-    .lang-switcher.open .lang-menu { display:block; }
-    .lang-option { width:100%; text-align:left; border:none; background:transparent; color:var(--navy); padding:8px 10px; border-radius:8px; cursor:pointer; }
-    .lang-option:hover { background:var(--light); }
+    :root {
+      --navy: #10233f;
+      --blue: #174b85;
+      --gold: #f5b82e;
+      --light: #f3f6fb;
+      --text: #202b3c;
+      --muted: #667085;
+      --border: #dce3ed;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      background: #0b1930;
+      color: #fff;
+      padding: 9px 16px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 16px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      background: white;
+      border-radius: 10px;
+    }
+
+    .brand-name {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .brand-subtitle {
+      color: #d9e4f5;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    .hero {
+      background: linear-gradient(120deg, #10233f, #1b528c);
+      color: white;
+      text-align: center;
+      padding: 55px 18px 70px;
+    }
+
+    .hero .tag {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 30px;
+      padding: 6px 14px;
+      font-size: 13px;
+    }
+
+    .hero h1 {
+      margin: 16px 0 10px;
+      font-size: clamp(28px, 5vw, 42px);
+      line-height: 1.2;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #e1eafa;
+    }
+
+    main {
+      width: min(960px, 92%);
+      margin: -28px auto 45px;
+      position: relative;
+    }
+
+    .form-card {
+      background: var(--white);
+      border: 1px solid #e4e9f1;
+      border-radius: 18px;
+      padding: clamp(20px, 5vw, 38px);
+      box-shadow: 0 12px 35px rgba(16,35,63,.10);
+    }
+
+    .section-heading {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-heading h2 {
+      margin: 0 0 5px;
+      font-size: 24px;
+      color: var(--navy);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 19px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #26354b;
+    }
+
+    .required { color: #c62828; }
+
+    input, select, textarea {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      padding: 13px 14px;
+      border: 1px solid #ccd5e2;
+      border-radius: 9px;
+      background: #fff;
+      color: #202b3c;
+      font: inherit;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(23,75,133,.12);
+    }
+
+    input[type="file"] { padding: 10px; }
+
+    textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: -2px;
+    }
+
+    .notice {
+      margin: 24px 0 18px;
+      background: #f7f9fc;
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      color: #526074;
+    }
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .consent input {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      margin-top: 3px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 22px;
+      padding: 15px 20px;
+      background: var(--gold);
+      border: 0;
+      border-radius: 10px;
+      color: #18243a;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover { background: #e9a915; }
+
+    .contact-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .contact-item {
+      text-align: center;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 10px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .contact-item a, .contact-item span {
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #0b1930;
+      color: #dce5f2;
+      text-align: center;
+      padding: 25px 16px;
+      font-size: 13px;
+    }
+
+    footer p { margin: 5px; }
+
+    @media (max-width: 640px) {
+      header { padding: 14px 4%; }
+      .brand-name { font-size: 15px; }
+      .brand img { width: 48px; height: 48px; }
+      nav { gap: 12px; }
+      nav a { font-size: 13px; }
+      .hero { padding: 42px 16px 55px; }
+      .grid { grid-template-columns: 1fr; }
+      .full { grid-column: auto; }
+      .contact-strip { grid-template-columns: 1fr; }
+      .form-card { border-radius: 14px; }
+    }
   </style>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand"><img src="assets/IMG-20260927-WA7171.jpg" alt="logo" /><span>Shri Pawan Shakti Construction</span></a>
-      <nav class="main-nav">
-        <button class="mobile-toggle" aria-label="Toggle menu">☰</button>
-        <div class="nav-links">
-          <a href="index.html" data-i18n="nav_home">Home</a>
-          <a href="company.html" class="active" data-i18n="nav_company">Company</a>
-          <div class="dropdown">
-            <button class="drop-trigger" type="button" data-i18n="nav_services">Services ▾</button>
-            <div class="dropdown-menu">
-              <a href="highway.html">Highway</a>
-              <a href="road.html">Road</a>
-              <a href="civil.html">Civil</a>
-              <a href="electrical.html">Electrical</a>
-              <a href="building.html">Building</a>
-              <a href="railway.html">Railway</a>
-              <a href="construction.html">Construction</a>
-            </div>
-          </div>
-          <a href="gallery.html" data-i18n="nav_projects">Projects</a>
-          <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
-          <a href="apply.html" class="active" data-i18n="nav_contact">Contact</a>
 
-          <div class="lang-switcher">
-            <button type="button" class="lang-trigger" aria-label="Select language">🌐 <span data-i18n="lang_label">Language</span> ▾</button>
-            <div class="lang-menu">
-              <button type="button" class="lang-option" data-lang="en">English</button>
-              <button type="button" class="lang-option" data-lang="hi">हिन्दी</button>
-              <button type="button" class="lang-option" data-lang="ta">தமிழ்</button>
-              <button type="button" class="lang-option" data-lang="te">తెలుగు</button>
-              <button type="button" class="lang-option" data-lang="kn">ಕನ್ನಡ</button>
-              <button type="button" class="lang-option" data-lang="ml">മലയാളം</button>
-              <button type="button" class="lang-option" data-lang="mr">मराठी</button>
-              <button type="button" class="lang-option" data-lang="gu">ગુજરાતી</button>
-              <button type="button" class="lang-option" data-lang="bn">বাংলা</button>
-              <button type="button" class="lang-option" data-lang="pa">ਪੰਜਾਬੀ</button>
-              <button type="button" class="lang-option" data-lang="or">ଓଡ଼ିଆ</button>
-              <button type="button" class="lang-option" data-lang="ru">Русский</button>
-              <button type="button" class="lang-option" data-lang="fr">Français</button>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
+<body>
+  <div class="topbar">
+    Highway • Road • Civil • Electrical • Building • Railway Works
+  </div>
+
+  <header>
+    <a class="brand" href="index.html" aria-label="Home">
+      <img
+        src="assets/IMG-20260927-WA7171.jpg"
+        alt="Shri Pawan Shakti Construction Logo"
+        onerror="this.style.display='none'"
+      >
+      <div>
+        <div class="brand-name">Shri Pawan Shakti Construction</div>
+        <div class="brand-subtitle">Quality Work • Trusted Service</div>
+      </div>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="apply.html" aria-current="page">Apply Online</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <main class="wrap">
-    <div class="top-box">
-      <p class="eyebrow accent" style="margin:0 0 10px;">Contact us</p>
-      <h1 style="margin:0; font-family:'Barlow Condensed',sans-serif; font-size:clamp(2.4rem,5vw,4rem); color:var(--navy); line-height:1;">Let's talk about your project.</h1>
-    </div>
+  <section class="hero">
+    <span class="tag">APPLICATION & ENQUIRY PORTAL</span>
+    <h1>Apply Online</h1>
+    <p>
+      नौकरी, अपना रिज़्यूमे, कंस्ट्रक्शन कॉन्ट्रैक्ट या टेंडर से संबंधित
+      जानकारी भेजने के लिए नीचे दिया गया फॉर्म भरें।
+    </p>
+  </section>
 
-    <div class="form-box">
-      <div class="card">
-        <form>
-          <div class="row">
-            <div><label>Name</label><input type="text" placeholder="Your name" /></div>
-            <div><label>Phone</label><input type="tel" placeholder="Your phone number" /></div>
-          </div>
-          <div class="row" style="margin-top:16px;">
-            <div><label>Email</label><input type="email" placeholder="Your email" /></div>
-            <div><label>Service</label><select><option>Highway</option><option>Road</option><option>Civil</option><option>Electrical</option><option>Building</option><option>Railway</option></select></div>
-          </div>
-          <div style="margin-top:16px;"><label>Project Details</label><textarea placeholder="Tell us about your project"></textarea></div>
-          <div style="margin-top:20px;"><button type="submit" class="btn" data-i18n="cta_send_enquiry">Send Enquiry</button></div>
-        </form>
+  <main>
+    <section class="form-card">
+      <div class="section-heading">
+        <h2>Application Form</h2>
+        <p><span class="required">*</span> वाले सभी फ़ील्ड भरना जरूरी है।</p>
       </div>
 
-      <div class="card">
-        <div class="brand-line"><img src="assets/IMG-20260927-WA7171.jpg" alt="logo" /><strong style="color:var(--navy);font-size:1.05rem;">Shri Pawan Shakti Construction</strong></div>
-        <ul class="contact-list" style="margin-top:18px;">
-          <li>Phone: 8878128338</li>
-          <li>Email: shripawanshakticonstruction@gmail.com</li>
-          <li>Location: Dabra, Madhya Pradesh</li>
-          <li>Business: Highway, road, civil, electrical, building work</li>
-        </ul>
+      <!-- FormSubmit email delivery endpoint -->
+      <form
+        action="https://formsubmit.co/shripawanshakticonstruction@gmail.com"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <input type="hidden" name="_subject"
+               value="New Application - Shri Pawan Shakti Construction">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+
+        <div class="grid">
+          <div class="field">
+            <label for="fullName">पूरा नाम / Full Name <span class="required">*</span></label>
+            <input id="fullName" name="Full Name" type="text"
+                   autocomplete="name" maxlength="100" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">मोबाइल नंबर / Phone <span class="required">*</span></label>
+            <input id="phone" name="Phone" type="tel"
+                   autocomplete="tel" inputmode="tel"
+                   pattern="[+0-9() -]{10,18}" maxlength="18" required>
+          </div>
+
+          <div class="field">
+            <label for="email">ईमेल / Email <span class="required">*</span></label>
+            <input id="email" name="Email" type="email"
+                   autocomplete="email" maxlength="150" required>
+          </div>
+
+          <div class="field">
+            <label for="city">शहर / जिला</label>
+            <input id="city" name="City" type="text"
+                   autocomplete="address-level2" maxlength="100"
+                   placeholder="जैसे: Dabra, Gwalior">
+          </div>
+
+          <div class="field full">
+            <label for="applicationType">आवेदन का प्रकार / Application Type <span class="required">*</span></label>
+            <select id="applicationType" name="Application Type" required>
+              <option value="">-- प्रकार चुनें --</option>
+              <option value="Job / Employment">Job / Employment</option>
+              <option value="Construction Contract">Construction Contract</option>
+              <option value="Government Tender">Government Tender</option>
+              <option value="Subcontract Work">Subcontract Work</option>
+              <option value="General Enquiry">General Enquiry</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="experience">अनुभव / Experience</label>
+            <input id="experience" name="Experience" type="text"
+                   maxlength="100" placeholder="जैसे: 2 साल">
+          </div>
+
+          <div class="field">
+            <label for="speciality">काम की विशेषज्ञता / Skill</label>
+            <select id="speciality" name="Speciality">
+              <option value="">-- चुनें --</option>
+              <option>Highway / Road Work</option>
+              <option>Civil Engineering</option>
+              <option>Electrical Work</option>
+              <option>Building Construction</option>
+              <option>Railway Work</option>
+              <option>Machine Operator / Driver</option>
+              <option>Labour / Supervisor</option>
+              <option>Accounts / Office Work</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="resume">रिज़्यूमे / दस्तावेज़ अपलोड करें</label>
+            <input
+              id="resume"
+              name="attachment"
+              type="file"
+              accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+            >
+            <span class="hint">
+              PDF, DOC, DOCX, JPG या PNG फ़ाइल चुनें। छोटी फ़ाइल अपलोड करना बेहतर है।
+              संवेदनशील दस्तावेज़ अनावश्यक रूप से न भेजें।
+            </span>
+          </div>
+
+          <div class="field full">
+            <label for="message">अतिरिक्त जानकारी / Message</label>
+            <textarea id="message" name="Message" maxlength="3000"
+              placeholder="अपने अनुभव, काम या प्रोजेक्ट के बारे में लिखें..."></textarea>
+          </div>
+        </div>
+
+        <div class="notice">
+          <strong>ध्यान दें:</strong> आवेदन भेजने पर आपकी दी हुई जानकारी कंपनी के
+          ईमेल पर भेजने का प्रयास होगा। ईमेल सेवा की एक्टिवेशन, फ़ाइल सीमा और
+          नेटवर्क के कारण डिलीवरी प्रभावित हो सकती है।
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" name="Consent"
+                 value="Applicant agrees to submit the provided information"
+                 required>
+          <span>मैं पुष्टि करता/करती हूँ कि दी गई जानकारी सही है और इसे आवेदन के उद्देश्य से भेजने की सहमति देता/देती हूँ। <span class="required">*</span></span>
+        </label>
+
+        <button class="submit-btn" type="submit">
+          आवेदन भेजें / Submit Application
+        </button>
+      </form>
+    </section>
+
+    <section class="contact-strip" aria-label="Contact information">
+      <div class="contact-item">
+        <strong>📞 Phone</strong>
+        <a href="tel:8878128338">8878128338</a>
       </div>
-    </div>
+      <div class="contact-item">
+        <strong>✉️ Email</strong>
+        <a href="mailto:shripawanshakticonstruction@gmail.com">
+          ईमेल करें
+        </a>
+      </div>
+      <div class="contact-item">
+        <strong>📍 Location</strong>
+        <span>Dabra, Madhya Pradesh</span>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div><a href="index.html" class="brand footer-brand"><img src="assets/IMG-20260927-WA7171.jpg" alt="logo" /><span>Shri Pawan Shakti Construction</span></a><p>Strong construction support for roads, civil work and infrastructure projects.</p></div>
-      <div><h4 data-i18n="footer_quicklinks">Quick Links</h4><ul><li><a href="index.html" data-i18n="nav_home">Home</a></li><li><a href="company.html" data-i18n="nav_company">Company</a></li><li><a href="gallery.html" data-i18n="nav_projects">Projects</a></li><li><a href="privacy.html" data-i18n="nav_privacy">Privacy</a></li></ul></div>
-      <div><h4 data-i18n="footer_services">Services</h4><ul><li><a href="highway.html">Highway</a></li><li><a href="road.html">Road</a></li><li><a href="civil.html">Civil</a></li><li><a href="electrical.html">Electrical</a></li></ul></div>
-      <div><h4 data-i18n="footer_contact">Contact</h4><ul><li>☎ 8878128338</li><li>✉ shripawanshakticonstruction@gmail.com</li></ul></div>
-    </div>
-    <div class="copyright">© 2026 Shri Pawan Shakti Construction. All rights reserved.</div>
+  <footer>
+    <p><strong>Shri Pawan Shakti Construction</strong></p>
+    <p>Highway, Road, Civil, Electrical, Building & Railway Works</p>
+    <p>© <span id="year"></span> Shri Pawan Shakti Construction. All rights reserved.</p>
   </footer>
 
-  <div class="floating-actions"><a class="float-btn call-btn" href="tel:8878128338" aria-label="Call now">📞</a><a class="float-btn wa-btn" href="https://wa.me/918878128338" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a></div>
-  <script src="assets/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("resume").addEventListener("change", function () {
+      const file = this.files && this.files[0];
+      if (!file) return;
+
+      const allowedTypes = [
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "image/jpeg",
+        "image/png"
+      ];
+
+      const allowedExtensions = /\.(pdf|doc|docx|jpg|jpeg|png)$/i;
+
+      if (!allowedExtensions.test(file.name) ||
+          (file.type && !allowedTypes.includes(file.type))) {
+        alert("कृपया PDF, DOC, DOCX, JPG या PNG फ़ाइल चुनें।");
+        this.value = "";
+        return;
+      }
+
+      const maxSize = 5 * 1024 * 1024;
+      if (file.size > maxSize) {
+        alert("फ़ाइल 5 MB से छोटी रखें और फिर से चुनें।");
+        this.value = "";
+      }
+    });
+  </script>
 </body>
 </html>
