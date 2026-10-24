@@ -1,3 +1,65 @@
+// Keep navigation independent of language preferences and browser storage.
+(function () {
+  const nav = document.querySelector('.main-nav');
+  if (!nav) return;
+  const toggle = nav.querySelector('.mobile-toggle');
+  const links = nav.querySelector('.nav-links');
+  const dropdown = nav.querySelector('.dropdown');
+  const services = nav.querySelector('.drop-trigger');
+  const language = nav.querySelector('.lang-switcher');
+  const languageTrigger = nav.querySelector('.lang-trigger');
+
+  function setOpen(container, trigger, open) {
+    if (container && trigger) {
+      container.classList.toggle('open', open);
+      trigger.setAttribute('aria-expanded', String(open));
+    }
+  }
+  function closePanels() {
+    setOpen(dropdown, services, false);
+    setOpen(language, languageTrigger, false);
+  }
+  function closeNavigation() {
+    closePanels();
+    setOpen(links, toggle, false);
+  }
+  toggle?.addEventListener('click', () => {
+    const open = !links.classList.contains('open');
+    closePanels();
+    setOpen(links, toggle, open);
+  });
+  services?.addEventListener('click', () => {
+    const open = !dropdown.classList.contains('open');
+    closePanels();
+    setOpen(dropdown, services, open);
+  });
+  languageTrigger?.addEventListener('click', () => {
+    const open = !language.classList.contains('open');
+    closePanels();
+    setOpen(language, languageTrigger, open);
+  });
+  nav.addEventListener('click', (event) => {
+    if (event.target.closest('a')) closeNavigation();
+  });
+  document.addEventListener('click', (event) => {
+    if (!nav.contains(event.target)) closeNavigation();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    if (language?.classList.contains('open')) {
+      setOpen(language, languageTrigger, false);
+      languageTrigger.focus();
+    } else if (dropdown?.classList.contains('open')) {
+      setOpen(dropdown, services, false);
+      services.focus();
+    } else if (links?.classList.contains('open')) {
+      closeNavigation();
+      toggle.focus();
+    }
+  });
+  window.matchMedia('(max-width: 1180px)').addEventListener('change', closeNavigation);
+})();
+
 const translations = {
   en: {
     topbar_text: 'Trusted infrastructure partner in Dabra, Madhya Pradesh',
@@ -38,7 +100,7 @@ const translations = {
     cta_pre: "Let's build together", cta_heading_main: 'Need a trusted construction partner?', cta_consultation: 'Send Enquiry',
     footer_intro: 'Modern infrastructure and construction services focused on quality, reliability and long-term value.',
     footer_quicklinks: 'Quick Links', footer_services: 'Services', footer_contact: 'Contact',
-    nav_company_2: 'Company', nav_projects_2: 'Projects', nav_privacy_2: 'Privacy Policy', nav_contact_2: 'Contact'
+    nav_terms: 'Terms & Conditions', nav_company_2: 'Company', nav_projects_2: 'Projects', nav_privacy_2: 'Privacy Policy', nav_contact_2: 'Contact'
   },
   hi: {
     topbar_text: 'दब्राह, मध्य प्रदेश में भरोसेमंद इंफ्रास्ट्रक्चर पार्टनर',
@@ -79,7 +141,7 @@ const translations = {
     cta_pre: 'चलो साथ में बनाते हैं', cta_heading_main: 'एक भरोसेमंद निर्माण भागीदार चाहिए?', cta_consultation: 'अनुरोध भेजें',
     footer_intro: 'गुणवत्ता, भरोसा और लंबे समय के मूल्य पर आधारित आधुनिक इंफ्रास्ट्रक्चर और निर्माण सेवाएँ।',
     footer_quicklinks: 'त्वरित लिंक', footer_services: 'सेवाएँ', footer_contact: 'संपर्क',
-    nav_company_2: 'कंपनी', nav_projects_2: 'प्रोजेक्ट्स', nav_privacy_2: 'गोपनीयता नीति', nav_contact_2: 'संपर्क'
+    nav_terms: 'नियम और शर्तें', nav_company_2: 'कंपनी', nav_projects_2: 'प्रोजेक्ट्स', nav_privacy_2: 'गोपनीयता नीति', nav_contact_2: 'संपर्क'
   },
   as: { nav_home: 'হোম', nav_company: 'কোম্পানি', nav_services: 'সেবা', nav_projects: 'প্ৰকল্প', nav_privacy: 'গোপনীয়তা', nav_contact: 'যোগাযোগ', lang_label: 'ভাষা', cta_send_enquiry: 'অনুসন্ধান প্ৰেৰণ কৰক', cta_our_projects: 'আমাৰ প্ৰকল্প' },
   bn: { nav_home: 'হোম', nav_company: 'কোম্পানি', nav_services: 'সেবা', nav_projects: 'প্রকল্প', nav_privacy: 'গোপনীয়তা', nav_contact: 'যোগাযোগ', lang_label: 'ভাষা', cta_send_enquiry: 'কোয়েরি পাঠান', cta_our_projects: 'আমাদের প্রকল্প' },
@@ -102,7 +164,9 @@ const translations = {
 };
 
 (function () {
-  const savedLang = localStorage.getItem('spc_language') || 'en';
+  let savedLang = 'en';
+  try { savedLang = localStorage.getItem('spc_language') || 'en'; } catch { /* Storage may be disabled. */ }
+  if (!Object.hasOwn(translations, savedLang)) savedLang = 'en';
   const langSwitcher = document.querySelector('.lang-switcher');
   const langTrigger = document.querySelector('.lang-trigger');
   const langOptions = document.querySelectorAll('.lang-option');
@@ -119,14 +183,7 @@ const translations = {
       btn.style.fontWeight = active ? '800' : '500';
       btn.style.background = active ? '#f5f7fa' : 'transparent';
     });
-    localStorage.setItem('spc_language', lang);
-  }
-
-  if (langSwitcher && langTrigger) {
-    langTrigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      langSwitcher.classList.toggle('open');
-    });
+    try { localStorage.setItem('spc_language', lang); } catch { /* Translation still works without storage. */ }
   }
 
   langOptions.forEach((btn) => {
@@ -134,11 +191,8 @@ const translations = {
       const lang = btn.getAttribute('data-lang') || 'en';
       applyLanguage(lang);
       if (langSwitcher) langSwitcher.classList.remove('open');
+      langTrigger?.setAttribute('aria-expanded', 'false');
     });
-  });
-
-  document.addEventListener('click', () => {
-    if (langSwitcher) langSwitcher.classList.remove('open');
   });
 
   applyLanguage(savedLang);
