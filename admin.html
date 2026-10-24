@@ -1,52 +1,49 @@
-<!doctype html>
-<html lang="hi">
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Admin Dashboard — Shri Pawan Shakti Construction</title>
-  <style>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Admin Dashboard — Shri Pawan Shakti Construction</title>
+<style>
     body{margin:0;background:#f6f2ea;font-family:Arial;color:#171717}.wrap{max-width:1100px;margin:auto;padding:25px 16px}.card{background:#fff;border:1px solid #e5dece;border-radius:14px;padding:22px;box-shadow:0 5px 16px rgba(0,0,0,.04)}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.topbar h1{font-size:1.8rem;margin:0}.btn-logout{padding:10px 15px;border:0;border-radius:8px;background:#1d1d1d;color:#fff;font-weight:700;cursor:pointer}.hidden{display:none}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.grid div{display:flex;flex-direction:column;gap:8px}label{font-weight:600}.input,input,button{font:inherit}.input,input{padding:10px 12px;border:1px solid #d2c8b5;border-radius:8px;background:#fff}.msg{margin-top:10px;font-size:.95rem;color:#0b6b3c}.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.photo{border:1px solid #ece2d2;border-radius:10px;padding:10px;background:#faf7f1}.photo img{width:100%;height:150px;object-fit:cover;border-radius:8px;background:#f0ebdf;display:block}.photo input{margin-top:8px;width:100%}.gold{background:#c9a55a;color:#fff;border:0;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer}.small{line-height:1.6}.@media (max-width:600px){.topbar{flex-direction:column;align-items:flex-start;gap:12px}.topbar h1{font-size:1.3rem}}
   </style>
-</head>
+<link href="assets/language.css?v=20261024-final" rel="stylesheet"/><script defer="" src="assets/i18n.js?v=20261024-final"></script></head>
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <h1>🔐 Shri Pawan Shakti Construction — Admin Dashboard</h1>
-      <button class="btn-logout" onclick="logout()">Logout</button>
-    </div>
-
-    <div id="login" class="card">
-      <h2>🔑 Admin Login</h2>
-      <p>Enter the admin password:</p>
-      <input type="password" id="password" placeholder="Enter password" onkeypress="if(event.key==='Enter') loginAdmin()">
-      <br><br>
-      <button onclick="loginAdmin()">Login</button>
-      <div id="loginMsg" class="msg"></div>
-    </div>
-
-    <div id="dash" class="hidden">
-      <div class="card">
-        <h2>Company Information</h2>
-        <div class="grid">
-          <div><label>Proprietor Name</label><input id="proprietor"></div>
-          <div><label>Official Gmail</label><input id="email" disabled></div>
-          <div><label>Contact Number 1</label><input id="phone1"></div>
-          <div><label>Contact Number 2 / Alternate</label><input id="phone2"></div>
-          <div><label>GST Number</label><input id="gst"></div>
-          <div><label>Udyam Number</label><input id="udyam" placeholder="UDYAM-MP-XX-XXXXXXX"></div>
-        </div>
-        <br>
-        <button class="gold" onclick="saveCompany()">💾 Save Company Information</button>
-        <div id="companyMsg" class="msg"></div>
-      </div>
-
-      <div class="card"><h2>Road Development — 8 Photos</h2><div class="photos" id="roadPhotos"></div></div>
-      <div class="card"><h2>Pole Installation — 8 Photos</h2><div class="photos" id="polePhotos"></div></div>
-      <div class="card"><p class="small">Certificate PDF upload can be added as a separate document field after you provide the final certificate files/requirements. This dashboard currently manages the company profile and project photos.</p></div>
-    </div>
-  </div>
-
-  <script src="admin-config.js"></script>
-  <script>
+<div class="wrap">
+<div class="topbar">
+<h1>🔐 Shri Pawan Shakti Construction — Admin Dashboard</h1>
+<button class="btn-logout" onclick="logout()">Logout</button>
+<div class="site-language"><label for="site-language-select">Language</label><select aria-label="Select website language" id="site-language-select"><option lang="en" value="en">English</option><option lang="hi" value="hi">हिन्दी</option><option lang="as" value="as">অসমীয়া</option><option lang="bn" value="bn">বাংলা</option><option lang="gu" value="gu">ગુજરાતી</option><option lang="kn" value="kn">ಕನ್ನಡ</option><option lang="ml" value="ml">മലയാളം</option><option lang="mr" value="mr">मराठी</option><option lang="or" value="or">ଓଡ଼ିଆ</option><option lang="pa" value="pa">ਪੰਜਾਬੀ</option><option lang="ta" value="ta">தமிழ்</option><option lang="te" value="te">తెలుగు</option><option lang="ur" value="ur">اردو</option><option lang="kok" value="kok">कोंकणी</option><option lang="mni" value="mni">ꯃꯤꯇꯩꯂꯣꯟ</option><option lang="es" value="es">Español</option><option lang="fr" value="fr">Français</option><option lang="de" value="de">Deutsch</option><option lang="ar" value="ar">العربية</option><option lang="ru" value="ru">Русский</option></select></div></div>
+<div class="card" id="login">
+<h2>🔑 Admin Login</h2>
+<p>Enter the admin password:</p>
+<input id="password" onkeypress="if(event.key==='Enter') loginAdmin()" placeholder="Enter password" type="password"/>
+<br/><br/>
+<button onclick="loginAdmin()">Login</button>
+<div class="msg" id="loginMsg"></div>
+</div>
+<div class="hidden" id="dash">
+<div class="card">
+<h2>Company Information</h2>
+<div class="grid">
+<div><label>Proprietor Name</label><input id="proprietor"/></div>
+<div><label>Official Gmail</label><input disabled="" id="email"/></div>
+<div><label>Contact Number 1</label><input id="phone1"/></div>
+<div><label>Contact Number 2 / Alternate</label><input id="phone2"/></div>
+<div><label>GST Number</label><input id="gst"/></div>
+<div><label>Udyam Number</label><input id="udyam" placeholder="UDYAM-MP-XX-XXXXXXX"/></div>
+</div>
+<br/>
+<button class="gold" onclick="saveCompany()">💾 Save Company Information</button>
+<div class="msg" id="companyMsg"></div>
+</div>
+<div class="card"><h2>Road Development — 8 Photos</h2><div class="photos" id="roadPhotos"></div></div>
+<div class="card"><h2>Pole Installation — 8 Photos</h2><div class="photos" id="polePhotos"></div></div>
+<div class="card"><p class="small">Certificate PDF upload can be added as a separate document field after you provide the final certificate files/requirements. This dashboard currently manages the company profile and project photos.</p></div>
+</div>
+</div>
+<script src="admin-config.js"></script>
+<script>
     let token = sessionStorage.getItem('spc_admin_token') || '';
     const adminEmail = (window.SPC_ADMIN && window.SPC_ADMIN.email) || 'shripawanshakticonstruction@gmail.com';
     const adminPassword = (window.SPC_ADMIN && window.SPC_ADMIN.passCode) || '';
@@ -82,7 +79,7 @@
       const password = $('password').value.trim();
 
       if (!password) {
-        msg('loginMsg', 'Password enter करो');
+        msg('loginMsg', 'Please enter a password.');
         return;
       }
 
@@ -145,7 +142,7 @@
 
       if (!file) return;
       if (file.size > 6 * 1024 * 1024) {
-        alert('Photo 6 MB से छोटी रखें');
+        alert(window.SiteLanguage.t('Choose a photo smaller than 6 MB.'));
         return;
       }
 

@@ -1,15 +1,16 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Company | Shri Pawan Shakti Construction</title>
-  <meta name="description" content="Learn about Shri Pawan Shakti Construction and our commitment to safe, timely, and quality construction work." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Company | Shri Pawan Shakti Construction</title>
+<meta content="Learn about Shri Pawan Shakti Construction and our commitment to safe, timely, and quality construction work." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/style.css?v=20261024-final" rel="stylesheet"/>
+<style>
     .floating-actions { position: fixed; right: 18px; bottom: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 2000; }
     .float-btn { display:flex; align-items:center; justify-content:center; width:58px; height:58px; border-radius:50%; box-shadow:0 12px 30px rgba(0,0,0,0.2); color:white; font-size:26px; text-decoration:none; }
     .call-btn { background:#0a8f2d; }
@@ -21,136 +22,112 @@
     .lang-option { width:100%; text-align:left; border:none; background:transparent; color:var(--navy); padding:8px 10px; border-radius:8px; cursor:pointer; }
     .lang-option:hover { background:var(--light); }
   </style>
-</head>
+<link href="assets/language.css?v=20261024-final" rel="stylesheet"/><script defer="" src="assets/i18n.js?v=20261024-final"></script></head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand"><img src="assets/IMG-20260927-WA7171.jpg" alt="logo" /><span>Shri Pawan Shakti Construction</span></a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <button class="mobile-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-navigation">☰</button>
-        <div class="nav-links" id="main-navigation">
-          <a href="index.html" data-i18n="nav_home">Home</a>
-          <a href="company.html" class="active" aria-current="page" data-i18n="nav_company">Company</a>
-          <div class="dropdown">
-            <button class="drop-trigger" type="button" aria-expanded="false" aria-controls="services-navigation" data-i18n="nav_services">Services ▾</button>
-            <div class="dropdown-menu" id="services-navigation">
-              <a href="highway.html">Highway</a>
-              <a href="road.html">Road</a>
-              <a href="civil.html">Civil</a>
-              <a href="electrical.html">Electrical</a>
-              <a href="building.html">Building</a>
-              <a href="railway.html">Railway</a>
-              <a href="construction.html">Construction</a>
-            </div>
-          </div>
-          <a href="gallery.html" data-i18n="nav_projects">Projects</a>
-          <a href="privacy.html" data-i18n="nav_privacy">Privacy</a>
-          <a href="apply.html" data-i18n="nav_contact">Contact</a>
+<header class="site-header">
+<div class="container nav-wrap">
+<a class="brand" href="index.html"><img alt="logo" src="assets/IMG-20260927-WA7171.jpg"/><span>Shri Pawan Shakti Construction</span></a>
+<nav aria-label="Main navigation" class="main-nav">
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle menu" class="mobile-toggle" type="button">☰</button>
+<div class="nav-links" id="main-navigation">
+<a href="index.html">Home</a>
+<a aria-current="page" class="active" href="company.html">Company</a>
+<div class="dropdown">
+<button aria-controls="services-navigation" aria-expanded="false" class="drop-trigger" type="button">Services</button>
+<div class="dropdown-menu" id="services-navigation">
+<a href="highway.html">Highway</a>
+<a href="road.html">Road</a>
+<a href="civil.html">Civil</a>
+<a href="electrical.html">Electrical</a>
+<a href="building.html">Building</a>
+<a href="railway.html">Railway</a>
+<a href="construction.html">Construction</a>
+</div>
+</div>
+<a href="gallery.html">Projects</a>
+<a href="privacy.html">Privacy</a>
+<a href="apply.html">Contact</a>
 
-          <div class="lang-switcher">
-            <button type="button" class="lang-trigger" aria-expanded="false" aria-controls="language-options" aria-label="Select language">🌐 <span data-i18n="lang_label">Language</span> ▾</button>
-            <div class="lang-menu" id="language-options">
-              <button type="button" class="lang-option" data-lang="en">English</button>
-              <button type="button" class="lang-option" data-lang="hi">हिन्दी</button>
-              <button type="button" class="lang-option" data-lang="ta">தமிழ்</button>
-              <button type="button" class="lang-option" data-lang="te">తెలుగు</button>
-              <button type="button" class="lang-option" data-lang="kn">ಕನ್ನಡ</button>
-              <button type="button" class="lang-option" data-lang="ml">മലയാളം</button>
-              <button type="button" class="lang-option" data-lang="mr">मराठी</button>
-              <button type="button" class="lang-option" data-lang="gu">ગુજરાતી</button>
-              <button type="button" class="lang-option" data-lang="bn">বাংলা</button>
-              <button type="button" class="lang-option" data-lang="pa">ਪੰਜਾਬੀ</button>
-              <button type="button" class="lang-option" data-lang="or">ଓଡ଼ିଆ</button>
-              <button type="button" class="lang-option" data-lang="ru">Русский</button>
-              <button type="button" class="lang-option" data-lang="fr">Français</button>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="section section-light">
-      <div class="container" style="max-width:980px;">
-        <p class="eyebrow accent">Company</p>
-        <h1 style="margin:0 0 16px; font-family:'Barlow Condensed',sans-serif; font-size:clamp(2.5rem,5vw,4rem); color:var(--navy); line-height:1;">Our work is simple: strong, safe and on time.</h1>
-        <p style="margin:0 0 12px; color:var(--muted); font-size:1.02rem;">Shri Pawan Shakti Construction is a construction company working in highway, road, civil, electrical and building work. We focus on quality and dependable execution.</p>
-        <p style="margin:0; color:var(--muted); font-size:1.02rem;">We work with clients, contractors and local teams to complete projects with care. Our aim is to give dependable service and long-term value through honest workmanship.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container" style="max-width:980px;">
-        <div class="process-grid">
-          <div class="process-box"><span>01</span><h3>Mission</h3><p>To deliver durable construction work with honesty, quality and discipline.</p></div>
-          <div class="process-box"><span>02</span><h3>Vision</h3><p>To become a trusted name in infrastructure and civil execution.</p></div>
-          <div class="process-box"><span>03</span><h3>Values</h3><p>Safety, trust, teamwork and quality are the foundations of our work.</p></div>
-          <div class="process-box"><span>04</span><h3>Approach</h3><p>We plan carefully, execute strongly and finish with attention to details.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light">
-      <div class="container" style="max-width:980px;">
-        <div class="cta-inner" style="background:#fff; padding:28px; border-radius:18px; box-shadow:0 18px 40px rgba(17,45,69,0.05);">
-          <div>
-            <p class="eyebrow accent">Need a partner?</p>
-            <h2 style="margin:0; color:var(--navy); font-family:'Barlow Condensed',sans-serif; font-size:clamp(2rem,4vw,3rem);">Let us know about your project.</h2>
-          </div>
-          <a href="apply.html" class="btn btn-primary" data-i18n="cta_send_enquiry">Send Enquiry</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a href="index.html" class="brand footer-brand"><img src="assets/IMG-20260927-WA7171.jpg" alt="Shri Pawan Shakti Construction logo" /><span>Shri Pawan Shakti Construction</span></a>
-        <p data-i18n="footer_intro">Modern infrastructure and construction services focused on quality, reliability and long-term value.</p>
-      </div>
-      <div>
-        <h4 data-i18n="footer_quicklinks">Quick Links</h4>
-        <ul>
-          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-          <li><a href="company.html" data-i18n="nav_company">Company</a></li>
-          <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
-          <li><a href="gallery.html" data-i18n="nav_projects">Projects</a></li>
-          <li><a href="privacy.html" data-i18n="nav_privacy_2">Privacy Policy</a></li>
-          <li><a href="terms.html" data-i18n="nav_terms">Terms & Conditions</a></li>
-          <li><a href="apply.html" data-i18n="nav_contact">Contact / Apply Online</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 data-i18n="footer_services">Services</h4>
-        <ul>
-          <li><a href="highway.html">Highway</a></li>
-          <li><a href="road.html">Road</a></li>
-          <li><a href="civil.html">Civil</a></li>
-          <li><a href="electrical.html">Electrical</a></li>
-          <li><a href="building.html">Building</a></li>
-          <li><a href="railway.html">Railway</a></li>
-          <li><a href="construction.html">Construction</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 data-i18n="footer_contact">Contact</h4>
-        <ul>
-          <li><a href="tel:8878128338">☎ 8878128338</a></li>
-          <li><a href="mailto:shripawanshakticonstruction@gmail.com">✉ shripawanshakticonstruction@gmail.com</a></li>
-          <li>Dabra, Madhya Pradesh</li>
-        </ul>
-      </div>
-    </div>
-    <div class="container copyright">© 2026 Shri Pawan Shakti Construction. All rights reserved.</div>
-  </footer>
-
-  <div class="floating-actions">
-    <a class="float-btn call-btn" href="tel:8878128338" aria-label="Call now">📞</a>
-    <a class="float-btn wa-btn" href="https://wa.me/918878128338" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
-  </div>
-
-  <script src="assets/main.js"></script>
+<div class="site-language"><label for="site-language-select">Language</label><select aria-label="Select website language" id="site-language-select"><option lang="en" value="en">English</option><option lang="hi" value="hi">हिन्दी</option><option lang="as" value="as">অসমীয়া</option><option lang="bn" value="bn">বাংলা</option><option lang="gu" value="gu">ગુજરાતી</option><option lang="kn" value="kn">ಕನ್ನಡ</option><option lang="ml" value="ml">മലയാളം</option><option lang="mr" value="mr">मराठी</option><option lang="or" value="or">ଓଡ଼ିଆ</option><option lang="pa" value="pa">ਪੰਜਾਬੀ</option><option lang="ta" value="ta">தமிழ்</option><option lang="te" value="te">తెలుగు</option><option lang="ur" value="ur">اردو</option><option lang="kok" value="kok">कोंकणी</option><option lang="mni" value="mni">ꯃꯤꯇꯩꯂꯣꯟ</option><option lang="es" value="es">Español</option><option lang="fr" value="fr">Français</option><option lang="de" value="de">Deutsch</option><option lang="ar" value="ar">العربية</option><option lang="ru" value="ru">Русский</option></select></div></div>
+</nav>
+</div>
+</header>
+<main>
+<section class="section section-light">
+<div class="container" style="max-width:980px;">
+<p class="eyebrow accent">Company</p>
+<h1 style="margin:0 0 16px; font-family:'Barlow Condensed',sans-serif; font-size:clamp(2.5rem,5vw,4rem); color:var(--navy); line-height:1;">Our work is simple: strong, safe and on time.</h1>
+<p style="margin:0 0 12px; color:var(--muted); font-size:1.02rem;">Shri Pawan Shakti Construction is a construction company working in highway, road, civil, electrical and building work. We focus on quality and dependable execution.</p>
+<p style="margin:0; color:var(--muted); font-size:1.02rem;">We work with clients, contractors and local teams to complete projects with care. Our aim is to give dependable service and long-term value through honest workmanship.</p>
+</div>
+</section>
+<section class="section">
+<div class="container" style="max-width:980px;">
+<div class="process-grid">
+<div class="process-box"><span>01</span><h3>Mission</h3><p>To deliver durable construction work with honesty, quality and discipline.</p></div>
+<div class="process-box"><span>02</span><h3>Vision</h3><p>To become a trusted name in infrastructure and civil execution.</p></div>
+<div class="process-box"><span>03</span><h3>Values</h3><p>Safety, trust, teamwork and quality are the foundations of our work.</p></div>
+<div class="process-box"><span>04</span><h3>Approach</h3><p>We plan carefully, execute strongly and finish with attention to details.</p></div>
+</div>
+</div>
+</section>
+<section class="section section-light">
+<div class="container" style="max-width:980px;">
+<div class="cta-inner" style="background:#fff; padding:28px; border-radius:18px; box-shadow:0 18px 40px rgba(17,45,69,0.05);">
+<div>
+<p class="eyebrow accent">Need a partner?</p>
+<h2 style="margin:0; color:var(--navy); font-family:'Barlow Condensed',sans-serif; font-size:clamp(2rem,4vw,3rem);">Let us know about your project.</h2>
+</div>
+<a class="btn btn-primary" href="apply.html">Send Enquiry</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<a class="brand footer-brand" href="index.html"><img alt="Shri Pawan Shakti Construction logo" src="assets/IMG-20260927-WA7171.jpg"/><span>Shri Pawan Shakti Construction</span></a>
+<p>Modern infrastructure and construction services focused on quality, reliability and long-term value.</p>
+</div>
+<div>
+<h4>Quick Links</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="company.html">Company</a></li>
+<li><a href="index.html#services">Services</a></li>
+<li><a href="gallery.html">Projects</a></li>
+<li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms &amp; Conditions</a></li>
+<li><a href="apply.html">Contact / Apply Online</a></li>
+</ul>
+</div>
+<div>
+<h4>Services</h4>
+<ul>
+<li><a href="highway.html">Highway</a></li>
+<li><a href="road.html">Road</a></li>
+<li><a href="civil.html">Civil</a></li>
+<li><a href="electrical.html">Electrical</a></li>
+<li><a href="building.html">Building</a></li>
+<li><a href="railway.html">Railway</a></li>
+<li><a href="construction.html">Construction</a></li>
+</ul>
+</div>
+<div>
+<h4>Contact</h4>
+<ul>
+<li><a href="tel:8878128338">☎ 8878128338</a></li>
+<li><a href="mailto:shripawanshakticonstruction@gmail.com">✉ shripawanshakticonstruction@gmail.com</a></li>
+<li>Dabra, Madhya Pradesh</li>
+</ul>
+</div>
+</div>
+<div class="container copyright">© 2026 Shri Pawan Shakti Construction. All rights reserved.</div>
+</footer>
+<div class="floating-actions">
+<a aria-label="Call now" class="float-btn call-btn" href="tel:8878128338">📞</a>
+<a aria-label="WhatsApp" class="float-btn wa-btn" href="https://wa.me/918878128338" rel="noopener" target="_blank">💬</a>
+</div>
+<script src="assets/main.js?v=20261024-final"></script>
 </body>
 </html>
