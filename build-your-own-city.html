@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Build Your Own City | Shri Pawan Shakti Construction</title>
 
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Build Your Own City | Shri Pawan Shakti Construction</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#f3f6fa;color:#172235}
@@ -41,22 +41,18 @@ input[type=color]{height:42px}
 .note{font-size:13px}
 @media(max-width:700px){.app{grid-template-columns:1fr}#scene{height:360px}#city{width:78%;left:10%}}
 </style>
-</head>
-
+<link href="assets/language.css?v=20261024-final" rel="stylesheet"/><script defer="" src="assets/i18n.js?v=20261024-final"></script></head>
 <body>
 <header>
 <strong>🏗️ SHRI PAWAN SHAKTI CONSTRUCTION</strong>
 <a href="index.html">← Back to Home</a>
-</header>
-
+<div class="site-language"><label for="site-language-select">Language</label><select aria-label="Select website language" id="site-language-select"><option lang="en" value="en">English</option><option lang="hi" value="hi">हिन्दी</option><option lang="as" value="as">অসমীয়া</option><option lang="bn" value="bn">বাংলা</option><option lang="gu" value="gu">ગુજરાતી</option><option lang="kn" value="kn">ಕನ್ನಡ</option><option lang="ml" value="ml">മലയാളം</option><option lang="mr" value="mr">मराठी</option><option lang="or" value="or">ଓଡ଼ିଆ</option><option lang="pa" value="pa">ਪੰਜਾਬੀ</option><option lang="ta" value="ta">தமிழ்</option><option lang="te" value="te">తెలుగు</option><option lang="ur" value="ur">اردو</option><option lang="kok" value="kok">कोंकणी</option><option lang="mni" value="mni">ꯃꯤꯇꯩꯂꯣꯟ</option><option lang="es" value="es">Español</option><option lang="fr" value="fr">Français</option><option lang="de" value="de">Deutsch</option><option lang="ar" value="ar">العربية</option><option lang="ru" value="ru">Русский</option></select></div></header>
 <main>
 <h1>🏙️ Build Your Own City</h1>
 <p>Build your dream city! Add buildings, roads, bridges, trees and vehicles.</p>
-
 <div class="app">
 <section class="panel">
 <h3>Choose Construction</h3>
-
 <div class="tools">
 <button class="active" data-tool="building">🏢 Building</button>
 <button data-tool="road">🛣️ Road</button>
@@ -65,23 +61,18 @@ input[type=color]{height:42px}
 <button data-tool="car">🚗 Vehicle</button>
 <button data-tool="tower">🏙️ Tower</button>
 </div>
-
 <label>Building Colour</label>
-<input type="color" id="paint" value="#e9b45d">
-
+<input id="paint" type="color" value="#e9b45d"/>
 <label>Building Height</label>
-<input type="range" id="height" min="15" max="50" value="28">
-
+<input id="height" max="50" min="15" type="range" value="28"/>
 <div class="buttons">
 <button class="primary" id="animate">▶ Build Animation</button>
 <button id="random">✨ Quick City</button>
 <button id="reset">↻ Reset City</button>
 <button id="save">💾 Save Design</button>
 </div>
-
 <p class="note">Tap an empty place on the board to build. Tap an object to remove it.</p>
 </section>
-
 <section class="game">
 <h3>Your Construction Site</h3>
 <p id="count">0 items placed</p>
@@ -95,7 +86,6 @@ input[type=color]{height:42px}
 </section>
 </div>
 </main>
-
 <script>
 const city=document.getElementById("city");
 const paint=document.getElementById("paint");
@@ -112,8 +102,10 @@ document.querySelectorAll("[data-tool]").forEach(button=>{
 
 function updateCount(){
  document.getElementById("count").textContent=
- city.querySelectorAll(".item").length+" items placed";
+ window.SiteLanguage.t("{count} items placed", {count: city.querySelectorAll(".item").length});
 }
+
+document.addEventListener("site:languagechange", updateCount);
 
 function addItem(type,x,y){
  const el=document.createElement("div");
