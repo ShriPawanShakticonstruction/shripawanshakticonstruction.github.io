@@ -10,7 +10,8 @@
   const normalise = value => value.replace(/\s+/g, ' ').trim();
   const replaceContactNumber = value => value
     .replace(/918878128338/g, '919183665900')
-    .replace(/88781\s*28838/g, '9183665900');
+    .replace(/88781\s*28838/g, '9183665900')
+    .replace(/88781\s*28338/g, '9183665900');
   const excluded = 'script, style, noscript, .site-language, [translate="no"], [contenteditable="true"]';
   let current = 'en';
   let dictionary = {};
