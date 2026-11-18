@@ -8,6 +8,9 @@
   const originals = new WeakMap();
   const attributes = new WeakMap();
   const normalise = value => value.replace(/\s+/g, ' ').trim();
+  const replaceContactNumber = value => value
+    .replace(/918878128338/g, '919183665900')
+    .replace(/88781\s*28838/g, '9183665900');
   const excluded = 'script, style, noscript, .site-language, [translate="no"], [contenteditable="true"]';
   let current = 'en';
   let dictionary = {};
@@ -18,7 +21,7 @@
 
   function translate(source, parameters = {}) {
     const result = Object.hasOwn(dictionary, source) ? dictionary[source] : source;
-    return result.replace(/\{(\w+)\}/g, (match, name) => Object.hasOwn(parameters, name) ? String(parameters[name]) : match);
+    return replaceContactNumber(result.replace(/\{(\w+)\}/g, (match, name) => Object.hasOwn(parameters, name) ? String(parameters[name]) : match));
   }
 
   function localiseFileControls() {
@@ -78,6 +81,12 @@
         if (value !== saved[name].rendered) element.setAttribute(name, saved[name].rendered);
       }
     });
+    // Keep telephone and WhatsApp links aligned with the current company number.
+    document.querySelectorAll('a[href]').forEach(anchor => {
+      const href = anchor.getAttribute('href');
+      const updatedHref = replaceContactNumber(href);
+      if (href !== updatedHref) anchor.setAttribute('href', updatedHref);
+    });
     // Language names remain in their native scripts so visitors can recognise them.
     if (select) {
       select.value = current;
@@ -99,7 +108,7 @@
         const response = await fetch(new URL(`${language}.json?v=20261024-final`, catalogRoot));
         if (!response.ok) throw new Error('Language file unavailable');
         const catalog = await response.json();
-        if (catalog.language !== language || !catalog.strings || typeof catalog.strings !== 'object' || !Object.values(catalog.strings).every(value => typeof value === 'string')) throw new Error('Invalid language file');
+        if (catalog.language !== language || !catalog.strings || typeof catalog.strings !== 'object' || !Object.values(catalog.strings).every(value => typeof value === 'string')) throw new Error('Invalid language catalog');
         catalogs.set(language, catalog.strings);
       }
       if (id !== request) return;
